@@ -791,23 +791,19 @@ export default function Home() {
           {/* ── MASSIVE HERO TITLE — full viewport width, no container constraint ── */}
           {/* Circular badge floats at left; title is full-width centred */}
           <div className="relative flex flex-1 flex-col justify-center items-center text-center w-full">
-            <ScrollReveal initialTransform="translateY(80px)">
-              <motion.div style={{ scale: heroScale, opacity: heroOpacity, y: heroY }}>
-                <Magnetic strength={0.08}>
-                  <h1
-                    className="font-montserrat whitespace-nowrap font-black text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow"
-                    style={{
-                      fontSize: "clamp(2rem, 12.5vw, 18rem)",
-                      lineHeight: "0.85",
-                      letterSpacing: "-0.06em",
-                      position: "relative",
-                    }}
-                  >
-                    MEGHA R
-                  </h1>
-                </Magnetic>
-              </motion.div>
-            </ScrollReveal>
+            <div className="relative">
+              <h1
+                className="font-montserrat whitespace-nowrap font-black text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow pointer-events-none select-text"
+                style={{
+                  fontSize: "clamp(2rem, 12.5vw, 18rem)",
+                  lineHeight: "0.85",
+                  letterSpacing: "-0.06em",
+                  position: "relative",
+                }}
+              >
+                MEGHA R
+              </h1>
+            </div>
 
             {/* Sub-info row — centered directly underneath */}
             <div className="mt-12 flex flex-col items-center justify-center gap-6 px-6 md:px-12 w-full max-w-[1600px]">
