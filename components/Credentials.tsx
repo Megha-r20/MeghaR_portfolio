@@ -27,7 +27,7 @@ export const CREDENTIALS: Credential[] = [
     description: "Demonstrated fluency in AI, completing 7 courses on applying AI to brainstorming, research, communication, content creation, data analysis, and coding. Built a portfolio of 20+ artifacts using AI, vibe-coded a custom AI solution, and leveraged AI tools responsibly to solve real workplace challenges.",
     skills: ["AI Fundamentals", "Brainstorming & Planning", "Research & Insights", "Content Creation", "Data Analysis", "App Building"],
     imageSrc: "/certifications/Google AI.jpg",
-    verifyUrl: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/overlay/Certifications/559499110/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/559499110/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
   },
   {
     id: "google-ai-essentials",
@@ -38,7 +38,7 @@ export const CREDENTIALS: Credential[] = [
     description: "Competent in using AI tools responsibly and improving productivity across workflows. Completed hands-on practice designed to build AI skills, maximize productivity, and discover the art of prompting.",
     skills: ["Introduction to AI", "Maximize Productivity", "Art of Prompting", "Responsible AI"],
     imageSrc: "/certifications/Google AI Essentials.jpg",
-    verifyUrl: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/overlay/Certifications/51308577/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/51308577/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
   },
   {
     id: "nvidia-prompt-eng",
@@ -49,7 +49,7 @@ export const CREDENTIALS: Credential[] = [
     description: "Demonstrated competence in the completion of Building LLM Applications With Prompt Engineering. Validated skills in interacting with Large Language Models and crafting effective prompts for complex AI applications.",
     skills: ["LLMs", "Prompt Engineering", "AI Application Development"],
     imageSrc: "/certifications/NVIDIA Prompt Engineering.jpg",
-    verifyUrl: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/overlay/Certifications/1935341866/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935341866/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
   },
   {
     id: "nvidia-gen-ai",
@@ -60,7 +60,7 @@ export const CREDENTIALS: Credential[] = [
     description: "Demonstrated competence in the core concepts of Generative AI, understanding how these models are built, trained, and deployed to solve complex real-world problems.",
     skills: ["Generative AI", "Deep Learning Concepts", "AI Workflows"],
     imageSrc: "/certifications/NVIDIA Generative AI.jpg",
-    verifyUrl: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/overlay/Certifications/1935582351/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935582351/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
   },
   {
     id: "jpmc-swe",
@@ -71,7 +71,7 @@ export const CREDENTIALS: Credential[] = [
     description: "Completed practical tasks in a simulated corporate environment, gaining hands-on experience in project setup, systems integration, and backend API development.",
     skills: ["Project Setup", "Kafka Integration", "H2 Integration", "REST API", "Java Backend"],
     imageSrc: "/certifications/JP Morgan Job Simulation Kafka & Java.jpg",
-    verifyUrl: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/overlay/Certifications/1935994035/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935994035/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
   }
 ];
 
