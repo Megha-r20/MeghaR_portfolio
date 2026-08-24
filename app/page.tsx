@@ -548,7 +548,7 @@ export default function Home() {
           },
           {
             label: "Gmail",
-            href: "mailto:prajitk299@gmail.com",
+            href: "mailto:megha.ragumani@gmail.com",
             icon: (
               <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -1153,10 +1153,10 @@ export default function Home() {
                   Direct
                 </div>
                 <a
-                  href="mailto:prajitk299@gmail.com"
+                  href="mailto:megha.ragumani@gmail.com"
                   className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] transition-colors"
                 >
-                  prajitk299@gmail.com
+                  megha.ragumani@gmail.com
                 </a>
               </div>
 
@@ -1174,7 +1174,7 @@ export default function Home() {
                   },
                   {
                     label: "Email",
-                    href: "mailto:prajitk299@gmail.com",
+                    href: "mailto:megha.ragumani@gmail.com",
                     icon: <Mail className="h-4 w-4" />,
                   },
                 ].map((social) => (
