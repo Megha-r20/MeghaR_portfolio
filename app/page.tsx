@@ -1127,15 +1127,10 @@ export default function Home() {
                   />
                 </div>
 
-                <GlowButton
+                <button
                   type="submit"
                   disabled={formState === "loading" || formState === "success"}
-                  mode="rotate"
-                  blur="medium"
-                  colors={["#ff8a3d", "#e8742c", "#c2410c", "#ffaf7a"]}
-                  variant="unstyled"
-                  wrapperClassName="mt-4"
-                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="mt-4 group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {formState === "loading" ? (
                     <>
@@ -1154,7 +1149,7 @@ export default function Home() {
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </>
                   )}
-                </GlowButton>
+                </button>
               </form>
             </ScrollReveal>
 
