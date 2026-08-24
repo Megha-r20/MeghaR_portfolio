@@ -314,80 +314,15 @@ body {
   background-size: 36px 36px;
 }
 
-/* ─── Custom cursor: orange dot + trailing ring ─────────────────────────── */
+/* ─── Custom CSS Cursor ─────────────────────────────────────────── */
 @media (pointer: fine) {
-  .has-custom-cursor body,
-  .has-custom-cursor a,
-  .has-custom-cursor button,
-  .has-custom-cursor input,
-  .has-custom-cursor textarea,
-  .has-custom-cursor select,
-  .has-custom-cursor label {
-    cursor: none !important;
+  body {
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L18 12L11 13L8 20L4 2Z" fill="%231a1612" stroke="%23ff8a3d" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 2, auto;
   }
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99999;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #ff8a3d;
-  pointer-events: none;
-  opacity: 0;
-  will-change: transform;
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.3s ease;
-}
-
-.cursor-dot--active {
-  width: 4px;
-  height: 4px;
-}
-
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99998;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(255, 138, 61, 0.5);
-  background: rgba(255, 138, 61, 0);
-  pointer-events: none;
-  opacity: 0;
-  will-change: transform;
-  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.35s ease,
-    background-color 0.35s ease,
-    opacity 0.3s ease;
-}
-
-/* Hovering anything clickable: ring blooms, tint fades in */
-.cursor-ring--active {
-  width: 52px;
-  height: 52px;
-  border-color: rgba(255, 138, 61, 0.85);
-  background: rgba(255, 138, 61, 0.07);
-}
-
-/* Mouse down: tactile contraction */
-.cursor-ring--down {
-  width: 24px;
-  height: 24px;
-}
-
-/* Hide custom cursor elements when native cursor is restored */
-html:not(.has-custom-cursor) .cursor-dot,
-html:not(.has-custom-cursor) .cursor-ring {
-  display: none !important;
-  opacity: 0 !important;
+  
+  a, button, [role="button"] {
+    cursor: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L18 12L11 13L8 20L4 2Z" fill="%23ff8a3d" stroke="%231a1612" stroke-width="1.5" stroke-linejoin="round"/></svg>') 4 2, pointer;
+  }
 }
 
 /* Cinematic warm grain — desktop only: full-screen mix-blend overlays are

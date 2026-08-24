@@ -39,17 +39,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
     };
   }, [isOpen, onClose]);
 
-  // Disable custom cursor and restore native 1:1 cursor on modal open to eliminate all lag/delay
-  useEffect(() => {
-    if (isOpen) {
-      document.documentElement.classList.remove("has-custom-cursor");
-    } else {
-      document.documentElement.classList.add("has-custom-cursor");
-    }
-    return () => {
-      document.documentElement.classList.add("has-custom-cursor");
-    };
-  }, [isOpen]);
+
 
   const validateForm = () => {
     const newErrors: { name?: string; email?: string; projectDetails?: string } = {};
