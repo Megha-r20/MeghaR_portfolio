@@ -858,65 +858,33 @@ export default function Home() {
         <BottomTicker />
       </div>
 
-      {/* Section 1: About */}
-      <section id="about" className="relative mx-auto max-w-[1600px] px-0 py-0 overflow-hidden">
+      {/* Section 1: About (Introduction) */}
+      <section id="about" className="relative mx-auto max-w-[1600px] min-h-[100vh] flex flex-col justify-center px-6 py-24 md:px-12 lg:px-20 overflow-hidden">
+        
+        {/* Atmospheric name watermark */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
+          <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap">
+            MEGHA
+          </span>
+          <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap ml-[15%]">
+            R
+          </span>
+        </div>
 
-        {/* ── Main 2-col editorial grid ───────────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 min-h-[100vh] relative z-10">
-
-          {/* ── LEFT: Dominant Portrait ──────────────────────────────────── */}
-          <ScrollReveal
-            initialTransform="translateX(-30px)"
-            className="md:col-span-6 relative overflow-hidden flex items-end"
-          >
-            {/* Atmospheric name watermark */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden">
-              <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(5rem,14vw,16rem)]">
-                MEGHA
-              </span>
-              <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(5rem,14vw,16rem)]">
-                R
-              </span>
-            </div>
-
-            {/* Portrait — bleeds to full height, soft bottom fade */}
-            <div className="relative z-10 w-full h-[70vh] md:h-[100vh] group">
-              <Image
-                src="/portrait/My Portrait White Shirt.png"
-                alt="MEGHA R"
-                fill
-                className="object-cover object-top transition-transform duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-                style={{
-                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-                  maskComposite: "intersect",
-                  WebkitMaskComposite: "source-in",
-                  mixBlendMode: "multiply",
-                }}
-                sizes="(max-width: 768px) 100vw, 58vw"
-                priority
-              />
-              {/* Warm ambient glow */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#f2ece1] via-[#f2ece1]/30 to-transparent pointer-events-none" />
-            </div>
-
-            {/* Section tag — bottom-left corner */}
-            <div className="absolute bottom-8 left-8 md:left-12 z-20 flex items-center gap-3 font-researcher text-[10px] uppercase tracking-[0.35em] text-[#3a322b]/40">
-              <span>01</span>
-              <span className="h-px w-8 bg-[#3a322b]/20" />
-              <span className="text-[#ff8a3d]/70 font-black tracking-[0.4em]">About</span>
-            </div>
-          </ScrollReveal>
-
-          {/* ── RIGHT: Editorial intro panel ─────────────────────────────── */}
+        {/* ── Single Column Editorial Layout ─────────────────────────────── */}
+        <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col">
           <ScrollReveal
             initialTransform="translateY(50px)"
-            className="md:col-span-6 flex flex-col justify-center px-8 md:px-12 lg:px-14 py-20 md:py-24"
+            className="flex flex-col justify-center w-full"
           >
-            {/* Small eyebrow */}
-            <p className="font-researcher text-[10px] uppercase tracking-[0.5em] text-[#ff8a3d]/70 mb-6">
-              Introduction
-            </p>
+            {/* Section tag / Small eyebrow */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-3 font-researcher text-[10px] uppercase tracking-[0.35em] text-[#3a322b]/50">
+                <span>01</span>
+                <span className="h-px w-12 bg-[#3a322b]/20" />
+                <span className="text-[#ff8a3d]/80 font-black tracking-[0.4em]">Introduction</span>
+              </div>
+            </div>
 
             {/* Syed-style 3-line animated hero heading */}
             <AnimatedHeroHeading
