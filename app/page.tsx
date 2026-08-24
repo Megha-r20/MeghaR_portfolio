@@ -1,0 +1,1275 @@
+"use client";
+
+import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Sparkles,
+  Mail,
+  Loader2,
+  CheckCircle2,
+  Link2,
+  Download,
+  Menu,
+  X,
+} from "lucide-react";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { BackgroundTypography } from "@/components/BackgroundTypography";
+import { StatsMarquee } from "@/components/StatsMarquee";
+import { Credentials } from "@/components/Credentials";
+import { About } from "@/components/About";
+import { Expertise } from "@/components/Expertise";
+import { TypewriterTitle } from "@/components/TypewriterTitle";
+import { IntroPreloader } from "@/components/IntroPreloader";
+import { MagneticNavGroup } from "@/components/ui/MagneticNavItem";
+import { ProximityPillRow } from "@/components/ui/TechPill";
+import { AnimatedHeroHeading } from "@/components/ui/AnimatedHeroHeading";
+import { WordReveal } from "@/components/ui/WordReveal";
+import { TiltCard } from "@/components/ui/TiltCard";
+import { Magnetic } from "@/components/ui/Magnetic";
+import { GlowButton } from "@/components/ui/glow";
+import { TimePill } from "@/components/TimePill";
+import { StatsCard } from "@/components/StatsCard";
+import { BottomTicker } from "@/components/BottomTicker";
+import { DinoRunner } from "@/components/DinoRunner";
+import { HireMeModal } from "@/components/HireMeModal";
+
+const Github = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type Project = {
+  num: string;
+  title: string;
+  cat: string;
+  desc: string;
+  tags: string[];
+  status: string;
+  year: string;
+  link: string;
+  github: string;
+  image: string;
+};
+
+type TimelineNode = {
+  year: string;
+  role: string;
+  desc: string;
+  side: string;
+  logoSrc?: string;
+  logoClass?: string;
+};
+
+// ─── ProjectCard ──────────────────────────────────────────────────────────────
+// One project card: rainbow hover border, glow icon buttons, tilt mockup,
+// and a bottom-up clip-path wipe on the screenshot when it enters the viewport.
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <div className="rainbow-glow group relative rounded-[28px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 md:rounded-[40px]">
+      <span aria-hidden="true" className="rainbow-halo"><span className="rainbow-conic" /></span>
+      <span aria-hidden="true" className="rainbow-ring"><span className="rainbow-conic" /></span>
+      {/* Hover shadow — pre-rendered on its own layer, faded via opacity (composited).
+          Animating box-shadow directly repaints the whole card every frame. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-[28px] md:rounded-[40px] shadow-[0_45px_100px_-30px_rgba(255,138,61,0.35)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      ></div>
+      <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#3a322b]/10 bg-gradient-to-br from-white via-[#faf5ec] to-[#f3ecdf] shadow-[0_30px_80px_-30px_rgba(58,50,43,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#ff8a3d]/30">
+        {/* Ambient orange glow on hover */}
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#ff8a3d]/10 opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-100"></div>
+
+        <div className="relative grid grid-cols-1 items-center gap-10 p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
+
+          {/* ── Left: Icons, Title, Description, Tech Tags ── */}
+          <div className="flex flex-col">
+            {/* Icon buttons */}
+            <div className="mb-8 flex items-center gap-4 md:mb-10">
+              <GlowButton
+                asChild
+                mode="rotate"
+                blur="soft"
+                glowScale={1.1}
+                colors={["#ff8a3d", "#3a322b", "#ffaf7a"]}
+                variant="unstyled"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] transition-all duration-300 hover:scale-110 hover:bg-[#ff8a3d] hover:text-[#1a1612] border-0 outline-none"
+              >
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} source on GitHub`}
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              </GlowButton>
+              <GlowButton
+                asChild
+                mode="rotate"
+                blur="soft"
+                glowScale={1.1}
+                colors={["#ff8a3d", "#3a322b", "#ffaf7a"]}
+                variant="unstyled"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] transition-all duration-300 hover:scale-110 hover:bg-[#ff8a3d] hover:text-[#1a1612] border-0 outline-none"
+              >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.title} live site`}
+                >
+                  <Link2 className="h-5 w-5" />
+                </a>
+              </GlowButton>
+            </div>
+
+            {/* Title */}
+            <h3 className="font-montserrat text-4xl font-black leading-[0.95] tracking-tight text-[#1a1612] transition-colors duration-500 group-hover:text-[#ff8a3d] md:text-5xl xl:text-6xl">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p className="font-syne mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold leading-[24px] text-[#95979D]">
+              {project.desc}
+            </p>
+
+            {/* Tech tags */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="font-syne text-[13px] font-bold uppercase tracking-[0.12em] text-[#3a322b] transition-colors duration-300 group-hover:text-[#1a1612] md:text-[15px]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Right: MacBook mockup ── */}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${project.title}`}
+            className="relative block w-full"
+          >
+            <TiltCard>
+              <div className="relative mx-auto w-full max-w-[580px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
+                {/* Screen + bezel */}
+                <div className="relative rounded-t-[16px] border-[10px] border-b-0 border-[#2b2b2f] bg-[#2b2b2f] shadow-[0_25px_60px_-20px_rgba(0,0,0,0.5)] md:rounded-t-[20px] md:border-[14px] md:border-b-0">
+                  <div className="relative overflow-hidden rounded-[4px] bg-black">
+                    <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#ff8a3d]/25 to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-100"></div>
+                    {/* Bottom-up wipe reveal */}
+                    <motion.div
+                      initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                      viewport={{ once: true, margin: "-10%" }}
+                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} Preview`}
+                        width={1600}
+                        height={1000}
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                        loading="eager"
+                      />
+                    </motion.div>
+                  </div>
+                </div>
+                {/* Base / hinge */}
+                <div className="relative left-1/2 h-3.5 w-[112%] -translate-x-1/2 rounded-b-[10px] bg-gradient-to-b from-[#d8d8db] via-[#bcbcc0] to-[#96969b] shadow-[0_12px_24px_-8px_rgba(0,0,0,0.4)] md:h-4">
+                  {/* Notch */}
+                  <div className="absolute left-1/2 top-0 h-1.5 w-[14%] -translate-x-1/2 rounded-b-[6px] bg-[#7c7c82]"></div>
+                </div>
+              </div>
+            </TiltCard>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── ProjectsShowcase ─────────────────────────────────────────────────────────
+// Simple vertical stack of full project cards with scroll reveals,
+// on every screen size.
+
+function ProjectsShowcase({ projects }: { projects: Project[] }) {
+  return (
+    <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-12 px-6 md:gap-y-20 md:px-12">
+      {projects.map((project) => (
+        <ScrollReveal key={project.title} initialTransform="translateY(80px)">
+          <ProjectCard project={project} />
+        </ScrollReveal>
+      ))}
+    </div>
+  );
+}
+
+// ─── JourneyTimeline ──────────────────────────────────────────────────────────
+// The center line draws itself in as you scroll through the section,
+// and each node's dot pops in with a spring when it enters the viewport.
+
+function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 80%", "end 70%"],
+  });
+
+  return (
+    <div ref={ref} className="relative">
+      <motion.div
+        style={{ scaleY: scrollYProgress }}
+        className="absolute left-0 top-0 h-full w-px origin-top bg-gradient-to-b from-[#ff8a3d]/40 via-[#5a3f2a]/30 to-transparent md:left-1/2"
+      />
+
+      {timeline.map((node) => (
+        <ScrollReveal
+          key={node.year}
+          initialTransform="translateY(40px)"
+          className={`relative mb-20 grid grid-cols-12 items-start gap-6 ${
+            node.side === "right" ? "md:flex-row-reverse" : ""
+          }`}
+        >
+          {/* Left Column (Content for left side, empty for right) */}
+          <div
+            className={`col-span-12 pl-8 md:col-span-5 md:pl-0 ${
+              node.side === "left" ? "md:text-right" : "md:hidden"
+            }`}
+          >
+            <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 ${node.side === "left" ? "md:justify-end" : ""}`}>
+              {node.side === "left" && node.logoSrc && (
+                <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(255,138,61,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                  <Image src={node.logoSrc} alt={node.role} width={200} height={80} className={`object-contain h-10 sm:h-12 w-auto ${node.logoClass || ""}`} priority />
+                </div>
+              )}
+              <div className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+                {node.year}
+              </div>
+            </div>
+            <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
+              {node.role}
+            </div>
+            <p className="mt-2 text-sm text-[#a89c8d]/70 font-syne">
+              {node.desc}
+            </p>
+          </div>
+
+          {/* Center Dot — springs in on first view */}
+          <div className="absolute left-0 top-2 flex h-4 w-4 -translate-x-1/2 items-center justify-center md:left-1/2">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, margin: "-15%" }}
+              transition={{ type: "spring", stiffness: 320, damping: 16 }}
+              className="relative flex h-full w-full items-center justify-center"
+            >
+              <div className="h-3 w-3 rounded-full bg-[#ff8a3d] shadow-[0_0_18px_rgba(255,138,61,0.7)] animate-pulse"></div>
+              <div className="absolute h-6 w-6 rounded-full border border-[#5a3f2a]/70 dark:border-[#5a3f2a]/70 light:border-black/10"></div>
+            </motion.div>
+          </div>
+
+          {/* Right Column (Content for right side, empty for left) */}
+          <div
+            className={`col-span-12 pl-8 md:col-span-5 md:col-start-8 md:pl-0 ${
+              node.side === "right" ? "block" : "hidden md:block opacity-0"
+            }`}
+          >
+            {node.side === "right" && (
+              <>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+                  <div className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+                    {node.year}
+                  </div>
+                  {node.logoSrc && (
+                    <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(255,138,61,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                      <Image src={node.logoSrc} alt={node.role} width={200} height={80} className={`object-contain h-10 sm:h-12 w-auto ${node.logoClass || ""}`} priority />
+                    </div>
+                  )}
+                </div>
+                <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
+                  {node.role}
+                </div>
+                <p className="mt-2 text-sm text-[#a89c8d]/70 font-syne">
+                  {node.desc}
+                </p>
+              </>
+            )}
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  );
+}
+
+export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
+  const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
+  const [activeSection, setActiveSection] = useState<string>("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hireMeOpen, setHireMeOpen] = useState(false);
+  // Mouse-driven effects (WebGL hero mesh) only make sense with a fine pointer
+  const [isFinePointer, setIsFinePointer] = useState(false);
+
+  // Form Fields
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Scroll-linked hero exit: title shrinks, drifts down and fades as you scroll away
+  const { scrollY } = useScroll();
+  const heroScale = useTransform(scrollY, [0, 700], [1, 0.9]);
+  const heroOpacity = useTransform(scrollY, [0, 700], [1, 0.15]);
+  const heroY = useTransform(scrollY, [0, 700], [0, 60]);
+
+  useEffect(() => {
+    setMounted(true);
+    setIsFinePointer(window.matchMedia("(pointer: fine)").matches);
+
+    // Scroll spy logic to highlight active link using IntersectionObserver
+    const sections = ["hero", "projects", "about", "stack", "journey", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -60% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => {
+      const el = document.getElementById(section);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email || !message) return;
+    setFormState("loading");
+    setTimeout(() => {
+      setFormState("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+      // Reset after 3 seconds
+      setTimeout(() => setFormState("idle"), 3000);
+    }, 1800);
+  };
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen w-full bg-[#0a0807] flex items-center justify-center">
+        <Loader2 className="h-6 w-6 animate-spin text-[#ff8a3d]" />
+      </div>
+    );
+  }
+
+  const buildPillars = [
+    {
+      num: "01",
+      title: "AI Products",
+      desc: "Built DevMentor AI and KADENCE — applying LLMs, agents, and intelligent workflows to real products.",
+      image: "/kadence-preview.png",
+    },
+    {
+      num: "02",
+      title: "Creative Technology",
+      desc: "Created VELARI, combining generative AI, interaction design, and immersive digital experiences.",
+      image: "/velari-preview.png",
+    },
+    {
+      num: "03",
+      title: "Developer Platforms",
+      desc: "Built products focused on developer growth, mentorship, analysis, and productivity.",
+      image: "/devscore-preview.png",
+    },
+    {
+      num: "04",
+      title: "Full-Stack Systems",
+      desc: "Engineering complete products from frontend experiences to backend infrastructure and deployment.",
+      image: "/devmentor-preview.png",
+    }
+  ];
+
+  const capabilities = [
+    { num: "01", title: "Full-Stack Development", desc: "End-to-end product engineering, from interface to infra." },
+    { num: "02", title: "AI Integration", desc: "LLMs, RAG, agents, and intelligent product layers." },
+    { num: "03", title: "Backend Systems", desc: "Resilient, scalable APIs and real-time pipelines." },
+    { num: "04", title: "UI / UX Engineering", desc: "Cinematic interfaces with motion-rich micro-interactions." },
+    { num: "05", title: "API Development", desc: "Clean REST & GraphQL contracts built to last." },
+    { num: "06", title: "Cloud & Deployment", desc: "Vercel, AWS, Docker — shipping confidently." },
+    { num: "07", title: "Database Architecture", desc: "Designing schemas that scale with the product." },
+    { num: "08", title: "Performance Optimization", desc: "Sub-second experiences, every load, every device." },
+  ];
+
+  const projects = [
+    {
+      num: "/01",
+      title: "KADENCE",
+      cat: "MUSIC • 3D UNIVERSE",
+      desc: "Step into a living, breathing 3D universe of music where every artist and album becomes a world to explore.",
+      tags: ["REACT", "THREE.JS", "NEXT.JS"],
+      status: "Live",
+      year: "2026",
+      link: "https://kadence-musicz.vercel.app/",
+      github: "https://github.com/septilex",
+      image: "/kadence-preview.png",
+    },
+    {
+      num: "/02",
+      title: "VELARI",
+      cat: "AI • GENERATIVE ART",
+      desc: "An AI canvas that turns your imagination into mesmerizing, gallery-worthy generative art in real time.",
+      tags: ["REACT", "OPENAI", "TAILWIND CSS"],
+      status: "Live",
+      year: "2026",
+      link: "https://velari-dusky.vercel.app/",
+      github: "https://github.com/septilex",
+      image: "/velari-preview.png",
+    },
+    {
+      num: "/03",
+      title: "DevMentor AI",
+      cat: "AI • ENGINEERING ASSISTANT",
+      desc: "An AI pair programmer that thinks like a senior engineer — auditing, architecting, and documenting your code at superhuman speed.",
+      tags: ["NEXT.JS", "TYPESCRIPT", "OPENAI"],
+      status: "Live",
+      year: "2026",
+      link: "https://devmentorr.vercel.app/",
+      github: "https://github.com/septilex",
+      image: "/devmentor-preview.png",
+    },
+    {
+      num: "/04",
+      title: "DevScore",
+      cat: "AI • DEVELOPER ANALYSIS",
+      desc: "The ultimate verdict on your code: scans your GitHub to reveal your true skill, growth, and developer DNA.",
+      tags: ["NEXT.JS", "GITHUB API", "AI"],
+      status: "Live",
+      year: "2026",
+      link: "https://devscore-xi.vercel.app/",
+      github: "https://github.com/septilex",
+      image: "/devscore-preview.png",
+    },
+  ];
+
+  const timeline = [
+    {
+      year: "2027",
+      role: "Amazon Internship Goal",
+      desc: "Aiming to enter large-scale engineering environments as a Java-focused developer while strengthening backend systems, scalability, and software engineering foundations through real-world experience.",
+      side: "left",
+      logoSrc: "/logos/amazon.png",
+      logoClass: "scale-[1.6]",
+    },
+    {
+      year: "2032",
+      role: "Aspiring Data Scientist at Google",
+      desc: "Working toward contributing to intelligent systems, machine learning infrastructure, and large-scale data-driven technologies while expanding expertise in AI research, analytics, and generative systems.",
+      side: "right",
+      logoSrc: "/logos/google.png",
+      logoClass: "scale-[1.6]",
+    },
+    {
+      year: "2037",
+      role: "Independent LLM & Startup Vision",
+      desc: "Aiming to build a proprietary large language model ecosystem and lead an AI startup focused on futuristic digital products, intelligent systems, and real-world business integrations.",
+      side: "left",
+    },
+    {
+      year: "2040",
+      role: "Long-Term Mission",
+      desc: "Building impactful AI-driven technologies that help people transform ideas into scalable realities while pushing the boundaries of intelligent systems and human-centered innovation.",
+      side: "right",
+    },
+  ];
+
+  const navItems = [
+    { id: "projects", label: "Work" },
+    { id: "about", label: "About" },
+    { id: "stack", label: "Stack" },
+    { id: "journey", label: "Journey" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  return (
+    <main className="relative min-h-screen w-full overflow-x-clip bg-[var(--bg-base)] transition-colors duration-700 ease-in-out">
+      <IntroPreloader />
+      <ScrollProgressBar />
+
+      {/* Floating quick-access dock — GitHub / LinkedIn / Gmail / Instagram, always on screen */}
+      <div className="fixed z-[90] flex gap-3 max-md:bottom-5 max-md:left-1/2 max-md:-translate-x-1/2 max-md:flex-row md:right-5 md:top-1/2 md:-translate-y-1/2 md:flex-col">
+        {[
+          {
+            label: "Github",
+            href: "https://github.com/septilex",
+            icon: (
+              <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+            ),
+          },
+          {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/",
+            icon: (
+              <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            ),
+          },
+          {
+            label: "Gmail",
+            href: "mailto:prajitk299@gmail.com",
+            icon: (
+              <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            ),
+          },
+          {
+            label: "Instagram",
+            href: "https://www.instagram.com/_prajitbalaji_/",
+            icon: (
+              <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            ),
+          },
+        ].map((item) => (
+          <Magnetic key={item.label} strength={0.35}>
+            <a
+              href={item.href}
+              target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              aria-label={item.label}
+              className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
+            >
+              {/* Always-on pulsing orange glow — same as the resume button */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+              />
+              {/* Liquid glass circle */}
+              <span className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[var(--dock-glass-border)] bg-[var(--dock-glass-bg)] text-[var(--fg-body)] backdrop-blur-xl shadow-[var(--dock-glass-shadow)] transition-all duration-300 group-hover:border-[var(--amber)]/50 group-hover:text-[var(--amber)] group-hover:shadow-[var(--dock-glass-hover-shadow)]">
+                {/* Specular sheen */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0.25)_28%,rgba(255,255,255,0)_50%)]"
+                />
+                <span className="relative z-10">{item.icon}</span>
+              </span>
+              {/* Hover label — glowing orange text */}
+              <span className="pointer-events-none absolute right-full top-1/2 z-20 mr-3 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-full border border-[var(--amber)]/30 bg-[var(--dock-label-bg)] px-3.5 py-2 font-researcher text-[9px] font-bold uppercase tracking-[0.3em] opacity-0 shadow-[0_8px_24px_rgba(255,138,61,0.2),0_0_12px_rgba(255,138,61,0.15)] backdrop-blur-md transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block" style={{ color: "var(--amber)", textShadow: "0 0 8px rgba(255,138,61,0.7), 0 0 20px rgba(255,138,61,0.4)" }}>
+                {item.label}
+              </span>
+            </a>
+          </Magnetic>
+        ))}
+      </div>
+
+      {/* Static Glow Orb */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed top-0 left-0 z-[1] h-[500px] w-[500px] rounded-full opacity-70 mix-blend-screen transition-transform duration-500"
+        style={{ transform: "translateX(-200px) translateY(-200px)" }}
+      >
+        <div className="glow-orb h-full w-full rounded-full"></div>
+      </div>
+
+      <div className="grid-overlay"></div>
+      <div className="grain"></div>
+      <div className="vignette"></div>
+
+      {/* Floating Header Navbar */}
+      <nav
+        className="fixed top-4 left-[calc(50%+16px)] z-50 -translate-x-1/2 transition-all duration-700 w-[min(95%,760px)]"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transform: mounted ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-40px)",
+        }}
+      >
+        <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-6 py-2.5 shadow-[var(--nav-shadow)]">
+          <a href="#hero" className="flex items-center gap-2 text-sm font-medium tracking-tight">
+            <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(255,138,61,0.2)]">
+              <Image
+                src="/pb_logo.jpg"
+                alt="PB Logo"
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </span>
+            <span className="hidden sm:inline text-[var(--fg-body)] font-researcher font-bold tracking-[0.2em] text-[11px] whitespace-nowrap">
+              MEGHA R
+            </span>
+          </a>
+
+          <MagneticNavGroup items={navItems} activeSection={activeSection} />
+
+          <div className="flex items-center gap-2">
+            {/* IST Time Pill — only visible md+ */}
+            <TimePill />
+
+            {/* Mobile menu toggle */}
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--fg-body)] transition-colors hover:text-[var(--amber)] md:hidden"
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown — glass panel */}
+        <div
+          className={`mt-2 overflow-hidden rounded-3xl border bg-[var(--dropdown-bg)] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden ${
+            menuOpen
+              ? "max-h-96 border-[var(--border-subtle)] opacity-100"
+              : "max-h-0 border-transparent opacity-0"
+          }`}
+        >
+          <div className="flex flex-col p-3">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setMenuOpen(false)}
+                className={`font-syne rounded-2xl px-4 py-3 text-[15px] font-semibold transition-colors ${
+                  activeSection === item.id
+                    ? "bg-[var(--dropdown-active-bg)] text-[var(--amber)]"
+                    : "text-[var(--fg-body)]/70 active:bg-[var(--fg-body)]/5"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                setHireMeOpen(true);
+              }}
+              className="font-syne mt-1 flex items-center justify-between rounded-2xl bg-[var(--amber)]/15 border border-[var(--amber)]/40 px-4 py-3 text-[15px] font-bold text-[var(--amber)] transition-colors"
+            >
+              <span>HIRE ME</span>
+              <Sparkles className="h-4 w-4 text-[var(--amber)]" />
+            </button>
+            <a
+              href="/Prajit_Balaji_Resume.pdf"
+              download="Prajit_Balaji_Resume.pdf"
+              onClick={() => setMenuOpen(false)}
+              className="font-syne mt-1 flex items-center gap-2 rounded-2xl border-t border-[var(--border-subtle)] px-4 py-3 text-[15px] font-semibold text-[var(--fg-body)]"
+            >
+              <Download className="h-4 w-4 text-[var(--amber)]" />
+              My Resume
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Top-Right Fixed HIRE ME Button (Aligned horizontally with navbar, vertically above side social dock) */}
+      <div
+        className="fixed top-4 right-5 z-50 hidden md:block transition-all duration-700"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transform: mounted ? "translateY(0)" : "translateY(-40px)",
+        }}
+      >
+        <Magnetic strength={0.35}>
+          <button
+            type="button"
+            onClick={() => setHireMeOpen(true)}
+            className="group relative flex h-[62px] items-center justify-center rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 active:scale-95"
+            aria-label="Hire Me"
+          >
+            {/* Always-on pulsing orange glow — matches dock buttons */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+            />
+
+            {/* Pill capsule: solid black & white text at default, turns solid orange & pure black on hover */}
+            <span className="relative z-10 flex h-12 items-center gap-2 rounded-full border border-white/10 bg-[#0f0d0b] px-5 shadow-[0_4px_20px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#ff8a3d] group-hover:bg-[#ff8a3d] group-hover:shadow-[0_0_30px_rgba(255,138,61,0.65),inset_0_1px_0_rgba(255,255,255,0.4)]">
+              {/* Subtle top specular border highlight */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
+              />
+
+              {/* Pulsing indicator dot — orange at default, turns pure black on hover */}
+              <span className="relative z-10 flex h-2 w-2 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff8a3d] opacity-75 transition-colors duration-300 group-hover:bg-black" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff8a3d] transition-colors duration-300 group-hover:bg-black" />
+              </span>
+
+              {/* Text — pure white at default, turns pure black on hover */}
+              <span className="relative z-10 font-researcher text-[11px] font-black uppercase tracking-[0.25em] text-white transition-colors duration-300 group-hover:text-black whitespace-nowrap">
+                HIRE ME
+              </span>
+            </span>
+          </button>
+        </Magnetic>
+      </div>
+
+      {/* Hire Me Premium Modal */}
+      <HireMeModal isOpen={hireMeOpen} onClose={() => setHireMeOpen(false)} />
+
+      {/* Hero Section */}
+      <section id="hero" className="relative min-h-screen w-full overflow-hidden">
+        {/* Background Typography */}
+        <BackgroundTypography
+           rows={[
+            "MEGHA R • CREATIVE ENGINEER •",
+            "ARTIFICIAL INTELLIGENCE • NEXT.JS • REACT •",
+            "SYSTEM ARCHITECTURE • UI/UX PRO MAX •",
+            "BUILDING THE FUTURE • SCALING SYSTEMS •"
+           ]}
+           opacity={0.06}
+        />
+
+        {/* Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(40,18,8,0.9),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_70%_50%,rgba(40,18,8,0.9),transparent_60%)] light:bg-[radial-gradient(ellipse_at_70%_50%,rgba(255,240,225,0.4),transparent_60%)]"></div>
+          <div className="absolute left-[8%] top-[18%] h-[400px] w-[400px] rounded-full bg-[#c2410c]/20 blur-[80px] light:bg-[#c2410c]/8 light:blur-[80px]"></div>
+          <div className="absolute right-[5%] top-[35%] h-[500px] w-[500px] rounded-full bg-[#ff8a3d]/15 blur-[100px] light:bg-[#ff8a3d]/6 light:blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] left-1/2 h-[350px] w-[70%] -translate-x-1/2 rounded-full bg-[#b87333]/18 blur-[80px] light:bg-[#b87333]/8 light:blur-[80px]"></div>
+          <div className="absolute inset-x-0 bottom-0 h-[40vh] bg-gradient-to-t from-[#1a0d05]/80 via-[#0d0807]/40 to-transparent dark:from-[#1a0d05]/80 dark:via-[#0d0807]/40 light:from-[#f5efe6] light:to-transparent"></div>
+        </div>
+
+        {/* Ambient pixel-art infinite runner Easter egg */}
+        <DinoRunner />
+
+        {/* Hero layout: flex column filling full viewport height */}
+        <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-32 pb-10">
+
+          {/* Top metadata row — constrained to 1600px */}
+          <ScrollReveal
+            initialTransform="translateY(20px)"
+            className="mx-auto mt-12 w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9.5px] uppercase tracking-[0.3em] text-[#1A1612] font-researcher font-bold"
+          >
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff8a3d] opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff8a3d]"></span>
+              </span>
+              <span>Available for projects · 2026</span>
+            </div>
+            <div className="hidden md:block">Portfolio · v0.26</div>
+          </ScrollReveal>
+
+          {/* ── MASSIVE HERO TITLE — full viewport width, no container constraint ── */}
+          {/* Circular badge floats at left; title is full-width centred */}
+          <div className="relative flex flex-1 flex-col justify-center items-center text-center w-full">
+            <ScrollReveal initialTransform="translateY(80px)">
+              <motion.div style={{ scale: heroScale, opacity: heroOpacity, y: heroY }}>
+                <Magnetic strength={0.08}>
+                  <h1
+                    className="font-montserrat whitespace-nowrap font-black text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow"
+                    style={{
+                      fontSize: "clamp(2rem, 12.5vw, 18rem)",
+                      lineHeight: "0.85",
+                      letterSpacing: "-0.06em",
+                      position: "relative",
+                    }}
+                  >
+                    MEGHA R
+                  </h1>
+                </Magnetic>
+              </motion.div>
+            </ScrollReveal>
+
+            {/* Sub-info row — centered directly underneath */}
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 px-6 md:px-12 w-full max-w-[1600px]">
+              <ScrollReveal
+                initialTransform="translateY(30px)"
+                className="relative w-full flex justify-center"
+              >
+                <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-center">
+                  Full-Stack AI Engineer
+                  <br />
+                  <TypewriterTitle />
+                  <br />
+                  <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-3 inline-block">Creating futuristic digital experiences.</span>
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal
+                initialTransform="translateY(30px)"
+                className="text-[9.5px] uppercase tracking-[0.25em] text-[#1A1612] font-researcher font-bold text-center mt-4"
+              >
+                <div>Based in the <span className="text-[#ff8a3d] font-bold">cloud</span></div>
+                <div className="mt-1">Building the <span className="text-[#ff8a3d] font-bold">next decade</span></div>
+              </ScrollReveal>
+
+              {/* Stats card + resume */}
+              <ScrollReveal initialTransform="translateY(30px)" className="mt-8 flex justify-center w-full">
+                <StatsCard />
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* Bottom row — constrained to 1600px */}
+          <ScrollReveal
+            initialTransform="translateY(20px)"
+            className="mx-auto w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#1A1612] font-researcher font-bold"
+          >
+            <span className="flex items-center gap-2">Scroll to explore</span>
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#3a2a1c]/80 dark:border-[#3a2a1c]/80 light:border-black/10">
+              <ArrowDown className="h-3 w-3 text-[#ff8a3d] animate-bounce" />
+            </div>
+            <span className="hidden md:inline">© 2026</span>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── Bottom Ticker — fixed to viewport bottom, visible immediately ── */}
+      <div className="fixed bottom-0 left-0 w-full z-[60]">
+        <BottomTicker />
+      </div>
+
+      {/* Section 1: About */}
+      <section id="about" className="relative mx-auto max-w-[1600px] px-0 py-0 overflow-hidden">
+
+        {/* ── Main 2-col editorial grid ───────────────────────────────────── */}
+        <div className="grid grid-cols-1 md:grid-cols-12 min-h-[100vh] relative z-10">
+
+          {/* ── LEFT: Dominant Portrait ──────────────────────────────────── */}
+          <ScrollReveal
+            initialTransform="translateX(-30px)"
+            className="md:col-span-6 relative overflow-hidden flex items-end"
+          >
+            {/* Atmospheric name watermark */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden">
+              <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(5rem,14vw,16rem)]">
+                MEGHA
+              </span>
+              <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(5rem,14vw,16rem)]">
+                R
+              </span>
+            </div>
+
+            {/* Portrait — bleeds to full height, soft bottom fade */}
+            <div className="relative z-10 w-full h-[70vh] md:h-[100vh] group">
+              <Image
+                src="/portrait/My Portrait White Shirt.png"
+                alt="MEGHA R"
+                fill
+                className="object-cover object-top transition-transform duration-[1800ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
+                style={{
+                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "source-in",
+                  mixBlendMode: "multiply",
+                }}
+                sizes="(max-width: 768px) 100vw, 58vw"
+                priority
+              />
+              {/* Warm ambient glow */}
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#f2ece1] via-[#f2ece1]/30 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Section tag — bottom-left corner */}
+            <div className="absolute bottom-8 left-8 md:left-12 z-20 flex items-center gap-3 font-researcher text-[10px] uppercase tracking-[0.35em] text-[#3a322b]/40">
+              <span>01</span>
+              <span className="h-px w-8 bg-[#3a322b]/20" />
+              <span className="text-[#ff8a3d]/70 font-black tracking-[0.4em]">About</span>
+            </div>
+          </ScrollReveal>
+
+          {/* ── RIGHT: Editorial intro panel ─────────────────────────────── */}
+          <ScrollReveal
+            initialTransform="translateY(50px)"
+            className="md:col-span-6 flex flex-col justify-center px-8 md:px-12 lg:px-14 py-20 md:py-24"
+          >
+            {/* Small eyebrow */}
+            <p className="font-researcher text-[10px] uppercase tracking-[0.5em] text-[#ff8a3d]/70 mb-6">
+              Introduction
+            </p>
+
+            {/* Syed-style 3-line animated hero heading */}
+            <AnimatedHeroHeading
+              lines={[
+                "I BUILD PRODUCTS,",
+                "CRAFT EXPERIENCES,",
+                "ENGINEER THE FUTURE.",
+              ]}
+              accentWords={["products", "experiences", "future"]}
+              className="mb-10"
+            />
+
+            {/* Thin separator */}
+            <div className="w-12 h-[2px] bg-[#ff8a3d]/40 rounded-full mb-8" />
+
+            {/* Biography block */}
+            <div className="font-syne space-y-5 text-[16px] font-semibold leading-[24px] text-[#95979D]">
+              <p>
+                I'm{" "}
+                <span 
+                  className="font-extrabold text-[#3a322b] text-[1.05em] tracking-tight"
+                  style={{ fontFamily: "var(--next-font-syne), sans-serif" }}
+                >
+                  MEGHA R
+                </span>
+                {" "}— a 3rd-year B.Tech CSE
+                {" "}<span className="text-[#ff8a3d] font-medium">(AI & Future Technologies)</span>{" "}
+                student at{" "}
+                <span className="text-[#ff8a3d] font-medium">SRM University – AP</span>.
+              </p>
+
+              <p>
+                I build AI-powered products and am deeply passionate about{" "}
+                <span className="text-[#ff8a3d]/90 font-medium">Generative AI</span> and{" "}
+                <span className="text-[#ff8a3d]/90 font-medium">LLMs</span> — understanding how
+                they work, experimenting with them, and shipping intelligent digital experiences.
+              </p>
+
+              <p>
+                I turn ideas into real-world products through{" "}
+                <span className="text-[#ff8a3d]/90 font-medium">full-stack engineering</span>,
+                AI tooling, and design systems that feel as good as they perform.
+              </p>
+
+              <p>
+                Outside of code, I obsess over new tech, build immersive UI/UX, and
+                constantly push myself to learn faster and ship smarter.
+              </p>
+            </div>
+
+            {/* CTA links */}
+            <div className="mt-10 flex items-center gap-6">
+              <Magnetic strength={0.2}>
+                <a
+                  href="#projects"
+                  className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:scale-105 active:scale-95"
+                >
+                  {/* Always-on pulsing orange glow */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                  />
+                  {/* Pill capsule: solid black & white text at default, turns solid orange & pure black on hover */}
+                  <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-white/10 bg-[#0f0d0b] text-white shadow-[0_4px_20px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#ff8a3d] group-hover:bg-[#ff8a3d] group-hover:text-black group-hover:shadow-[0_0_30px_rgba(255,138,61,0.65),inset_0_1px_0_rgba(255,255,255,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
+                    {/* Subtle top specular border highlight */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <span className="relative z-10">VIEW WORK</span>
+                    <ArrowUpRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </a>
+              </Magnetic>
+              <span className="h-px w-8 bg-[#3a322b]/15" />
+              <a
+                href="#contact"
+                className="text-[13px] font-medium uppercase tracking-[0.3em] text-[#3a322b]/45 hover:text-[#3a322b] transition-colors duration-300"
+              >
+                Let's Talk
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Stats Marquee Strip */}
+      <StatsMarquee />
+
+      {/* Section 2: About */}
+      <About />
+
+      {/* Section 3: Technology Arsenal */}
+      <section id="stack" className="relative mx-auto max-w-[1600px] pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+        <div className="px-6 md:px-12">
+          <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <span>03</span>
+            <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Technology Arsenal</span>
+          </div>
+          <WordReveal
+            text="A modern arsenal for"
+            accentText="building at the edge."
+            className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-20 md:mb-32 text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+          />
+        </div>
+
+        {/* Marquees */}
+        <ScrollReveal initialTransform="translateY(40px)" delay={200}>
+          <div className="flex flex-col gap-6 select-none mt-10 w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] overflow-hidden">
+            {/* Row 1 */}
+            <ProximityPillRow
+              techs={["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js", "Express", "MongoDB", "PostgreSQL", "OpenAI", "LLMs"]}
+              rowKey="row1"
+              animClass="animate-marquee"
+            />
+
+            {/* Row 2 */}
+            <ProximityPillRow
+              techs={["RAG", "AI Agents", "Docker", "AWS", "Vercel", "GitHub", "REST APIs", "Authentication", "Prompt Engineering", "AI Workflows"]}
+              rowKey="row2"
+              reverse
+              dimmed
+              animClass="animate-marquee-slow"
+            />
+          </div>
+        </ScrollReveal>
+      </section>
+
+
+
+      {/* Section 4: Expertise */}
+      <Expertise />
+
+      {/* Section 5: Projects */}
+      <section id="projects" className="relative py-32 md:py-48">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+          <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <span>05</span>
+            <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Projects</span>
+          </div>
+
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+            <WordReveal
+              text="Projects that"
+              accentText="define me."
+              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+            />
+            <div className="text-[11px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-researcher">
+              {projects.length} works
+            </div>
+          </div>
+        </div>
+
+        <ProjectsShowcase projects={projects} />
+      </section>
+
+
+
+
+      {/* Section 6: Credentials */}
+      <Credentials />
+
+      {/* Section 7: Journey */}
+      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-48">
+        <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+          <span>07</span>
+          <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Journey</span>
+        </div>
+
+        <WordReveal
+          text="My vision towards"
+          accentText="what I am striving to."
+          className="font-display mb-24 max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+        />
+
+        {/* Timeline Grid — line draws in on scroll, dots spring in */}
+        <JourneyTimeline timeline={timeline} />
+      </section>
+
+      {/* Section 8: Contact */}
+      <section id="contact" className="relative overflow-hidden">
+        <div className="mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-48">
+          <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <span>08</span>
+            <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Let&apos;s Talk</span>
+          </div>
+
+          <WordReveal
+            text="Let's build the"
+            accentText="future."
+            className="font-display max-w-6xl text-[clamp(2.5rem,8vw,10rem)] font-semibold leading-[0.9] tracking-tight"
+          />
+
+          <div className="mt-24 grid grid-cols-1 gap-16 md:grid-cols-12">
+            {/* Form */}
+            <ScrollReveal initialTransform="translateY(40px)" className="md:col-span-7">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={formState === "loading" || formState === "success"}
+                      className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="you@domain.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={formState === "loading" || formState === "success"}
+                      className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                    Tell me about it
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder="A project, an idea, anything..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={formState === "loading" || formState === "success"}
+                    className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
+                  />
+                </div>
+
+                <GlowButton
+                  type="submit"
+                  disabled={formState === "loading" || formState === "success"}
+                  mode="rotate"
+                  blur="medium"
+                  colors={["#ff8a3d", "#e8742c", "#c2410c", "#ffaf7a"]}
+                  variant="unstyled"
+                  wrapperClassName="mt-4"
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {formState === "loading" ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Transmitting...
+                    </>
+                  ) : formState === "success" ? (
+                    <>
+                      <CheckCircle2 className="h-4 w-4 text-green-950" />
+                      Transmission Received!
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="h-4 w-4" />
+                      Send transmission
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </>
+                  )}
+                </GlowButton>
+              </form>
+            </ScrollReveal>
+
+            {/* Direct details */}
+            <ScrollReveal
+              initialTransform="translateX(-40px)"
+              className="md:col-span-4 md:col-start-9 space-y-8"
+            >
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                  Direct
+                </div>
+                <a
+                  href="mailto:prajitk299@gmail.com"
+                  className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] transition-colors"
+                >
+                  prajitk299@gmail.com
+                </a>
+              </div>
+
+              <div className="space-y-3 pt-4">
+                {[
+                  {
+                    label: "Github",
+                    href: "https://github.com/septilex",
+                    icon: <Github className="h-4 w-4" />,
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/in/prajit-balaji-kalidindi-2b706a36a/",
+                    icon: <Linkedin className="h-4 w-4" />,
+                  },
+                  {
+                    label: "Email",
+                    href: "mailto:prajitk299@gmail.com",
+                    icon: <Mail className="h-4 w-4" />,
+                  },
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between border-b border-[#3a2a1c]/55 dark:border-[#3a2a1c]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#f2ece1] text-[#a89c8d]"
+                  >
+                    <span className="flex items-center gap-3 text-[#c9bcaa] group-hover:text-[#ff8a3d] transition-colors">
+                      {social.icon}
+                      {social.label}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-[#a89c8d]/55 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#ff8a3d]" />
+                  </a>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        {/* Footer Accent bar / text */}
+        <div className="relative border-t border-[#3a2a1c]/55 dark:border-[#3a2a1c]/55 light:border-black/10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-x-0 bottom-0 h-full bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,138,61,0.28),rgba(194,65,12,0.12)_30%,transparent_60%)]"></div>
+            <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff8a3d]/60 to-transparent"></div>
+          </div>
+
+          <div className="relative mx-auto max-w-[1600px] px-6 py-16 md:px-12">
+            <ScrollReveal initialTransform="translateY(100px)">
+              <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow">
+                HIRE ME !!
+              </h3>
+            </ScrollReveal>
+
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-semibold font-researcher">
+              <span>© 2026 · All systems imagined</span>
+              <span>Crafted in the dark · v0.26</span>
+              <span>Made with code, motion & care</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
