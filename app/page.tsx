@@ -1055,7 +1055,7 @@ export default function Home() {
 
       {/* Section 8: Contact */}
       <section id="contact" className="relative overflow-hidden">
-        <div className="mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-48">
+        <div className="mx-auto max-w-[1600px] px-6 pt-24 pb-12 md:px-12 md:pt-32 md:pb-12">
           <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
             <span>08</span>
             <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
@@ -1068,7 +1068,7 @@ export default function Home() {
             className="font-display max-w-6xl text-[clamp(2.5rem,8vw,10rem)] font-semibold leading-[0.9] tracking-tight"
           />
 
-          <div className="mt-24 grid grid-cols-1 gap-16 md:grid-cols-12">
+          <div className="mt-16 md:mt-20 grid grid-cols-1 gap-16 md:grid-cols-12">
             {/* Form */}
             <ScrollReveal initialTransform="translateY(40px)" className="md:col-span-7">
               <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -1204,7 +1204,7 @@ export default function Home() {
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff8a3d]/60 to-transparent"></div>
           </div>
 
-          <div className="relative mx-auto max-w-[1600px] px-6 py-16 md:px-12">
+          <div className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-20 md:px-12 md:pt-10 md:pb-24">
             <ScrollReveal initialTransform="translateY(100px)">
               <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow">
                 HIRE ME !!
