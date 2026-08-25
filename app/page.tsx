@@ -842,11 +842,11 @@ export default function Home() {
             {/* Syed-style 3-line animated hero heading */}
             <AnimatedHeroHeading
               lines={[
-                "I BUILD PRODUCTS,",
-                "CRAFT EXPERIENCES,",
-                "ENGINEER THE FUTURE.",
+                "I BUILD WEB PRODUCTS,",
+                "DESIGN DIGITAL EXPERIENCES,",
+                "TURN IDEAS INTO REALITY.",
               ]}
-              accentWords={["products", "experiences", "future"]}
+              accentWords={["products", "experiences", "reality"]}
               className="mb-10"
             />
 
