@@ -207,7 +207,7 @@ function ProjectCard({ project }: { project: Project }) {
                         alt={`${project.title} Preview`}
                         width={1600}
                         height={1000}
-                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                        className="aspect-video w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                         loading="eager"
                       />
                     </motion.div>
@@ -438,26 +438,26 @@ export default function Home() {
     {
       num: "01",
       title: "AI Products",
-      desc: "Built DevMentor AI and KADENCE — applying LLMs, agents, and intelligent workflows to real products.",
-      image: "/kadence-preview.png",
+      desc: "Applying LLMs, agents, and intelligent workflows to real products.",
+      image: "/meraki-preview.png",
     },
     {
       num: "02",
       title: "Creative Technology",
-      desc: "Created VELARI, combining generative AI, interaction design, and immersive digital experiences.",
-      image: "/velari-preview.png",
+      desc: "Combining interaction design and immersive digital experiences.",
+      image: "/meraki-preview.png",
     },
     {
       num: "03",
       title: "Developer Platforms",
       desc: "Built products focused on developer growth, mentorship, analysis, and productivity.",
-      image: "/devscore-preview.png",
+      image: "/meraki-preview.png",
     },
     {
       num: "04",
       title: "Full-Stack Systems",
       desc: "Engineering complete products from frontend experiences to backend infrastructure and deployment.",
-      image: "/devmentor-preview.png",
+      image: "/meraki-preview.png",
     },
   ];
 
@@ -507,51 +507,15 @@ export default function Home() {
   const projects = [
     {
       num: "/01",
-      title: "KADENCE",
-      cat: "MUSIC • 3D UNIVERSE",
-      desc: "Step into a living, breathing 3D universe of music where every artist and album becomes a world to explore.",
-      tags: ["REACT", "THREE.JS", "NEXT.JS"],
-      status: "Live",
-      year: "2026",
-      link: "https://kadence-musicz.vercel.app/",
-      github: "https://github.com/Megha-r20",
-      image: "/kadence-preview.png",
-    },
-    {
-      num: "/02",
-      title: "VELARI",
-      cat: "AI • GENERATIVE ART",
-      desc: "An AI canvas that turns your imagination into mesmerizing, gallery-worthy generative art in real time.",
-      tags: ["REACT", "OPENAI", "TAILWIND CSS"],
-      status: "Live",
-      year: "2026",
-      link: "https://velari-dusky.vercel.app/",
-      github: "https://github.com/Megha-r20",
-      image: "/velari-preview.png",
-    },
-    {
-      num: "/03",
-      title: "DevMentor AI",
-      cat: "AI • ENGINEERING ASSISTANT",
-      desc: "An AI pair programmer that thinks like a senior engineer — auditing, architecting, and documenting your code at superhuman speed.",
-      tags: ["NEXT.JS", "TYPESCRIPT", "OPENAI"],
-      status: "Live",
-      year: "2026",
-      link: "https://devmentorr.vercel.app/",
-      github: "https://github.com/Megha-r20",
-      image: "/devmentor-preview.png",
-    },
-    {
-      num: "/04",
-      title: "DevScore",
-      cat: "AI • DEVELOPER ANALYSIS",
-      desc: "The ultimate verdict on your code: scans your GitHub to reveal your true skill, growth, and developer DNA.",
-      tags: ["NEXT.JS", "GITHUB API", "AI"],
-      status: "Live",
-      year: "2026",
-      link: "https://devscore-xi.vercel.app/",
-      github: "https://github.com/Megha-r20",
-      image: "/devscore-preview.png",
+      title: "MERAKI",
+      cat: "FULL-STACK • VOLUNTEER PLATFORM",
+      desc: "A volunteer platform that connects NGOs and volunteers through opportunities, applications, and role-based dashboards.",
+      tags: ["NODE.JS", "EXPRESS", "MONGODB"],
+      status: "LIVE",
+      year: "2025",
+      link: "https://meraki-ngo-platform.netlify.app/",
+      github: "https://github.com/kalviumcommunity/s82_Megha_Capstone_Meraki",
+      image: "/meraki-preview.png",
     },
   ];
 
