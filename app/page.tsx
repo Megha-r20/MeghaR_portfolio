@@ -814,7 +814,7 @@ export default function Home() {
                 className="relative w-full flex justify-center"
               >
                 <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-center">
-                  Full-Stack AI Engineer
+                  Full-Stack Developer
                   <br />
                   <TypewriterTitle />
                   <br />
