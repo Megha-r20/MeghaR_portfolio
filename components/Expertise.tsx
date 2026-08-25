@@ -266,10 +266,10 @@ export function Expertise() {
 
   return (
     <section ref={sectionRef} className="px-6 md:px-12 relative">
-      <div className="max-w-7xl mx-auto">
-        {/* Section header */}
+      {/* ── Section tag / Small eyebrow (Aligned top-left like Credentials) ── */}
+      <div className="max-w-[1600px] mx-auto w-full pt-32">
         <div
-          className="mb-16 pt-32"
+          className="mb-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(46px)",
@@ -277,9 +277,23 @@ export function Expertise() {
               "opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <span className="font-researcher text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em] uppercase block mb-4">
-            04 / Expertise
-          </span>
+          <span>04</span>
+          <span className="h-px w-12 bg-[#ff8a3d]/40" />
+          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Expertise</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto">
+        {/* Section header */}
+        <div
+          className="mb-16"
+          style={{
+            opacity: revealed ? 1 : 0,
+            transform: revealed ? "translateY(0)" : "translateY(46px)",
+            transition:
+              "opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        >
           <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#f2ece1] light:text-[#1a1612] leading-[0.9] tracking-[-0.03em]">
             My <span className="text-[#ff8a3d]">Expertise</span>
           </h2>
