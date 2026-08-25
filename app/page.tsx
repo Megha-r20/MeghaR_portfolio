@@ -572,7 +572,9 @@ export default function Home() {
             href: "/resume.pdf",
             icon: (
               <svg className="h-[24px] w-[24px]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z" />
+                <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h12v16z"/>
+                <circle cx="9" cy="9" r="2.5" />
+                <path d="M13 7.5h4v1.5h-4zm0 3h4v1.5h-4zm-6 4h10v1.5H7zm0 3h7v1.5H7z" />
               </svg>
             ),
           },
