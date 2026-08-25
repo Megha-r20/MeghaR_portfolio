@@ -15,27 +15,27 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { ScrollProgressBar } from "@/components/ScrollProgressBar";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { BackgroundTypography } from "@/components/BackgroundTypography";
-import { StatsMarquee } from "@/components/StatsMarquee";
-import { Credentials } from "@/components/Credentials";
-import { About } from "@/components/About";
-import { Expertise } from "@/components/Expertise";
-import { TypewriterTitle } from "@/components/TypewriterTitle";
-import { IntroPreloader } from "@/components/IntroPreloader";
-import { MagneticNavGroup } from "@/components/ui/MagneticNavItem";
+import { ScrollProgressBar } from "@/components/effects/ScrollProgressBar";
+import { ScrollReveal } from "@/components/effects/ScrollReveal";
+import { BackgroundTypography } from "@/components/effects/BackgroundTypography";
+import { StatsMarquee } from "@/components/shared/StatsMarquee";
+import { Credentials } from "@/components/sections/Credentials";
+import { About } from "@/components/sections/About";
+import { Expertise } from "@/components/sections/Expertise";
+import { TypewriterTitle } from "@/components/hero/TypewriterTitle";
+import { IntroPreloader } from "@/components/effects/IntroPreloader";
+import { MagneticNavGroup } from "@/components/navigation/MagneticNavItem";
 import { ProximityPillRow } from "@/components/ui/TechPill";
-import { AnimatedHeroHeading } from "@/components/ui/AnimatedHeroHeading";
+import { AnimatedHeroHeading } from "@/components/hero/AnimatedHeroHeading";
 import { WordReveal } from "@/components/ui/WordReveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { GlowButton } from "@/components/ui/glow";
-import { TimePill } from "@/components/TimePill";
-import { StatsCard } from "@/components/StatsCard";
-import { BottomTicker } from "@/components/BottomTicker";
-import { DinoRunner } from "@/components/DinoRunner";
-import { HireMeModal } from "@/components/HireMeModal";
+import { TimePill } from "@/components/hero/TimePill";
+import { StatsCard } from "@/components/shared/StatsCard";
+import { BottomTicker } from "@/components/shared/BottomTicker";
+import { DinoRunner } from "@/components/hero/DinoRunner";
+import { HireMeModal } from "@/components/shared/HireMeModal";
 
 const Github = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>

@@ -4,10 +4,10 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import localFont from "next/font/local";
 import "./globals.css";
-import { CursorGlow } from "@/components/CursorGlow";
-import { CustomCursor } from "@/components/CustomCursor";
+import { CursorGlow } from "@/components/effects/CursorGlow";
+import { CustomCursor } from "@/components/effects/CustomCursor";
 
-import { SmoothScroll } from "@/components/SmoothScroll";
+import { SmoothScroll } from "@/components/effects/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],

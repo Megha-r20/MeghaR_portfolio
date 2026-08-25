@@ -1,0 +1,117 @@
+
+"use client";
+
+import React, { useState } from "react";
+import { ScrollReveal } from "@/components/effects/ScrollReveal";
+import { Loader2, CheckCircle2, ArrowUpRight } from "lucide-react";
+
+export function Contact() {
+  const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email || !message) return;
+    setFormState("loading");
+    setTimeout(() => {
+      setFormState("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setTimeout(() => setFormState("idle"), 3000);
+    }, 1800);
+  };
+
+  return (
+    <section id="contact" className="relative w-full pt-32 pb-40 overflow-hidden bg-gradient-to-t from-[var(--bg-base)] via-[#0a0807]/50 to-transparent">
+      
+      {/* Section 7: Journey */}
+      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-16 md:px-12 md:pt-12 md:pb-24">
+        <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+          <span>07</span>
+          <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Journey</span>
+        </div>
+
+        <WordReveal
+          text="My vision towards"
+          accentText="what I am striving to."
+          className="font-display mb-24 max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+        />
+
+        {/* Timeline Grid — line draws in on scroll, dots spring in */}
+        <JourneyTimeline timeline={timeline} />
+      </section>
+
+      {/* Section 8: Contact */}
+      <section id="contact" className="relative overflow-hidden">
+        <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-12">
+          <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <span>08</span>
+            <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
+            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Let&apos;s Talk</span>
+          </div>
+
+          <WordReveal
+            text="Let's build the"
+            accentText="future."
+            className="font-display max-w-6xl text-[clamp(2.5rem,8vw,10rem)] font-semibold leading-[0.9] tracking-tight"
+          />
+
+          <div className="mt-16 md:mt-20 grid grid-cols-1 gap-16 md:grid-cols-12">
+            {/* Form */}
+            <ScrollReveal initialTransform="translateY(40px)" className="md:col-span-7">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={formState === "loading" || formState === "success"}
+                      className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="you@domain.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={formState === "loading" || formState === "success"}
+                      className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                    Tell me about it
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder="A project, an idea, anything..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={formState === "loading" || formState === "success"}
+                    className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={formState === "loading" || formState === "success"}
+    </section>
+  );
+}
