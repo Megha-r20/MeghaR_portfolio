@@ -78,6 +78,7 @@
 
   /* ── Grid overlay ── */
   --grid-color: rgba(58, 50, 43, 0.07);
+  --grid-color-hz: rgba(58, 50, 43, 0.12);
 
   /* ── Glass / blur surfaces ── */
   --glass-bg: rgba(246, 242, 236, 0.42);
@@ -233,6 +234,7 @@
   --fg-faint: rgba(58, 50, 43, 0.25);
 
   --grid-color: rgba(58, 50, 43, 0.07);
+  --grid-color-hz: rgba(58, 50, 43, 0.12);
 
   --glass-bg: rgba(246, 242, 236, 0.42);
   --glass-border: rgba(255, 255, 255, 0.55);
@@ -345,7 +347,7 @@ body {
   background-color: var(--bg-base);
   background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    linear-gradient(to bottom, var(--grid-color-hz) 1px, transparent 1px);
   background-size: 36px 36px;
   color: var(--fg-body);
 }
@@ -358,7 +360,7 @@ body {
   z-index: 2;
   background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    linear-gradient(to bottom, var(--grid-color-hz) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
