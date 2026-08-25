@@ -112,50 +112,30 @@ function ProjectCard({ project }: { project: Project }) {
         className="pointer-events-none absolute inset-0 rounded-[28px] md:rounded-[40px] shadow-[0_45px_100px_-30px_rgba(255,138,61,0.35)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       ></div>
       <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#3a322b]/10 bg-gradient-to-br from-white via-[#faf5ec] to-[#f3ecdf] shadow-[0_30px_80px_-30px_rgba(58,50,43,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#ff8a3d]/30">
-        {/* Ambient orange glow on hover */}
-        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#ff8a3d]/10 opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-100"></div>
 
         <div className="relative grid grid-cols-1 items-center gap-10 p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
           {/* ── Left: Icons, Title, Description, Tech Tags ── */}
           <div className="flex flex-col">
             {/* Icon buttons */}
             <div className="mb-8 flex items-center gap-4 md:mb-10">
-              <GlowButton
-                asChild
-                mode="rotate"
-                blur="soft"
-                glowScale={1.1}
-                colors={["#ff8a3d", "#3a322b", "#ffaf7a"]}
-                variant="unstyled"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] transition-all duration-300 hover:scale-110 hover:bg-[#ff8a3d] hover:text-[#1a1612] border-0 outline-none"
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} source on GitHub`}
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_2px_10px_rgba(26,22,18,0.1)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
               >
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.title} source on GitHub`}
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-              </GlowButton>
-              <GlowButton
-                asChild
-                mode="rotate"
-                blur="soft"
-                glowScale={1.1}
-                colors={["#ff8a3d", "#3a322b", "#ffaf7a"]}
-                variant="unstyled"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] transition-all duration-300 hover:scale-110 hover:bg-[#ff8a3d] hover:text-[#1a1612] border-0 outline-none"
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.title} live site`}
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_2px_10px_rgba(26,22,18,0.1)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${project.title} live site`}
-                >
-                  <Link2 className="h-5 w-5" />
-                </a>
-              </GlowButton>
+                <Link2 className="h-5 w-5" />
+              </a>
             </div>
 
             {/* Title */}
