@@ -123,7 +123,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} source on GitHub`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_2px_10px_rgba(26,22,18,0.1)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_0_24px_rgba(255,138,61,0.4)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -132,7 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${project.title} live site`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_2px_10px_rgba(26,22,18,0.1)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_0_24px_rgba(255,138,61,0.4)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
               >
                 <Link2 className="h-5 w-5" />
               </a>
