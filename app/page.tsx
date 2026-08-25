@@ -484,32 +484,34 @@ export default function Home() {
 
   const timeline = [
     {
+      year: "2026",
+      role: "Exploring & Preparing",
+      desc: "Currently seeking internship opportunities, strengthening my software engineering skills, building projects, improving problem-solving, and preparing for industry roles.",
+      side: "left",
+    },
+    {
       year: "2027",
-      role: "Amazon Internship Goal",
-      desc: "Aiming to enter large-scale engineering environments as a Java-focused developer while strengthening backend systems, scalability, and software engineering foundations through real-world experience.",
-      side: "left",
-      logoSrc: "/logos/amazon.png",
-      logoClass: "scale-[1.6]",
-    },
-    {
-      year: "2032",
-      role: "Aspiring Data Scientist at Google",
-      desc: "Working toward contributing to intelligent systems, machine learning infrastructure, and large-scale data-driven technologies while expanding expertise in AI research, analytics, and generative systems.",
+      role: "On-Site Internship",
+      desc: "Goal: secure an on-site internship where I can gain real-world experience, work with professional teams, contribute to production projects, and strengthen my software engineering and backend development skills.",
       side: "right",
-      logoSrc: "/logos/google.png",
-      logoClass: "scale-[1.6]",
     },
     {
-      year: "2037",
-      role: "Independent LLM & Startup Vision",
-      desc: "Aiming to build a proprietary large language model ecosystem and lead an AI startup focused on futuristic digital products, intelligent systems, and real-world business integrations.",
+      year: "2028",
+      role: "Graduate & Begin My Career",
+      desc: "Graduate with my B.Tech and transition into a full-time software engineering role while continuing to grow in backend systems, AI, data, and scalable technologies.",
       side: "left",
     },
     {
-      year: "2040",
-      role: "Long-Term Mission",
-      desc: "Building impactful AI-driven technologies that help people transform ideas into scalable realities while pushing the boundaries of intelligent systems and human-centered innovation.",
+      year: "2030+",
+      role: "AI, Data & Advanced Engineering",
+      desc: "Deepen my expertise in artificial intelligence, data science, machine learning, and large-scale software systems while working on meaningful real-world problems.",
       side: "right",
+    },
+    {
+      year: "Long-Term",
+      role: "Build & Innovate",
+      desc: "Eventually create impactful AI-powered products and explore entrepreneurship, with a vision of building intelligent technologies that turn ideas into scalable real-world solutions.",
+      side: "left",
     },
   ];
 
