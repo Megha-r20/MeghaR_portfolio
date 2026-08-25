@@ -597,16 +597,12 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-clip bg-[#f2ece1] transition-colors duration-700 ease-in-out">
+    <main className="relative min-h-screen w-full overflow-x-clip bg-[#f2ece1]">
       <IntroPreloader onReadyToReveal={() => setIsReadyToReveal(true)} />
 
       <div
-        className="bg-[#f2ece1]"
         style={{
-          opacity: isReadyToReveal ? 1 : 0,
           pointerEvents: isReadyToReveal ? "auto" : "none",
-          visibility: isReadyToReveal ? "visible" : "hidden",
-          transition: "opacity 0.8s ease-out, visibility 0.8s ease-out",
         }}
       >
         <ScrollProgressBar />
