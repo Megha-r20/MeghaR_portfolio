@@ -4,14 +4,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IntroLoadingBar } from "@/components/ui/IntroLoadingBar";
 
-export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => void }) {
+export function IntroPreloader({
+  onReadyToReveal,
+}: {
+  onReadyToReveal?: () => void;
+}) {
   const [isVisible, setIsVisible] = useState(true);
   const [startOutro, setStartOutro] = useState(false);
 
   useEffect(() => {
     // Lock scroll during the intro
     document.body.style.overflow = "hidden";
-    
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -24,8 +28,8 @@ export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => vo
     // Short delay to let the "SYSTEM READY" text flash, then trigger reveal
     setTimeout(() => {
       if (onReadyToReveal) onReadyToReveal(); // Unhide the main page underneath
-      setIsVisible(false);                    // Slide up the overlay
-      document.body.style.overflow = "";      // Unlock scroll
+      setIsVisible(false); // Slide up the overlay
+      document.body.style.overflow = ""; // Unlock scroll
     }, 600);
   };
 
@@ -38,7 +42,7 @@ export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => vo
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.85, ease: [0.85, 0, 0.15, 1] }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--preloader-bg)] will-change-transform select-none pointer-events-auto"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#f2ece1] will-change-transform select-none pointer-events-auto"
           style={{
             backgroundImage: `
               linear-gradient(to right, var(--preloader-grid) 1px, transparent 1px),
@@ -59,7 +63,10 @@ export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => vo
               style={{ fontFamily: "'Montenegrin Gothic One', sans-serif" }}
             >
               {words.map((word, idx) => (
-                <span key={idx} className="overflow-hidden block leading-[1.1] py-1">
+                <span
+                  key={idx}
+                  className="overflow-hidden block leading-[1.1] py-1"
+                >
                   <motion.span
                     variants={{
                       hidden: { y: 45, opacity: 0 },
@@ -91,7 +98,9 @@ export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => vo
             </motion.div>
 
             <motion.div
-              animate={startOutro ? { opacity: 0, y: -6 } : { opacity: 1, y: 0 }}
+              animate={
+                startOutro ? { opacity: 0, y: -6 } : { opacity: 1, y: 0 }
+              }
               transition={{ duration: 0.3, ease: "easeIn" }}
               className="w-full px-4 sm:px-0"
             >

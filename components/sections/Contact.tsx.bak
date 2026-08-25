@@ -112,6 +112,21 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={formState === "loading" || formState === "success"}
+                  className="mt-6 flex h-14 items-center justify-center gap-2 bg-[#ff8a3d] px-8 text-[13px] font-bold uppercase tracking-[0.2em] text-[#1a1612] transition-colors hover:bg-[#e8742c] disabled:opacity-50"
+                >
+                  {formState === "loading" ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : formState === "success" ? (
+                    <CheckCircle2 className="h-5 w-5" />
+                  ) : (
+                    "Send Message"
+                  )}
+                </button>
+              </form>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

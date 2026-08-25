@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Instrument_Serif, Montserrat, Syne } from "next/font/google";
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import {
+  Inter,
+  Space_Grotesk,
+  Instrument_Serif,
+  Montserrat,
+  Syne,
+} from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import localFont from "next/font/local";
 import "./globals.css";
 import { CursorGlow } from "@/components/effects/CursorGlow";
@@ -51,7 +57,8 @@ const researcher = localFont({
 
 export const metadata: Metadata = {
   title: "MEGHA R — Full-Stack Developer",
-  description: "A cinematic futuristic tech identity experience. Full-Stack Developer. Building scalable web experiences.",
+  description:
+    "A cinematic futuristic tech identity experience. Full-Stack Developer. Building scalable web experiences.",
 };
 
 export default function RootLayout({
@@ -65,14 +72,11 @@ export default function RootLayout({
       className={`light ${inter.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${montserrat.variable} ${researcher.variable} ${GeistSans.variable} ${GeistMono.variable} ${syne.variable}`}
       suppressHydrationWarning
     >
-      <head>
-      </head>
-      <body className="antialiased min-h-screen">
-          <CustomCursor />
-          <CursorGlow />
-          <SmoothScroll>
-            {children}
-          </SmoothScroll>
+      <head></head>
+      <body className="antialiased min-h-screen bg-[#f2ece1]">
+        <CustomCursor />
+        <CursorGlow />
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
