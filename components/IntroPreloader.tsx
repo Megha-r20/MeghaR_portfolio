@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IntroLoadingBar } from "@/components/ui/IntroLoadingBar";
 
-export function IntroPreloader() {
+export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [startOutro, setStartOutro] = useState(false);
 
@@ -12,23 +12,22 @@ export function IntroPreloader() {
     // Lock scroll during the intro
     document.body.style.overflow = "hidden";
     
-    // Trigger text outro animation at 1.8s
-    const textTimer = setTimeout(() => {
-      setStartOutro(true);
-    }, 1800);
-
-    // Slide up the entire overlay at 2.3s
-    const overlayTimer = setTimeout(() => {
-      setIsVisible(false);
-      document.body.style.overflow = "";
-    }, 2300);
-
     return () => {
-      clearTimeout(textTimer);
-      clearTimeout(overlayTimer);
       document.body.style.overflow = "";
     };
   }, []);
+
+  const handleLoadingComplete = () => {
+    // Progress hit exactly 100%
+    setStartOutro(true);
+
+    // Short delay to let the "SYSTEM READY" text flash, then trigger reveal
+    setTimeout(() => {
+      if (onReadyToReveal) onReadyToReveal(); // Unhide the main page underneath
+      setIsVisible(false);                    // Slide up the overlay
+      document.body.style.overflow = "";      // Unlock scroll
+    }, 600);
+  };
 
   const words = ["Innovating,", "Empowering,", "Delivering."];
 
@@ -91,7 +90,6 @@ export function IntroPreloader() {
               ))}
             </motion.div>
 
-            {/* 8-bit retro loading bar — fades out with the outro */}
             <motion.div
               animate={startOutro ? { opacity: 0, y: -6 } : { opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: "easeIn" }}
@@ -99,7 +97,8 @@ export function IntroPreloader() {
             >
               <IntroLoadingBar
                 startDelay={300}
-                duration={1300}
+                duration={1500} // slight adjustment for dramatic effect
+                onComplete={handleLoadingComplete}
               />
             </motion.div>
           </div>

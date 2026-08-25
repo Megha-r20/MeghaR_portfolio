@@ -324,6 +324,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+  const [isReadyToReveal, setIsReadyToReveal] = useState(false);
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
   const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
   const [activeSection, setActiveSection] = useState<string>("hero");
@@ -522,8 +523,17 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen w-full overflow-x-clip bg-[var(--bg-base)] transition-colors duration-700 ease-in-out">
-      <IntroPreloader />
-      <ScrollProgressBar />
+      <IntroPreloader onReadyToReveal={() => setIsReadyToReveal(true)} />
+      
+      <div
+        style={{
+          opacity: isReadyToReveal ? 1 : 0,
+          pointerEvents: isReadyToReveal ? "auto" : "none",
+          visibility: isReadyToReveal ? "visible" : "hidden",
+          transition: "opacity 0.8s ease-out, visibility 0.8s ease-out",
+        }}
+      >
+        <ScrollProgressBar />
 
       {/* Floating quick-access dock — GitHub / LinkedIn / Gmail, always on screen */}
       <div className="fixed z-[90] flex gap-3 max-md:bottom-5 max-md:left-1/2 max-md:-translate-x-1/2 max-md:flex-row md:right-5 md:top-1/2 md:-translate-y-1/2 md:flex-col">
@@ -1219,6 +1229,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </main>
   );
 }
