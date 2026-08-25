@@ -772,11 +772,9 @@ export default function Home() {
                 className="relative w-full flex justify-center"
               >
                 <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-center">
-                  Full-Stack Developer
-                  <br />
-                  <TypewriterTitle />
-                  <br />
-                  <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-3 inline-block">Building scalable web experiences.</span>
+                  <span className="block mb-2 md:mb-3">Full-Stack Developer</span>
+                  <span className="block mb-4 md:mb-5"><TypewriterTitle /></span>
+                  <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-2 inline-block">Building scalable web experiences.</span>
                 </p>
               </ScrollReveal>
 
