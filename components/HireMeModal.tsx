@@ -261,7 +261,9 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                     <span className="text-[11px] text-[var(--fg-mute)]/75 font-syne">
                       Prefer direct contact?{" "}
                       <a
-                        href="mailto:megha.ragumani@gmail.com"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-[#ff8a3d] hover:underline underline-offset-2"
                       >
                         megha.ragumani@gmail.com
