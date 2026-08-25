@@ -181,7 +181,7 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
 
-          {/* ── Right: MacBook mockup ── */}
+          {/* ── Right: Static Project Preview ── */}
           <a
             href={project.link}
             target="_blank"
@@ -189,37 +189,47 @@ function ProjectCard({ project }: { project: Project }) {
             aria-label={`Open ${project.title}`}
             className="relative block w-full"
           >
-            <TiltCard>
-              <div className="relative mx-auto w-full max-w-[580px] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1">
-                {/* Screen + bezel */}
-                <div className="relative rounded-t-[16px] border-[10px] border-b-0 border-[#2b2b2f] bg-[#2b2b2f] shadow-[0_25px_60px_-20px_rgba(0,0,0,0.5)] md:rounded-t-[20px] md:border-[14px] md:border-b-0">
-                  <div className="relative overflow-hidden rounded-[4px] bg-black">
-                    <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#ff8a3d]/25 to-transparent opacity-0 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-100"></div>
-                    {/* Bottom-up wipe reveal */}
-                    <motion.div
-                      initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-                      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                      viewport={{ once: true, margin: "-10%" }}
-                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} Preview`}
-                        width={1600}
-                        height={1000}
-                        className="aspect-video w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                        loading="eager"
-                      />
-                    </motion.div>
-                  </div>
+            <div className="relative mx-auto w-full max-w-[650px] overflow-hidden rounded-[14px] border-[1.5px] border-[#1a1612] bg-[#f8f5f0] shadow-[0_24px_50px_-12px_rgba(26,22,18,0.3),0_0_60px_-15px_rgba(255,138,61,0.35)]">
+              
+              {/* Dark Browser Chrome */}
+              <div className="flex h-[38px] w-full items-center justify-between border-b-[1.5px] border-[#1a1612] bg-[#1a1612] px-4">
+                {/* Colored window-control dots */}
+                <div className="flex gap-[6px]">
+                  <div className="h-[10px] w-[10px] rounded-full bg-[#ff5f56]"></div>
+                  <div className="h-[10px] w-[10px] rounded-full bg-[#ffbd2e]"></div>
+                  <div className="h-[10px] w-[10px] rounded-full bg-[#27c93f]"></div>
                 </div>
-                {/* Base / hinge */}
-                <div className="relative left-1/2 h-3.5 w-[112%] -translate-x-1/2 rounded-b-[10px] bg-gradient-to-b from-[#d8d8db] via-[#bcbcc0] to-[#96969b] shadow-[0_12px_24px_-8px_rgba(0,0,0,0.4)] md:h-4">
-                  {/* Notch */}
-                  <div className="absolute left-1/2 top-0 h-1.5 w-[14%] -translate-x-1/2 rounded-b-[6px] bg-[#7c7c82]"></div>
+                
+                {/* Address bar */}
+                <div className="flex h-[22px] items-center justify-center rounded-[4px] bg-[#ffffff]/10 px-6 md:px-10">
+                  <span className="font-sans text-[10px] font-medium tracking-wide text-[#ffffff]/60">
+                    {project.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                  </span>
                 </div>
+                
+                {/* Spacer to balance flex layout */}
+                <div className="w-[42px]"></div>
               </div>
-            </TiltCard>
+
+              {/* Browser Screen / Screenshot */}
+              <div className="relative w-full bg-[#f2ece1]">
+                <motion.div
+                  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} Preview`}
+                    width={1600}
+                    height={1000}
+                    className="aspect-video w-full object-cover object-top"
+                    loading="eager"
+                  />
+                </motion.div>
+              </div>
+            </div>
           </a>
         </div>
       </div>
