@@ -863,28 +863,22 @@ export default function Home() {
                 >
                   MEGHA R
                 </span>
-                {" "}— a 3rd-year B.Tech CSE
-                {" "}<span className="text-[#ff8a3d] font-medium">(AI & Future Technologies)</span>{" "}
-                student at{" "}
-                <span className="text-[#ff8a3d] font-medium">SRM University – AP</span>.
+                {" "}— a 3rd-year B.Tech Computer Science student specializing in
+                {" "}<span className="text-[#ff8a3d] font-medium">Software Product Engineering</span>{" "}
+                at{" "}
+                <span className="text-[#ff8a3d] font-medium">Kalasalingam Academy of Research and Education</span>.
               </p>
 
               <p>
-                I build AI-powered products and am deeply passionate about{" "}
-                <span className="text-[#ff8a3d]/90 font-medium">Generative AI</span> and{" "}
-                <span className="text-[#ff8a3d]/90 font-medium">LLMs</span> — understanding how
-                they work, experimenting with them, and shipping intelligent digital experiences.
+                I'm a <span className="text-[#ff8a3d]/90 font-medium">Full-Stack Developer</span> who enjoys turning ideas into responsive, functional, and engaging web experiences.
               </p>
 
               <p>
-                I turn ideas into real-world products through{" "}
-                <span className="text-[#ff8a3d]/90 font-medium">full-stack engineering</span>,
-                AI tooling, and design systems that feel as good as they perform.
+                I work with <span className="text-[#ff8a3d]/90 font-medium">React, JavaScript, modern web technologies</span>, and full-stack development, while also exploring UI/UX to create interfaces that are clean, intuitive, and enjoyable to use.
               </p>
 
               <p>
-                Outside of code, I obsess over new tech, build immersive UI/UX, and
-                constantly push myself to learn faster and ship smarter.
+                I enjoy building real-world projects, experimenting with new technologies, and continuously improving my development and design skills.
               </p>
             </div>
 
