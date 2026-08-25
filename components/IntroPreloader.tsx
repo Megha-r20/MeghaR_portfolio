@@ -96,8 +96,8 @@ export function IntroPreloader({ onReadyToReveal }: { onReadyToReveal?: () => vo
               className="w-full px-4 sm:px-0"
             >
               <IntroLoadingBar
-                startDelay={300}
-                duration={1500} // slight adjustment for dramatic effect
+                startDelay={500}
+                duration={3500}
                 onComplete={handleLoadingComplete}
               />
             </motion.div>
