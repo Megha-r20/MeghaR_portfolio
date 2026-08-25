@@ -14,19 +14,6 @@ type ExpertiseCategoryData = {
 
 const EXPERTISE_DATA: ExpertiseCategoryData[] = [
   {
-    title: "AI & Intelligent Systems",
-    description:
-      "Building intelligent systems that learn, adapt, and solve real problems.",
-    skills: [
-      "OpenAI",
-      "LLMs",
-      "RAG",
-      "AI Agents",
-      "Prompt Engineering",
-      "AI Workflows",
-    ],
-  },
-  {
     title: "Full-Stack Development",
     description:
       "Crafting end-to-end products with modern frameworks and clean architecture.",
