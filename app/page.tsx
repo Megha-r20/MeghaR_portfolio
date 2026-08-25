@@ -486,31 +486,31 @@ export default function Home() {
     {
       year: "2026",
       role: "Exploring & Preparing",
-      desc: "Currently seeking internship opportunities, strengthening my software engineering skills, building projects, improving problem-solving, and preparing for industry roles.",
+      desc: "Currently seeking internship opportunities, strengthening my MERN and full-stack development skills, building meaningful projects, improving problem-solving, and preparing for the industry.",
       side: "left",
     },
     {
       year: "2027",
       role: "On-Site Internship",
-      desc: "Goal: secure an on-site internship where I can gain real-world experience, work with professional teams, contribute to production projects, and strengthen my software engineering and backend development skills.",
+      desc: "Aim to gain on-site industry experience, work with professional teams, contribute to real-world projects, and strengthen my skills in full-stack development, backend systems, and software engineering.",
       side: "right",
     },
     {
       year: "2028",
       role: "Graduate & Begin My Career",
-      desc: "Graduate with my B.Tech and transition into a full-time software engineering role while continuing to grow in backend systems, AI, data, and scalable technologies.",
+      desc: "Graduate with my B.Tech and begin my professional journey as a software engineer, applying my full-stack development skills while continuing to learn, build, and grow.",
       side: "left",
     },
     {
       year: "2030+",
-      role: "AI, Data & Advanced Engineering",
-      desc: "Deepen my expertise in artificial intelligence, data science, machine learning, and large-scale software systems while working on meaningful real-world problems.",
+      role: "Growth & Specialization",
+      desc: "Continue evolving as a software engineer by deepening my expertise in full-stack development while exploring AI, data, cloud, and emerging technologies that shape the future of software.",
       side: "right",
     },
     {
       year: "Long-Term",
       role: "Build & Innovate",
-      desc: "Eventually create impactful AI-powered products and explore entrepreneurship, with a vision of building intelligent technologies that turn ideas into scalable real-world solutions.",
+      desc: "Create impactful technology products, explore entrepreneurship, and turn ambitious ideas into scalable solutions that solve meaningful real-world problems.",
       side: "left",
     },
   ];
