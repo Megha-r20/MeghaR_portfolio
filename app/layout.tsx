@@ -51,7 +51,7 @@ const researcher = localFont({
 
 export const metadata: Metadata = {
   title: "MEGHA R — Full-Stack Developer",
-  description: "A cinematic futuristic tech identity experience. Full-Stack Developer. Creating futuristic digital experiences.",
+  description: "A cinematic futuristic tech identity experience. Full-Stack Developer. Building scalable web experiences.",
 };
 
 export default function RootLayout({

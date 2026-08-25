@@ -818,7 +818,7 @@ export default function Home() {
                   <br />
                   <TypewriterTitle />
                   <br />
-                  <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-3 inline-block">Creating futuristic digital experiences.</span>
+                  <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-3 inline-block">Building scalable web experiences.</span>
                 </p>
               </ScrollReveal>
 
