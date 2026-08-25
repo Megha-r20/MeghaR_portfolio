@@ -824,10 +824,14 @@ export default function Home() {
 
               <ScrollReveal
                 initialTransform="translateY(30px)"
-                className="text-[9.5px] uppercase tracking-[0.25em] text-[#1A1612] font-researcher font-bold text-center mt-4"
+                className="flex flex-col items-center gap-2 mt-6 text-center"
               >
-                <div>OPEN TO <span className="text-[#ff8a3d] font-bold">INTERNSHIPS</span> &middot; 2026+</div>
-                <div className="mt-1">BUILDING &middot; <span className="text-[#ff8a3d] font-bold">LEARNING</span> &middot; CREATING</div>
+                <div className="font-researcher text-[12px] md:text-[14px] font-black uppercase tracking-[0.15em] text-[#110e0c]">
+                  OPEN TO <span className="text-[#ff8a3d]">INTERNSHIPS</span> &middot; 2026+
+                </div>
+                <div className="font-researcher text-[10px] md:text-[12px] font-bold uppercase tracking-[0.15em] text-[#110e0c]/80">
+                  BUILDING &middot; <span className="text-[#ff8a3d]">LEARNING</span> &middot; CREATING
+                </div>
               </ScrollReveal>
 
               {/* Stats card + resume */}
