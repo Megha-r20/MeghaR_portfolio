@@ -39,11 +39,11 @@ export function IntroPreloader() {
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.85, ease: [0.85, 0, 0.15, 1] }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#f2ece1] will-change-transform select-none pointer-events-auto"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--preloader-bg)] will-change-transform select-none pointer-events-auto"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(58, 50, 43, 0.06) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(58, 50, 43, 0.06) 1px, transparent 1px)
+              linear-gradient(to right, var(--preloader-grid) 1px, transparent 1px),
+              linear-gradient(to bottom, var(--preloader-grid) 1px, transparent 1px)
             `,
             backgroundSize: "24px 24px",
             transform: "translate3d(0, 0, 0)",
@@ -51,12 +51,12 @@ export function IntroPreloader() {
           }}
         >
           {/* Center column: text + loading bar */}
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-12">
             {/* Word reveal row */}
             <motion.div
               initial="hidden"
               animate={startOutro ? "exit" : "visible"}
-              className="flex flex-row space-x-[6px] md:space-x-3 text-base sm:text-xl md:text-2xl lg:text-3xl text-black tracking-[-0.02em] scale-x-[1.1] md:scale-x-[1.15] transform-origin-center"
+              className="flex flex-row space-x-[6px] md:space-x-3 text-base sm:text-xl md:text-2xl lg:text-3xl text-[var(--preloader-text)] tracking-[-0.02em] scale-x-[1.1] md:scale-x-[1.15] transform-origin-center"
               style={{ fontFamily: "'Montenegrin Gothic One', sans-serif" }}
             >
               {words.map((word, idx) => (

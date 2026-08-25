@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // ─── IntroLoadingBar ──────────────────────────────────────────────────────────
-// A premium, sleek continuous progress bar for the intro preloader.
+// A retro pixel-art / arcade-style determinate progress bar.
 
 interface IntroLoadingBarProps {
   startDelay?: number;
@@ -57,50 +57,29 @@ export function IntroLoadingBar({
       transition={{ duration: 0.4, delay: startDelay / 1000, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col items-center gap-3 w-full"
     >
-      {/* Top label row */}
-      <div className="flex items-center justify-between w-full max-w-xs md:max-w-sm px-1">
-        <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-[#1a1612] font-researcher">
-          LOADING
-        </span>
-        <span className="text-[10px] md:text-[11px] font-bold tracking-[0.1em] text-[#1a1612] tabular-nums font-researcher">
-          {pctLabel}
-        </span>
-      </div>
-
-      {/* Smooth track */}
-      <div className="relative w-full max-w-xs md:max-w-sm h-[3px] md:h-[4px] bg-[#1a1612]/10 rounded-full overflow-hidden">
-        {/* Fill */}
+      {/* Rounded Outlined Progress Bar */}
+      <div className="relative w-full max-w-[220px] md:max-w-[260px] h-[14px] md:h-[16px] rounded-full border-[1.5px] border-[var(--preloader-track-border)] bg-[var(--preloader-track-bg)] p-[2px]">
+        {/* Smooth Fill */}
         <div
-          className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] rounded-full will-change-transform"
+          className="h-full rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] will-change-transform"
           style={{ width: `${progress}%` }}
         />
-        
-        {/* Shimmer overlay */}
-        {!done && (
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            animate={{ x: ["-100%", "200%"] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-            style={{
-              background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)",
-              width: "50%",
-            }}
-          />
-        )}
       </div>
 
-      {/* Completion label (optional, keeps layout stable) */}
-      <div className="h-4">
-        {done && (
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 0.7] }}
-            transition={{ duration: 0.3, times: [0, 0.2, 1] }}
-            className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-[#ff8a3d] font-researcher"
-          >
-            READY
-          </motion.span>
-        )}
+      {/* Bottom text row (Pixel/Monospace Arcade Style) */}
+      <div className="flex items-center justify-between w-full max-w-[220px] md:max-w-[260px] px-1 mt-1">
+        <span 
+          className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-[var(--preloader-label)]"
+          style={{ fontFamily: "'Courier New', Courier, monospace" }}
+        >
+          {done ? "SYSTEM READY" : "LOADING..."}
+        </span>
+        <span 
+          className="text-[9px] md:text-[10px] tracking-[0.2em] text-[var(--preloader-label)] tabular-nums font-bold"
+          style={{ fontFamily: "'Courier New', Courier, monospace" }}
+        >
+          {pctLabel}
+        </span>
       </div>
     </motion.div>
   );
