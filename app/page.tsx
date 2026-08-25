@@ -801,9 +801,7 @@ export default function Home() {
             className="mx-auto w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#1A1612] font-researcher font-bold"
           >
             <span className="flex items-center gap-2">Scroll to explore</span>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#3a2a1c]/80 dark:border-[#3a2a1c]/80 light:border-black/10">
-              <ArrowDown className="h-3 w-3 text-[#ff8a3d] animate-bounce" />
-            </div>
+
             <span className="hidden md:inline">© 2026</span>
           </ScrollReveal>
         </div>
