@@ -826,8 +826,8 @@ export default function Home() {
                 initialTransform="translateY(30px)"
                 className="text-[9.5px] uppercase tracking-[0.25em] text-[#1A1612] font-researcher font-bold text-center mt-4"
               >
-                <div>Based in the <span className="text-[#ff8a3d] font-bold">cloud</span></div>
-                <div className="mt-1">Building the <span className="text-[#ff8a3d] font-bold">next decade</span></div>
+                <div>OPEN TO <span className="text-[#ff8a3d] font-bold">INTERNSHIPS</span> &middot; 2026</div>
+                <div className="mt-1">CURRENTLY EXPLORING <span className="text-[#ff8a3d] font-bold">AI &amp; GENERATIVE AI</span></div>
               </ScrollReveal>
 
               {/* Stats card + resume */}
