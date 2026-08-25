@@ -750,7 +750,7 @@ export default function Home() {
 
           {/* ── MASSIVE HERO TITLE — full viewport width, no container constraint ── */}
           {/* Circular badge floats at left; title is full-width centred */}
-          <div className="relative flex flex-1 flex-col justify-center items-center text-center w-full">
+          <div className="relative flex flex-1 flex-col justify-center items-center text-center w-full -mt-6 md:-mt-12">
             <div className="relative">
               <h1
                 className="font-montserrat whitespace-nowrap font-black text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow pointer-events-none select-text"
