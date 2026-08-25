@@ -2,76 +2,49 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+import { Clock } from "lucide-react";
 
 export type Credential = {
   id: string;
   tickerLabel: string;
   title: string;
-  issuer: string;
-  date: string;
+  status: string;
   description: string;
   skills: string[];
-  imageSrc: string;
-  verifyUrl?: string;
 };
 
 export const CREDENTIALS: Credential[] = [
   {
-    id: "google-ai-pro",
-    tickerLabel: "Google AI Professional",
-    title: "Google AI Professional Certificate",
-    issuer: "Google Career Certificates",
-    date: "June 7, 2026",
-    description: "Demonstrated fluency in AI, completing 7 courses on applying AI to brainstorming, research, communication, content creation, data analysis, and coding. Built a portfolio of 20+ artifacts using AI, vibe-coded a custom AI solution, and leveraged AI tools responsibly to solve real workplace challenges.",
-    skills: ["AI Fundamentals", "Brainstorming & Planning", "Research & Insights", "Content Creation", "Data Analysis", "App Building"],
-    imageSrc: "/certifications/Google AI.jpg",
-    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/559499110/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    id: "mern-fullstack",
+    tickerLabel: "MERN Stack",
+    title: "MERN Stack & Full-Stack Development",
+    status: "IN PROGRESS",
+    description: "Currently learning, exploring, and working toward certifications that strengthen my technical skills and professional journey.",
+    skills: ["MongoDB", "Express.js", "React", "Node.js", "Next.js"],
   },
   {
-    id: "google-ai-essentials",
-    tickerLabel: "Google AI Essentials",
-    title: "Google AI Essentials",
-    issuer: "Google Career Certificates",
-    date: "May 30, 2026",
-    description: "Competent in using AI tools responsibly and improving productivity across workflows. Completed hands-on practice designed to build AI skills, maximize productivity, and discover the art of prompting.",
-    skills: ["Introduction to AI", "Maximize Productivity", "Art of Prompting", "Responsible AI"],
-    imageSrc: "/certifications/Google AI Essentials.jpg",
-    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/51308577/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
-  },
-  {
-    id: "nvidia-prompt-eng",
-    tickerLabel: "Prompt Engineering",
-    title: "Building LLM Applications With Prompt Engineering",
-    issuer: "NVIDIA",
-    date: "May 25, 2026",
-    description: "Demonstrated competence in the completion of Building LLM Applications With Prompt Engineering. Validated skills in interacting with Large Language Models and crafting effective prompts for complex AI applications.",
-    skills: ["LLMs", "Prompt Engineering", "AI Application Development"],
-    imageSrc: "/certifications/NVIDIA Prompt Engineering.jpg",
-    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935341866/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
-  },
-  {
-    id: "nvidia-gen-ai",
+    id: "ai-genai",
     tickerLabel: "Generative AI",
-    title: "Generative AI Explained",
-    issuer: "NVIDIA",
-    date: "May 25, 2026",
-    description: "Demonstrated competence in the core concepts of Generative AI, understanding how these models are built, trained, and deployed to solve complex real-world problems.",
-    skills: ["Generative AI", "Deep Learning Concepts", "AI Workflows"],
-    imageSrc: "/certifications/NVIDIA Generative AI.jpg",
-    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935582351/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    title: "AI & Generative AI",
+    status: "FUTURE GOAL",
+    description: "Currently learning, exploring, and working toward certifications that strengthen my technical skills and professional journey.",
+    skills: ["LLMs", "Prompt Engineering", "AI Integration", "RAG"],
   },
   {
-    id: "jpmc-swe",
+    id: "data-emerging",
+    tickerLabel: "Data Tech",
+    title: "Data & Emerging Technologies",
+    status: "FUTURE GOAL",
+    description: "Currently learning, exploring, and working toward certifications that strengthen my technical skills and professional journey.",
+    skills: ["Data Pipelines", "Machine Learning Concepts", "Cloud Architectures"],
+  },
+  {
+    id: "swe",
     tickerLabel: "Software Engineering",
-    title: "Software Engineering Job Simulation",
-    issuer: "JPMorgan Chase & Co. (Forage)",
-    date: "May 29, 2026",
-    description: "Completed practical tasks in a simulated corporate environment, gaining hands-on experience in project setup, systems integration, and backend API development.",
-    skills: ["Project Setup", "Kafka Integration", "H2 Integration", "REST API", "Java Backend"],
-    imageSrc: "/certifications/JP Morgan Job Simulation Kafka & Java.jpg",
-    verifyUrl: "https://www.linkedin.com/in/megha-r20/overlay/Certifications/1935994035/treasury/?profileId=ACoAAFt9SysBUj6heYrOZ1_DwJZQvMEbJs3izAg"
+    title: "Software Engineering",
+    status: "IN PROGRESS",
+    description: "Currently learning, exploring, and working toward certifications that strengthen my technical skills and professional journey.",
+    skills: ["System Design", "Backend Systems", "APIs", "Scalability"],
   }
 ];
 
@@ -102,7 +75,7 @@ export function Credentials() {
         </div>
         
         <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-8 md:mb-12 text-[#110e0c]">
-          Verified <span className="text-[#ff8a3d]">Expertise.</span>
+          Building My <span className="text-[#ff8a3d]">Expertise.</span>
         </h2>
       </div>
 
@@ -156,7 +129,7 @@ export function Credentials() {
       </div>
 
       {/* Content Area */}
-      <div className="mx-auto max-w-[1600px] w-full px-6 md:px-12 relative z-10 pt-12 md:pt-16 min-h-[1000px] lg:min-h-[750px]">
+      <div className="mx-auto max-w-[1600px] w-full px-6 md:px-12 relative z-10 pt-12 md:pt-16 min-h-[700px] lg:min-h-[550px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeId}
@@ -166,23 +139,22 @@ export function Credentials() {
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center"
           >
-            {/* Left: Certificate Image Container (50%) */}
+            {/* Left: Certificate Placeholder (50%) */}
             <div className="relative group perspective-[1200px]">
               <motion.div 
                 className="relative rounded-[1.5rem] overflow-hidden bg-white shadow-[0_15px_40px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.04)] transition-transform duration-700 ease-out group-hover:scale-[1.01] group-hover:shadow-[0_20px_50px_rgba(255,138,61,0.08),0_0_0_1px_rgba(0,0,0,0.04)]"
                 whileHover={{ rotateY: 2, rotateX: 2 }}
               >
-                <div className="relative aspect-[1.4/1] w-full bg-[#fdfdfc]">
-                  {/* Fallback pattern while loading */}
+                <div className="relative aspect-[1.4/1] w-full bg-[#fdfdfc] flex items-center justify-center">
+                  {/* Fallback pattern */}
                   <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#110e0c_1px,transparent_1px)] [background-size:20px_20px]"></div>
                   
-                  <Image 
-                    src={activeCredential.imageSrc} 
-                    alt={activeCredential.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
-                  />
+                  <div className="relative z-10 flex flex-col items-center justify-center gap-4">
+                    <Clock className="w-12 h-12 text-[#ff8a3d]/40 animate-pulse" />
+                    <span className="font-researcher text-[#110e0c]/40 text-sm tracking-[0.3em] font-bold uppercase">
+                      Coming Soon
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -191,8 +163,8 @@ export function Credentials() {
             <div className="flex flex-col space-y-6">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#ff8a3d] font-researcher">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>VERIFIED • {activeCredential.date.split(" ").pop()}</span>
+                  <Clock className="w-3.5 h-3.5" />
+                  <span>{activeCredential.status}</span>
                 </div>
                 
                 <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight text-[#110e0c]">
@@ -200,7 +172,7 @@ export function Credentials() {
                 </h3>
                 
                 <p className="font-syne text-lg md:text-xl font-medium text-[#8c7d6e]">
-                  Issued by <span className="text-[#110e0c]">{activeCredential.issuer}</span>
+                  Continuous <span className="text-[#110e0c]">Learning</span>
                 </p>
               </div>
 
@@ -212,7 +184,7 @@ export function Credentials() {
                 </p>
                 
                 <div className="space-y-3 pt-2">
-                  <h4 className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#8c7d6e] font-researcher">Skills Validated</h4>
+                  <h4 className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#8c7d6e] font-researcher">Target Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {activeCredential.skills.map(skill => (
                       <span key={skill} className="px-3 py-1.5 rounded-lg border border-[#e6e0d8] bg-white text-xs md:text-sm font-medium text-[#110e0c] shadow-sm transition-all duration-300 hover:border-[#ff8a3d]/40 hover:text-[#ff8a3d] hover:shadow-[0_4px_12px_rgba(255,138,61,0.08)]">
@@ -222,23 +194,6 @@ export function Credentials() {
                   </div>
                 </div>
               </div>
-
-              {activeCredential.verifyUrl && (
-                <div className="pt-4">
-                  <a 
-                    href={activeCredential.verifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-full bg-[#ff8a3d] text-white font-bold text-sm tracking-wide transition-all duration-300 hover:bg-[#e8742c] hover:scale-105 hover:shadow-[0_8px_25px_rgba(255,138,61,0.3)] overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Verify Credential
-                      <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
-                  </a>
-                </div>
-              )}
             </div>
           </motion.div>
         </AnimatePresence>

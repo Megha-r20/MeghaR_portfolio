@@ -247,7 +247,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
         <ScrollReveal
           key={node.year}
           initialTransform="translateY(40px)"
-          className={`relative mb-20 last:mb-0 grid grid-cols-12 items-start gap-6 ${
+          className={`relative mb-24 md:mb-32 last:mb-0 grid grid-cols-12 items-start gap-6 ${
             node.side === "right" ? "md:flex-row-reverse" : ""
           }`}
         >
