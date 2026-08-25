@@ -4,10 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const TITLES = [
-  "Full Stack Developer",
-  "ML Engineer",
   "React Developer",
-  "UI/UX Enthusiast",
+  "UI/UX Designer",
+  "Creative Developer",
 ];
 
 export const TypewriterTitle = () => {
