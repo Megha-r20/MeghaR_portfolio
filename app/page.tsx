@@ -825,20 +825,19 @@ export default function Home() {
           </span>
         </div>
 
+        {/* ── Section tag / Small eyebrow (Aligned top-left like Credentials) ── */}
+        <div className="relative z-10 w-full mb-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start">
+          <span>01</span>
+          <span className="h-px w-12 bg-[#ff8a3d]/40" />
+          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Introduction</span>
+        </div>
+
         {/* ── Single Column Editorial Layout ─────────────────────────────── */}
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col">
           <ScrollReveal
             initialTransform="translateY(50px)"
             className="flex flex-col justify-center w-full"
           >
-            {/* Section tag / Small eyebrow */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center gap-3 font-researcher text-[10px] uppercase tracking-[0.35em] text-[#3a322b]/50">
-                <span>01</span>
-                <span className="h-px w-12 bg-[#3a322b]/20" />
-                <span className="text-[#ff8a3d]/80 font-black tracking-[0.4em]">Introduction</span>
-              </div>
-            </div>
 
             {/* Syed-style 3-line animated hero heading */}
             <AnimatedHeroHeading
