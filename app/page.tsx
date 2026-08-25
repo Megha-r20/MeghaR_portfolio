@@ -611,7 +611,7 @@ export default function Home() {
           <a href="#hero" className="flex items-center gap-2 text-sm font-medium tracking-tight">
             <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(255,138,61,0.2)]">
               <Image
-                src="/mr_logo.png"
+                src="/mr_logo_v2.png"
                 alt="MR Logo"
                 fill
                 sizes="40px"
