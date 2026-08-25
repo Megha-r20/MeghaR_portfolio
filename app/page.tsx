@@ -887,7 +887,7 @@ export default function Home() {
 
                 <ScrollReveal
                   initialTransform="translateY(30px)"
-                  className="text-[11px] uppercase tracking-[0.15em] text-[#110e0c] font-researcher font-black text-center mt-4"
+                  className="text-[13px] uppercase tracking-[0.15em] text-[#110e0c] font-researcher font-black text-center mt-4"
                 >
                   <div>
                     OPEN TO{" "}
