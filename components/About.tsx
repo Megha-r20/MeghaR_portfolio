@@ -65,7 +65,7 @@ export const About = () => {
 
               {/* Degree */}
               <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#ff8a3d]">
-                B.Tech Computer Science
+                B.Tech In Computer Science
               </h4>
 
               {/* Subtitle */}
