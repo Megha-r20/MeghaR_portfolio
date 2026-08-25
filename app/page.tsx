@@ -247,7 +247,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
         <ScrollReveal
           key={node.year}
           initialTransform="translateY(40px)"
-          className={`relative mb-20 grid grid-cols-12 items-start gap-6 ${
+          className={`relative mb-20 last:mb-0 grid grid-cols-12 items-start gap-6 ${
             node.side === "right" ? "md:flex-row-reverse" : ""
           }`}
         >
@@ -1048,7 +1048,7 @@ export default function Home() {
       <Credentials />
 
       {/* Section 7: Journey */}
-      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-48">
+      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 pt-32 pb-16 md:px-12 md:pt-48 md:pb-24">
         <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
           <span>07</span>
           <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
@@ -1067,7 +1067,7 @@ export default function Home() {
 
       {/* Section 8: Contact */}
       <section id="contact" className="relative overflow-hidden">
-        <div className="mx-auto max-w-[1600px] px-6 pt-24 pb-12 md:px-12 md:pt-32 md:pb-12">
+        <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-12">
           <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
             <span>08</span>
             <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
