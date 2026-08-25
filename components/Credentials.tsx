@@ -75,7 +75,7 @@ export function Credentials() {
         </div>
         
         <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-8 md:mb-12 text-[#110e0c]">
-          Building My <span className="text-[#ff8a3d]">Expertise.</span>
+          Certifications <span className="text-[#ff8a3d]">Ahead.</span>
         </h2>
       </div>
 
