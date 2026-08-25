@@ -1191,7 +1191,7 @@ export default function Home() {
                   <a
                     key={social.label}
                     href={social.href}
-                    target="_blank"
+                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between border-b border-[#3a2a1c]/55 dark:border-[#3a2a1c]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#f2ece1] text-[#a89c8d]"
                   >
