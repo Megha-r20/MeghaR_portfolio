@@ -57,6 +57,19 @@
 
 :root {
   /* ── Core surfaces ── */
+  /* ── Spacing Rhythm ── */
+  --section-space-sm: 80px;
+  --section-space-md: 110px;
+  --section-space-lg: 140px;
+  --section-space-xl: 160px;
+
+  /* Mobile spacing overrides will use media queries in Tailwind or component directly, but we can define mobile vars */
+  --section-space-mob-sm: 70px;
+  --section-space-mob-md: 80px;
+  --section-space-mob-lg: 90px;
+  --section-space-mob-xl: 100px;
+
+  /* ── Backgrounds ── */
   --bg-base: #f2ece1;
   --bg-elev: #e8e1d4;
   --bg-card: #ffffff;

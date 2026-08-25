@@ -223,7 +223,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 function ProjectsShowcase({ projects }: { projects: Project[] }) {
   return (
-    <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-12 px-6 md:gap-y-20 md:px-12">
+    <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-[35px] md:gap-y-[50px] px-6 md:px-12">
       {projects.map((project) => (
         <ScrollReveal key={project.title} initialTransform="translateY(80px)">
           <ProjectCard project={project} />
@@ -255,7 +255,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
         <ScrollReveal
           key={node.year}
           initialTransform="translateY(40px)"
-          className={`relative mb-24 md:mb-32 last:mb-0 grid grid-cols-12 items-start gap-6 ${
+          className={`relative mb-[35px] md:mb-[50px] last:mb-0 grid grid-cols-12 items-start gap-6 ${
             node.side === "right" ? "md:flex-row-reverse" : ""
           }`}
         >
@@ -887,7 +887,7 @@ export default function Home() {
         {/* Section 1: About (Introduction) */}
         <section
           id="about"
-          className="relative mx-auto max-w-[1600px] min-h-[100vh] flex flex-col justify-center px-6 py-24 md:px-12 lg:px-20 overflow-hidden"
+          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[110px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden"
         >
           {/* Atmospheric name watermark */}
           <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
@@ -899,8 +899,8 @@ export default function Home() {
             </span>
           </div>
 
-          {/* ── Section tag / Small eyebrow (Aligned top-left like Credentials) ── */}
-          <div className="relative z-10 w-full mb-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start">
+          {/* ── Section tag / Small eyebrow ── */}
+          <div className="relative z-10 w-full mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-14">
             <span>01</span>
             <span className="h-px w-12 bg-[#ff8a3d]/40" />
             <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -924,9 +924,6 @@ export default function Home() {
                 accentWords={["products", "experiences", "reality"]}
                 className="mb-10"
               />
-
-              {/* Thin separator */}
-              <div className="w-12 h-[2px] bg-[#ff8a3d]/40 rounded-full mb-8" />
 
               {/* Biography block */}
               <div className="font-syne space-y-5 text-[16px] font-semibold leading-[24px] text-[#95979D]">
@@ -976,7 +973,7 @@ export default function Home() {
               </div>
 
               {/* CTA links */}
-              <div className="mt-10 flex items-center gap-6">
+              <div className="mt-12 flex items-center gap-6 md:mt-14">
                 <Magnetic strength={0.2}>
                   <a
                     href="#projects"
@@ -1020,10 +1017,10 @@ export default function Home() {
         {/* Section 3: Technology Arsenal */}
         <section
           id="stack"
-          className="relative mx-auto max-w-[1600px] pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden"
+          className="relative mx-auto max-w-[1600px] py-[90px] md:py-[110px] overflow-hidden"
         >
           <div className="px-6 md:px-12">
-            <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
               <span>03</span>
               <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
               <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1033,13 +1030,13 @@ export default function Home() {
             <WordReveal
               text="A modern arsenal for"
               accentText="building at the edge."
-              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-20 md:mb-32 text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
             />
           </div>
 
           {/* Marquees */}
           <ScrollReveal initialTransform="translateY(40px)" delay={200}>
-            <div className="flex flex-col gap-6 select-none mt-10 w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] overflow-hidden">
+            <div className="flex flex-col gap-6 select-none w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] overflow-hidden">
               {/* Row 1 */}
               <ProximityPillRow
                 techs={[
@@ -1085,9 +1082,9 @@ export default function Home() {
         <Expertise />
 
         {/* Section 5: Projects */}
-        <section id="projects" className="relative py-32 md:py-48">
+        <section id="projects" className="relative py-[120px] md:py-[140px]">
           <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-            <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
               <span>05</span>
               <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
               <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1095,7 +1092,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
+            <div className="mb-[60px] md:mb-[80px] flex flex-wrap items-end justify-between gap-6">
               <WordReveal
                 text="Projects that"
                 accentText="define me."
@@ -1116,9 +1113,9 @@ export default function Home() {
         {/* Section 7: Journey */}
         <section
           id="journey"
-          className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-16 md:px-12 md:pt-12 md:pb-24"
+          className="relative mx-auto max-w-[1600px] px-6 py-[120px] md:px-12 md:py-[140px]"
         >
-          <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+          <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
             <span>07</span>
             <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
             <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1129,7 +1126,7 @@ export default function Home() {
           <WordReveal
             text="My vision towards"
             accentText="what I am striving to."
-            className="font-display mb-24 max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
           />
 
           {/* Timeline Grid — line draws in on scroll, dots spring in */}
@@ -1138,8 +1135,8 @@ export default function Home() {
 
         {/* Section 8: Contact */}
         <section id="contact" className="relative overflow-hidden">
-          <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-12">
-            <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+          <div className="mx-auto max-w-[1600px] px-6 py-[140px] md:px-12 md:pt-[160px] md:pb-[180px]">
+            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
               <span>08</span>
               <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
               <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1153,7 +1150,7 @@ export default function Home() {
               className="font-display max-w-6xl text-[clamp(2.5rem,8vw,10rem)] font-semibold leading-[0.9] tracking-tight"
             />
 
-            <div className="mt-16 md:mt-20 grid grid-cols-1 gap-16 md:grid-cols-12">
+            <div className="mt-[50px] md:mt-[70px] grid grid-cols-1 gap-16 md:grid-cols-12">
               {/* Form */}
               <ScrollReveal
                 initialTransform="translateY(40px)"
@@ -1216,7 +1213,7 @@ export default function Home() {
                     disabled={
                       formState === "loading" || formState === "success"
                     }
-                    className="mt-4 group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="mt-[40px] md:mt-[50px] group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {formState === "loading" ? (
                       <>

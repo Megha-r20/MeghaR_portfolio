@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 export const About = () => {
   return (
     <section
-      id="about"
-      className="relative mx-auto max-w-[1600px] px-6 md:px-12"
+      id="about-education"
+      className="relative mx-auto max-w-[1600px] px-6 py-[100px] md:px-12 md:py-[120px]"
     >
       {/* ── Section layout: flex column, generous spacing for scrolling ── */}
-      <div className="flex flex-col gap-24 py-24 md:gap-40 md:py-36">
+      <div className="flex flex-col gap-24 md:gap-32">
 
         {/* ── SECTION HEADER ── */}
-        <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+        <div className="mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher md:mb-16">
           <span>02</span>
           <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
           <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">About</span>

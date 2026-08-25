@@ -63,18 +63,18 @@ export function Credentials() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full pt-16 pb-6 md:pt-20 md:pb-8 z-10 block">
+    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full py-[100px] md:py-[120px] z-10 block">
       {/* Background soft glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff8a3d]/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 relative z-10 w-full">
-        <div className="mb-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher">
+        <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher">
           <span>06</span>
           <span className="h-px w-12 bg-[#ff8a3d]/40"></span>
           <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Credentials</span>
         </div>
         
-        <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-8 md:mb-12 text-[#110e0c]">
+        <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[50px] md:mb-[70px] text-[#110e0c]">
           Certifications <span className="text-[#ff8a3d]">Ahead.</span>
         </h2>
       </div>

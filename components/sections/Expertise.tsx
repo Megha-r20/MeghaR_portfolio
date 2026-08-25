@@ -265,11 +265,11 @@ export function Expertise() {
   );
 
   return (
-    <section ref={sectionRef} className="px-6 md:px-12 relative">
+    <section ref={sectionRef} className="px-6 md:px-12 relative py-[120px] md:py-[140px]">
       {/* ── Section tag / Small eyebrow (Aligned top-left like Credentials) ── */}
-      <div className="max-w-[1600px] mx-auto w-full pt-32">
+      <div className="max-w-[1600px] mx-auto w-full">
         <div
-          className="mb-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher"
+          className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(46px)",
@@ -286,7 +286,7 @@ export function Expertise() {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div
-          className="mb-16"
+          className="mb-[60px] md:mb-[90px]"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(46px)",
