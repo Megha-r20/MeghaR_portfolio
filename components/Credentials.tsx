@@ -90,7 +90,7 @@ export function Credentials() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full pt-16 pb-12 md:pt-20 md:pb-16 z-10 block">
+    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full pt-16 pb-6 md:pt-20 md:pb-8 z-10 block">
       {/* Background soft glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff8a3d]/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
 

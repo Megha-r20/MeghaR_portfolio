@@ -1048,7 +1048,7 @@ export default function Home() {
       <Credentials />
 
       {/* Section 7: Journey */}
-      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 pt-16 pb-16 md:px-12 md:pt-24 md:pb-24">
+      <section id="journey" className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-16 md:px-12 md:pt-12 md:pb-24">
         <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
           <span>07</span>
           <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
