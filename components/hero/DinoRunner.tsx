@@ -79,26 +79,18 @@ const PTERO = [
   ]),
 ];
 
-const CLOUD_BASE = px([
-  "        #####",
-  "      #########",
-  "    #############",
-  "   ###############",
-  "   ###############"
+const CLOUD1 = px([
+  "       ####",
+  "     ########    ###",
+  "   ###################",
+  " #######################"
 ]);
-const CLOUD_HL = px([
-  "        #####",
-  "      ##",
-  "    ##",
-  "   #",
-  "   #"
-]);
-const CLOUD_SH = px([
-  "",
-  "",
-  "",
-  "               ###",
-  "    ##############"
+
+const CLOUD2 = px([
+  "      ###",
+  "    #######",
+  "  ###########",
+  "###############"
 ]);
 
 // ── Palette ────────────────────────────────────────────────────────────────
@@ -114,16 +106,14 @@ const PAL = {
   tree: "rgba(180, 0, 35, 0.15)", // #B40023
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
-  cloudBase: "rgba(174, 184, 194, 1.0)", // #AEB8C2
-  cloudSh: "rgba(154, 167, 184, 1.0)",   // #9AA7B8 (Shadow)
-  cloudHl: "rgba(201, 208, 215, 1.0)",  // #C9D0D7
+  cloud: "rgba(174, 184, 194, 1.0)", // #AEB8C2 (Muted Blue-Gray)
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
 
 interface Obs { x: number; type: "sm" | "lg" | "tree" }
 interface Flyer { x: number; y: number; f: number; t: number; big: boolean }
-interface Drift { x: number; y: number; s: number; a: number; w: number }
+interface Drift { x: number; y: number; s: number; a: number; w: number; type: number }
 
 // ── Component ──────────────────────────────────────────────────────────────
 
@@ -215,14 +205,14 @@ export function DinoRunner() {
 
       if (!init) {
         cls = [
-          { x: W * 0.05, y: H * 0.08, s: 0.75, a: 0.55, w: 1.2 },
-          { x: W * 0.18, y: H * 0.16, s: 0.60, a: 0.45, w: 1.0 },
-          { x: W * 0.32, y: H * 0.05, s: 0.85, a: 0.60, w: 1.3 },
-          { x: W * 0.48, y: H * 0.12, s: 0.70, a: 0.50, w: 1.1 },
-          { x: W * 0.62, y: H * 0.18, s: 0.55, a: 0.45, w: 1.4 },
-          { x: W * 0.75, y: H * 0.07, s: 0.85, a: 0.60, w: 1.0 },
-          { x: W * 0.88, y: H * 0.14, s: 0.65, a: 0.55, w: 1.2 },
-          { x: W * 0.98, y: H * 0.04, s: 0.60, a: 0.50, w: 0.9 },
+          { x: W * 0.05, y: H * 0.08, s: 1.3, a: 0.75, w: 1.0, type: 0 },
+          { x: W * 0.18, y: H * 0.22, s: 0.8, a: 0.55, w: 1.0, type: 1 },
+          { x: W * 0.32, y: H * 0.05, s: 1.5, a: 0.85, w: 1.0, type: 0 },
+          { x: W * 0.48, y: H * 0.18, s: 0.9, a: 0.65, w: 1.0, type: 1 },
+          { x: W * 0.62, y: H * 0.10, s: 1.1, a: 0.75, w: 1.0, type: 0 },
+          { x: W * 0.75, y: H * 0.25, s: 0.7, a: 0.50, w: 1.0, type: 1 },
+          { x: W * 0.88, y: H * 0.15, s: 1.2, a: 0.80, w: 1.0, type: 0 },
+          { x: W * 0.98, y: H * 0.07, s: 1.0, a: 0.70, w: 1.0, type: 1 },
         ];
         init = true;
       }
@@ -325,12 +315,13 @@ export function DinoRunner() {
       if (cCD <= 0) {
         cls.push({
           x: W + 60,
-          y: H * (0.02 + Math.random() * 0.22),
-          s: 0.5 + Math.random() * 0.4,
-          a: 0.45 + Math.random() * 0.15, // 45% to 60% opacity
-          w: 0.9 + Math.random() * 0.5,  // Slight width stretch/squish
+          y: H * (0.05 + Math.random() * 0.20),
+          s: 0.7 + Math.random() * 0.8,
+          a: 0.50 + Math.random() * 0.35, 
+          w: 1.0,
+          type: Math.random() > 0.5 ? 1 : 0
         });
-        cCD = 75 + Math.random() * 85;
+        cCD = 80 + Math.random() * 100;
       }
       for (const c of cls) c.x -= v * (0.15 + (c.s - 0.6) * 0.1);
       cls = cls.filter(c => c.x > -100);
@@ -340,9 +331,8 @@ export function DinoRunner() {
 
       // Clouds
       for (const c of cls) {
-        stamp(CLOUD_BASE, c.x, c.y, PAL.cloudBase, PX * c.s, c.a, c.w);
-        stamp(CLOUD_SH, c.x, c.y, PAL.cloudSh, PX * c.s, c.a, c.w);
-        stamp(CLOUD_HL, c.x, c.y, PAL.cloudHl, PX * c.s, c.a, c.w);
+        const sprite = c.type === 1 ? CLOUD2 : CLOUD1;
+        stamp(sprite, c.x, c.y, PAL.cloud, PX * c.s, c.a, c.w);
       }
 
       // Ground
