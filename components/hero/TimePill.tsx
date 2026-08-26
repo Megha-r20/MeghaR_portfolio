@@ -35,7 +35,7 @@ export function TimePill() {
     <div
       className="group relative hidden md:flex items-center gap-2 rounded-full px-3.5 py-1.5 select-none"
       style={{
-        background: "#1a1612",
+        background: "#211a18",
         boxShadow:
           "0 2px 12px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06) inset",
         transition: "box-shadow 0.25s ease",
@@ -44,8 +44,8 @@ export function TimePill() {
     >
       {/* Subtle live-dot indicator */}
       <span className="relative flex h-1.5 w-1.5 shrink-0">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff8a3d] opacity-60" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#ff8a3d]" />
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a83050] opacity-60" />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#a83050]" />
       </span>
 
       {/* IST label */}

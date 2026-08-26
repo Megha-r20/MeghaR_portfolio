@@ -13,10 +13,10 @@ export const About = () => {
       <div className="flex flex-col gap-24 md:gap-32">
 
         {/* ── SECTION HEADER ── */}
-        <div className="mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher md:mb-16">
+        <div className="mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-researcher md:mb-16">
           <span>02</span>
-          <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
-          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">About</span>
+          <span className="h-px w-12 bg-[#756b65]/60 dark:bg-[#756b65]/60 light:bg-black/10"></span>
+          <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">About</span>
         </div>
 
 
@@ -36,7 +36,7 @@ export const About = () => {
           >
             <span
               className="font-researcher absolute right-[0%] top-[50%] -translate-y-[50%] text-[9rem] md:text-[15rem] lg:text-[20rem] font-semibold leading-none tracking-tighter"
-              style={{ color: "rgb(58, 50, 43)", opacity: 0.10 }}
+              style={{ color: "rgb(58, 51, 48)", opacity: 0.10 }}
             >
               2028
             </span>
@@ -54,27 +54,27 @@ export const About = () => {
             <div className="flex flex-col items-end text-right">
               {/* Arrow */}
               <div className="mb-4 flex items-center gap-2">
-                <span className="font-researcher text-sm text-[#ff8a3d]">&larr;</span>
-                <div className="h-px w-14 md:w-24 bg-[#ff8a3d]" />
+                <span className="font-researcher text-sm text-[#a83050]">&larr;</span>
+                <div className="h-px w-14 md:w-24 bg-[#a83050]" />
               </div>
 
               {/* Institution */}
-              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] scale-x-[1.25] origin-right inline-block">
+              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18] scale-x-[1.25] origin-right inline-block">
                 Kalasalingam Academy of<br/>Research and Education
               </h3>
 
               {/* Degree */}
-              <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#ff8a3d]">
+              <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#a83050]">
                 B.Tech In Computer Science
               </h4>
 
               {/* Subtitle */}
-              <p className="font-syne mt-4 text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#a89c8d] dark:text-[#a89c8d] light:text-[#7a6f62]">
+              <p className="font-syne mt-4 text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#756b65] dark:text-[#756b65] light:text-[#756b65]">
                 Software Product Engineering
               </p>
 
               {/* Location & years */}
-              <div className="mt-8 flex flex-col items-end gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#a89c8d] dark:text-[#a89c8d] light:text-[#7a6f62]">
+              <div className="mt-8 flex flex-col items-end gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#756b65] dark:text-[#756b65] light:text-[#756b65]">
                 <span>Virudhunagar, Tamil Nadu</span>
                 <span>2024 &ndash; Present</span>
               </div>
@@ -100,7 +100,7 @@ export const About = () => {
           >
             <span
               className="font-researcher absolute left-[0%] top-[50%] -translate-y-[50%] text-[9rem] md:text-[15rem] lg:text-[20rem] font-semibold leading-none tracking-tighter"
-              style={{ color: "rgb(58, 50, 43)", opacity: 0.10 }}
+              style={{ color: "rgb(58, 51, 48)", opacity: 0.10 }}
             >
               2025
             </span>
@@ -116,23 +116,23 @@ export const About = () => {
           >
             <div className="flex flex-col items-start text-left">
               <div className="mb-4 flex items-center gap-2">
-                <div className="h-px w-14 md:w-24 bg-[#ff8a3d]" />
-                <span className="font-researcher text-sm text-[#ff8a3d]">&rarr;</span>
+                <div className="h-px w-14 md:w-24 bg-[#a83050]" />
+                <span className="font-researcher text-sm text-[#a83050]">&rarr;</span>
               </div>
 
-              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] inline-block scale-x-[1.25] origin-left">
+              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18] inline-block scale-x-[1.25] origin-left">
                 Future Company / Role
               </h3>
 
-              <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#ff8a3d]">
+              <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#a83050]">
                 Software Engineer
               </h4>
 
-              <p className="mt-4 font-syne text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#a89c8d] dark:text-[#a89c8d] light:text-[#7a6f62]">
+              <p className="mt-4 font-syne text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#756b65] dark:text-[#756b65] light:text-[#756b65]">
                 Key achievements or technologies used
               </p>
 
-              <div className="mt-8 flex flex-col items-start gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#a89c8d] dark:text-[#a89c8d] light:text-[#7a6f62]">
+              <div className="mt-8 flex flex-col items-start gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#756b65] dark:text-[#756b65] light:text-[#756b65]">
                 <span>City, State</span>
                 <span>Year &ndash; Year</span>
               </div>

@@ -107,12 +107,12 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
               duration: 0.25,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="relative w-full max-w-[1100px] max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[28px] md:rounded-[36px] border border-[var(--border-medium)] bg-[var(--bg-card)] p-6 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.6),0_0_35px_rgba(255,138,61,0.15)] transform-gpu custom-scrollbar"
+            className="relative w-full max-w-[1100px] max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[28px] md:rounded-[36px] border border-[var(--border-medium)] bg-[var(--bg-card)] p-6 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.6),0_0_35px_rgba(168, 48, 80,0.15)] transform-gpu custom-scrollbar"
           >
-            {/* Ambient orange glow orb in top corner */}
+            {/* Ambient crimson glow orb in top corner */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-[#ff8a3d]/12 blur-[40px]"
+              className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-[#a83050]/12 blur-[40px]"
             />
             {/* Glass specular sheen */}
             <div
@@ -125,7 +125,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
               type="button"
               onClick={onClose}
               aria-label="Close modal"
-              className="absolute top-6 right-6 md:top-8 md:right-8 z-[60] group flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elev)]/80 text-[var(--fg-mute)] transition-all duration-200 hover:border-[#ff8a3d]/50 hover:bg-[#ff8a3d]/10 hover:text-[var(--amber)] backdrop-blur-md"
+              className="absolute top-6 right-6 md:top-8 md:right-8 z-[60] group flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--bg-elev)]/80 text-[var(--fg-mute)] transition-all duration-200 hover:border-[#a83050]/50 hover:bg-[#a83050]/10 hover:text-[var(--crimson)] backdrop-blur-md"
             >
               <X className="h-4 w-4 transition-transform duration-200 group-hover:rotate-90" />
             </button>
@@ -137,8 +137,8 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
               <div className="flex flex-col">
                 {/* Header */}
                 <div>
-                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff8a3d] font-researcher">
-                    <Sparkles className="h-3.5 w-3.5 text-[#ff8a3d]" />
+                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#a83050] font-researcher">
+                    <Sparkles className="h-3.5 w-3.5 text-[#a83050]" />
                     <span>Availability • Open for Work</span>
                   </div>
                   <h3
@@ -157,7 +157,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                   {/* Name */}
                   <div>
                     <label className="mb-1.5 block text-[10px] uppercase tracking-[0.25em] text-[var(--fg-mute)] font-semibold font-researcher">
-                      Name <span className="text-[#ff8a3d]">*</span>
+                      Name <span className="text-[#a83050]">*</span>
                     </label>
                     <input
                       type="text"
@@ -168,7 +168,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                         if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
                       }}
                       disabled={formState === "loading" || formState === "success"}
-                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#ff8a3d] focus:outline-none focus:ring-1 focus:ring-[#ff8a3d]/50 ${
+                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#a83050] focus:outline-none focus:ring-1 focus:ring-[#a83050]/50 ${
                         errors.name ? "border-red-500/80" : "border-[var(--border-subtle)]"
                       }`}
                     />
@@ -180,7 +180,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                   {/* Email */}
                   <div>
                     <label className="mb-1.5 block text-[10px] uppercase tracking-[0.25em] text-[var(--fg-mute)] font-semibold font-researcher">
-                      Email <span className="text-[#ff8a3d]">*</span>
+                      Email <span className="text-[#a83050]">*</span>
                     </label>
                     <input
                       type="email"
@@ -191,7 +191,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                         if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
                       }}
                       disabled={formState === "loading" || formState === "success"}
-                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#ff8a3d] focus:outline-none focus:ring-1 focus:ring-[#ff8a3d]/50 ${
+                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#a83050] focus:outline-none focus:ring-1 focus:ring-[#a83050]/50 ${
                         errors.email ? "border-red-500/80" : "border-[var(--border-subtle)]"
                       }`}
                     />
@@ -203,7 +203,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                   {/* What are you looking to build? */}
                   <div>
                     <label className="mb-1.5 block text-[10px] uppercase tracking-[0.25em] text-[var(--fg-mute)] font-semibold font-researcher">
-                      What are you looking to build? <span className="text-[#ff8a3d]">*</span>
+                      What are you looking to build? <span className="text-[#a83050]">*</span>
                     </label>
                     <textarea
                       rows={4}
@@ -214,7 +214,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                         if (errors.projectDetails) setErrors((prev) => ({ ...prev, projectDetails: undefined }));
                       }}
                       disabled={formState === "loading" || formState === "success"}
-                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#ff8a3d] focus:outline-none focus:ring-1 focus:ring-[#ff8a3d]/50 resize-none ${
+                      className={`w-full rounded-2xl border bg-[var(--bg-elev)]/60 px-4 py-3 text-sm text-[var(--fg-primary)] placeholder:[var(--fg-mute)]/50 backdrop-blur-md transition-all duration-200 focus:border-[#a83050] focus:outline-none focus:ring-1 focus:ring-[#a83050]/50 resize-none ${
                         errors.projectDetails ? "border-red-500/80" : "border-[var(--border-subtle)]"
                       }`}
                     />
@@ -231,19 +231,19 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                         disabled={formState === "loading" || formState === "success"}
                         mode="rotate"
                         blur="medium"
-                        colors={["#ff8a3d", "#e8742c", "#c2410c", "#ffaf7a"]}
+                        colors={["#a83050", "#670626", "#670626", "#f5e6eb"]}
                         variant="unstyled"
                         wrapperClassName="w-full"
-                        className="font-syne group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-full border border-[#ff8a3d]/60 bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-6 py-3.5 text-sm font-bold tracking-wider uppercase text-[#1a0d05] shadow-[0_0_25px_rgba(255,138,61,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,138,61,0.55)] disabled:cursor-not-allowed disabled:opacity-75"
+                        className="font-syne group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-full border border-[#670626]/60 bg-[#670626] hover:bg-[#a83050] px-6 py-3.5 text-sm font-bold tracking-wider uppercase text-[#f7f1ea] shadow-[0_0_25px_rgba(103,6,38,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,48,80,0.55)] disabled:cursor-not-allowed disabled:opacity-75"
                       >
                         {formState === "loading" ? (
                           <>
-                            <Loader2 className="h-4 w-4 animate-spin text-[#1a0d05]" />
+                            <Loader2 className="h-4 w-4 animate-spin text-[#f7f1ea]" />
                             <span className="font-syne">Sending Inquiry...</span>
                           </>
                         ) : formState === "success" ? (
                           <>
-                            <CheckCircle2 className="h-4 w-4 text-emerald-950" />
+                            <CheckCircle2 className="h-4 w-4 text-[#f7f1ea]" />
                             <span className="font-syne">Inquiry Sent!</span>
                           </>
                         ) : (
@@ -264,7 +264,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#ff8a3d] hover:underline underline-offset-2"
+                        className="text-[#a83050] hover:underline underline-offset-2"
                       >
                         megha.ragumani@gmail.com
                       </a>
@@ -294,7 +294,7 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                     <a
                       href="/Prajit_Balaji_Resume.pdf"
                       download="Prajit_Balaji_Resume.pdf"
-                      className="font-syne group flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--fg-mute)] transition-colors hover:text-[#ff8a3d] px-4 py-2"
+                      className="font-syne group flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] transition-colors border border-[#670626] text-[#670626] hover:bg-[#670626] hover:text-[#f5e6eb] px-6 py-3 rounded-full bg-transparent"
                     >
                       <Download className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
                       DOWNLOAD MY RESUME

@@ -109,9 +109,9 @@ function ProjectCard({ project }: { project: Project }) {
           Animating box-shadow directly repaints the whole card every frame. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[28px] md:rounded-[40px] shadow-[0_45px_100px_-30px_rgba(255,138,61,0.35)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-[28px] md:rounded-[40px] shadow-[0_45px_100px_-30px_rgba(168, 48, 80,0.35)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       ></div>
-      <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#3a322b]/10 bg-gradient-to-br from-white via-[#faf5ec] to-[#f3ecdf] shadow-[0_30px_80px_-30px_rgba(58,50,43,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#ff8a3d]/30">
+      <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#3a3330]/10 bg-gradient-to-br from-white via-[#ede7dc] to-[#ede7dc] shadow-[0_30px_80px_-30px_rgba(58, 51, 48,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#a83050]/30">
 
         <div className="relative grid grid-cols-1 items-center gap-10 p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
           {/* ── Left: Icons, Title, Description, Tech Tags ── */}
@@ -123,7 +123,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} source on GitHub`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_0_24px_rgba(255,138,61,0.4)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#211a18] text-[#f7f1ea] shadow-[0_0_24px_rgba(168, 48, 80,0.4)] transition-colors duration-300 hover:bg-[#a83050] hover:text-[#211a18]"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -132,14 +132,14 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${project.title} live site`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1a1612] text-[#f2ece1] shadow-[0_0_24px_rgba(255,138,61,0.4)] transition-colors duration-300 hover:bg-[#ff8a3d] hover:text-[#1a1612]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#211a18] text-[#f7f1ea] shadow-[0_0_24px_rgba(168, 48, 80,0.4)] transition-colors duration-300 hover:bg-[#a83050] hover:text-[#211a18]"
               >
                 <Link2 className="h-5 w-5" />
               </a>
             </div>
 
             {/* Title */}
-            <h3 className="font-montserrat text-4xl font-black leading-[0.95] tracking-tight text-[#1a1612] transition-colors duration-500 group-hover:text-[#ff8a3d] md:text-5xl xl:text-6xl">
+            <h3 className="font-montserrat text-4xl font-black leading-[0.95] tracking-tight text-[#211a18] transition-colors duration-500 group-hover:text-[#a83050] md:text-5xl xl:text-6xl">
               {project.title}
             </h3>
 
@@ -153,7 +153,7 @@ function ProjectCard({ project }: { project: Project }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-syne text-[13px] font-bold uppercase tracking-[0.12em] text-[#3a322b] transition-colors duration-300 group-hover:text-[#1a1612] md:text-[15px]"
+                  className="font-syne text-[13px] font-bold uppercase tracking-[0.12em] text-[#3a3330] transition-colors duration-300 group-hover:text-[#211a18] md:text-[15px]"
                 >
                   {tag}
                 </span>
@@ -169,10 +169,10 @@ function ProjectCard({ project }: { project: Project }) {
             aria-label={`Open ${project.title}`}
             className="relative block w-full"
           >
-            <div className="relative mx-auto w-full max-w-[650px] overflow-hidden rounded-[14px] border-[1.5px] border-[#1a1612] bg-[#f8f5f0] shadow-[0_24px_50px_-12px_rgba(26,22,18,0.3),0_0_60px_-15px_rgba(255,138,61,0.35)]">
+            <div className="relative mx-auto w-full max-w-[650px] overflow-hidden rounded-[14px] border-[1.5px] border-[#211a18] bg-[#f8f5f0] shadow-[0_24px_50px_-12px_rgba(33, 26, 24,0.3),0_0_60px_-15px_rgba(168, 48, 80,0.35)]">
               
               {/* Dark Browser Chrome */}
-              <div className="flex h-[38px] w-full items-center justify-between border-b-[1.5px] border-[#1a1612] bg-[#1a1612] px-4">
+              <div className="flex h-[38px] w-full items-center justify-between border-b-[1.5px] border-[#211a18] bg-[#211a18] px-4">
                 {/* Colored window-control dots */}
                 <div className="flex gap-[6px]">
                   <div className="h-[10px] w-[10px] rounded-full bg-[#ff5f56]"></div>
@@ -192,7 +192,7 @@ function ProjectCard({ project }: { project: Project }) {
               </div>
 
               {/* Browser Screen / Screenshot */}
-              <div className="relative w-full bg-[#f2ece1]">
+              <div className="relative w-full bg-[#f7f1ea]">
                 <motion.div
                   initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
                   whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
@@ -248,7 +248,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
     <div ref={ref} className="relative">
       <motion.div
         style={{ scaleY: scrollYProgress }}
-        className="absolute left-0 top-0 h-full w-px origin-top bg-gradient-to-b from-[#ff8a3d]/40 via-[#5a3f2a]/30 to-transparent md:left-1/2"
+        className="absolute left-0 top-0 h-full w-px origin-top bg-gradient-to-b from-[#a83050]/40 via-[#756b65]/30 to-transparent md:left-1/2"
       />
 
       {timeline.map((node) => (
@@ -269,7 +269,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
               className={`flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 ${node.side === "left" ? "md:justify-end" : ""}`}
             >
               {node.side === "left" && node.logoSrc && (
-                <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(255,138,61,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(168, 48, 80,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
                   <Image
                     src={node.logoSrc}
                     alt={node.role}
@@ -287,7 +287,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
             <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
               {node.role}
             </div>
-            <p className="mt-2 text-sm text-[#a89c8d]/70 font-syne">
+            <p className="mt-2 text-sm text-[#756b65]/70 font-syne">
               {node.desc}
             </p>
           </div>
@@ -301,8 +301,8 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
               transition={{ type: "spring", stiffness: 320, damping: 16 }}
               className="relative flex h-full w-full items-center justify-center"
             >
-              <div className="h-3 w-3 rounded-full bg-[#ff8a3d] shadow-[0_0_18px_rgba(255,138,61,0.7)] animate-pulse"></div>
-              <div className="absolute h-6 w-6 rounded-full border border-[#5a3f2a]/70 dark:border-[#5a3f2a]/70 light:border-black/10"></div>
+              <div className="h-3 w-3 rounded-full bg-[#a83050] shadow-[0_0_18px_rgba(168, 48, 80,0.7)] animate-pulse"></div>
+              <div className="absolute h-6 w-6 rounded-full border border-[#756b65]/70 dark:border-[#756b65]/70 light:border-black/10"></div>
             </motion.div>
           </div>
 
@@ -319,7 +319,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
                     {node.year}
                   </div>
                   {node.logoSrc && (
-                    <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(255,138,61,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                    <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(168, 48, 80,0.25)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
                       <Image
                         src={node.logoSrc}
                         alt={node.role}
@@ -334,7 +334,7 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
                 <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
                   {node.role}
                 </div>
-                <p className="mt-2 text-sm text-[#a89c8d]/70 font-syne">
+                <p className="mt-2 text-sm text-[#756b65]/70 font-syne">
                   {node.desc}
                 </p>
               </>
@@ -418,8 +418,8 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen w-full bg-[#f2ece1] flex items-center justify-center">
-        <Loader2 className="h-6 w-6 animate-spin text-[#ff8a3d]" />
+      <div className="min-h-screen w-full bg-[#f7f1ea] flex items-center justify-center">
+        <Loader2 className="h-6 w-6 animate-spin text-[#a83050]" />
       </div>
     );
   }
@@ -551,7 +551,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-clip bg-[#f2ece1]">
+    <main className="relative min-h-screen w-full overflow-x-clip bg-[#f7f1ea]">
       <IntroPreloader onReadyToReveal={() => setIsReadyToReveal(true)} />
 
       <div
@@ -627,13 +627,13 @@ export default function Home() {
               aria-label={item.label}
               className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
-              {/* Always-on pulsing orange glow — same as the resume button */}
+              {/* Always-on pulsing crimson glow — same as the resume button */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                className="pointer-events-none absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#a83050] via-[#670626] to-[#670626] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
               />
               {/* Liquid glass circle */}
-              <span className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[var(--dock-glass-border)] bg-[var(--dock-glass-bg)] text-[var(--fg-body)] backdrop-blur-xl shadow-[var(--dock-glass-shadow)] transition-all duration-300 group-hover:border-[var(--amber)]/50 group-hover:text-[var(--amber)] group-hover:shadow-[var(--dock-glass-hover-shadow)]">
+              <span className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[var(--dock-glass-border)] bg-[var(--dock-glass-bg)] text-[var(--fg-body)] backdrop-blur-xl shadow-[var(--dock-glass-shadow)] transition-all duration-300 group-hover:border-[var(--crimson)]/50 group-hover:text-[var(--crimson)] group-hover:shadow-[var(--dock-glass-hover-shadow)]">
                 {/* Specular sheen */}
                 <span
                   aria-hidden="true"
@@ -641,13 +641,13 @@ export default function Home() {
                 />
                 <span className="relative z-10">{item.icon}</span>
               </span>
-              {/* Hover label — glowing orange text */}
+              {/* Hover label — glowing crimson text */}
               <span
-                className="pointer-events-none absolute right-full top-1/2 z-20 mr-3 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-full border border-[var(--amber)]/30 bg-[var(--dock-label-bg)] px-3.5 py-2 font-researcher text-[9px] font-bold uppercase tracking-[0.3em] opacity-0 shadow-[0_8px_24px_rgba(255,138,61,0.2),0_0_12px_rgba(255,138,61,0.15)] backdrop-blur-md transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+                className="pointer-events-none absolute right-full top-1/2 z-20 mr-3 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-full border border-[var(--crimson)]/30 bg-[var(--dock-label-bg)] px-3.5 py-2 font-researcher text-[9px] font-bold uppercase tracking-[0.3em] opacity-0 shadow-[0_8px_24px_rgba(168, 48, 80,0.2),0_0_12px_rgba(168, 48, 80,0.15)] backdrop-blur-md transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
                 style={{
-                  color: "var(--amber)",
+                  color: "var(--crimson)",
                   textShadow:
-                    "0 0 8px rgba(255,138,61,0.7), 0 0 20px rgba(255,138,61,0.4)",
+                    "0 0 8px rgba(168, 48, 80,0.7), 0 0 20px rgba(168, 48, 80,0.4)",
                 }}
               >
                 {item.label}
@@ -684,7 +684,7 @@ export default function Home() {
               href="#hero"
               className="flex items-center gap-2 text-sm font-medium tracking-tight"
             >
-              <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(255,138,61,0.2)]">
+              <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(168, 48, 80,0.2)]">
                 <Image
                   src="/mr_logo_v2.png"
                   alt="MR Logo"
@@ -709,7 +709,7 @@ export default function Home() {
                 onClick={() => setMenuOpen((v) => !v)}
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
-                className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--fg-body)] transition-colors hover:text-[var(--amber)] md:hidden"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--fg-body)] transition-colors hover:text-[var(--crimson)] md:hidden"
               >
                 {menuOpen ? (
                   <X className="h-5 w-5" />
@@ -736,7 +736,7 @@ export default function Home() {
                   onClick={() => setMenuOpen(false)}
                   className={`font-syne rounded-2xl px-4 py-3 text-[15px] font-semibold transition-colors ${
                     activeSection === item.id
-                      ? "bg-[var(--dropdown-active-bg)] text-[var(--amber)]"
+                      ? "bg-[var(--dropdown-active-bg)] text-[var(--crimson)]"
                       : "text-[var(--fg-body)]/70 active:bg-[var(--fg-body)]/5"
                   }`}
                 >
@@ -750,7 +750,7 @@ export default function Home() {
                 onClick={() => setMenuOpen(false)}
                 className="font-syne mt-1 flex items-center gap-2 rounded-2xl border-t border-[var(--border-subtle)] px-4 py-3 text-[15px] font-semibold text-[var(--fg-body)]"
               >
-                <Download className="h-4 w-4 text-[var(--amber)]" />
+                <Download className="h-4 w-4 text-[var(--crimson)]" />
                 My Resume
               </a>
             </div>
@@ -779,9 +779,9 @@ export default function Home() {
           {/* Background */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(255,240,225,0.4),transparent_60%)]"></div>
-            <div className="absolute left-[8%] top-[18%] h-[400px] w-[400px] rounded-full bg-[#c2410c]/8 blur-[80px]"></div>
-            <div className="absolute right-[5%] top-[35%] h-[500px] w-[500px] rounded-full bg-[#ff8a3d]/6 blur-[100px]"></div>
-            <div className="absolute bottom-[-10%] left-1/2 h-[350px] w-[70%] -translate-x-1/2 rounded-full bg-[#b87333]/8 blur-[80px]"></div>
+            <div className="absolute left-[8%] top-[18%] h-[400px] w-[400px] rounded-full bg-[#670626]/8 blur-[80px]"></div>
+            <div className="absolute right-[5%] top-[35%] h-[500px] w-[500px] rounded-full bg-[#a83050]/6 blur-[100px]"></div>
+            <div className="absolute bottom-[-10%] left-1/2 h-[350px] w-[70%] -translate-x-1/2 rounded-full bg-[#d4728c]/8 blur-[80px]"></div>
             <div className="absolute inset-x-0 bottom-0 h-[40vh] bg-gradient-to-t from-[#f5efe6] to-transparent"></div>
           </div>
 
@@ -793,12 +793,12 @@ export default function Home() {
             {/* Top metadata row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
-              className="mx-auto mt-12 w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9.5px] uppercase tracking-[0.3em] text-[#1A1612] font-researcher font-bold"
+              className="mx-auto mt-12 w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9.5px] uppercase tracking-[0.3em] text-[#211a18] font-researcher font-bold"
             >
               <div className="flex items-center gap-3">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff8a3d] opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff8a3d]"></span>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a83050] opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a83050]"></span>
                 </span>
                 <span>Available for projects · 2026</span>
               </div>
@@ -810,7 +810,7 @@ export default function Home() {
             <div className="relative flex flex-1 flex-col justify-center items-center text-center w-full">
               <div className="relative">
                 <h1
-                  className="font-montserrat whitespace-nowrap font-black text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow pointer-events-none select-text"
+                  className="font-montserrat whitespace-nowrap font-black text-[#211a18] text-glow pointer-events-none select-text"
                   style={{
                     fontSize: "clamp(2rem, 12.5vw, 18rem)",
                     lineHeight: "0.85",
@@ -828,12 +828,12 @@ export default function Home() {
                   initialTransform="translateY(30px)"
                   className="relative w-full flex justify-center"
                 >
-                  <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-center">
+                  <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#211a18] text-center">
                     Full-Stack Developer
                     <br />
                     <TypewriterTitle />
                     <br />
-                    <span className="font-syne text-[#a89c8d] text-xl md:text-2xl mt-3 inline-block">
+                    <span className="font-syne text-[#756b65] text-xl md:text-2xl mt-3 inline-block">
                       Building scalable web experiences.
                     </span>
                   </p>
@@ -841,18 +841,18 @@ export default function Home() {
 
                 <ScrollReveal
                   initialTransform="translateY(30px)"
-                  className="text-[13px] uppercase tracking-[0.15em] text-[#110e0c] font-researcher font-black text-center mt-2"
+                  className="text-[13px] uppercase tracking-[0.15em] text-[#670626] font-researcher font-black text-center mt-2"
                 >
                   <div>
                     OPEN TO{" "}
-                    <span className="text-[#ff8a3d] font-bold">
+                    <span className="text-[#a83050] font-bold">
                       INTERNSHIPS
                     </span>{" "}
                     &middot; 2026+
                   </div>
                   <div className="mt-1">
                     BUILDING &middot;{" "}
-                    <span className="text-[#ff8a3d] font-bold">LEARNING</span>{" "}
+                    <span className="text-[#a83050] font-bold">LEARNING</span>{" "}
                     &middot; CREATING
                   </div>
                 </ScrollReveal>
@@ -870,7 +870,7 @@ export default function Home() {
             {/* Bottom row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
-              className="mx-auto w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#1A1612] font-researcher font-bold"
+              className="mx-auto w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#211a18] font-researcher font-bold"
             >
               <span className="flex items-center gap-2">Scroll to explore</span>
 
@@ -891,10 +891,10 @@ export default function Home() {
         >
           {/* Atmospheric name watermark */}
           <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
-            <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap">
+            <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a3330]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap">
               MEGHA
             </span>
-            <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a322b]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap ml-[15%]">
+            <span className="font-display font-black leading-[0.85] tracking-[-0.04em] text-[#3a3330]/[0.035] text-[clamp(6rem,16vw,20rem)] whitespace-nowrap ml-[15%]">
               R
             </span>
           </div>
@@ -902,8 +902,8 @@ export default function Home() {
           {/* ── Section tag / Small eyebrow ── */}
           <div className="relative z-10 w-full mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-14">
             <span>01</span>
-            <span className="h-px w-12 bg-[#ff8a3d]/40" />
-            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
+            <span className="h-px w-12 bg-[#a83050]/40" />
+            <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
               Introduction
             </span>
           </div>
@@ -930,17 +930,17 @@ export default function Home() {
                 <p>
                   I'm{" "}
                   <span
-                    className="font-extrabold text-[#3a322b] text-[1.05em] tracking-tight"
+                    className="font-extrabold text-[#3a3330] text-[1.05em] tracking-tight"
                     style={{ fontFamily: "var(--next-font-syne), sans-serif" }}
                   >
                     MEGHA R
                   </span>{" "}
                   — a 3rd-year B.Tech Computer Science student specializing in{" "}
-                  <span className="text-[#ff8a3d] font-medium">
+                  <span className="text-[#a83050] font-medium">
                     Software Product Engineering
                   </span>{" "}
                   at{" "}
-                  <span className="text-[#ff8a3d] font-medium">
+                  <span className="text-[#a83050] font-medium">
                     Kalasalingam Academy of Research and Education
                   </span>
                   .
@@ -948,7 +948,7 @@ export default function Home() {
 
                 <p>
                   I'm a{" "}
-                  <span className="text-[#ff8a3d]/90 font-medium">
+                  <span className="text-[#a83050]/90 font-medium">
                     Full-Stack Developer
                   </span>{" "}
                   who enjoys turning ideas into responsive, functional, and
@@ -957,7 +957,7 @@ export default function Home() {
 
                 <p>
                   I work with{" "}
-                  <span className="text-[#ff8a3d]/90 font-medium">
+                  <span className="text-[#a83050]/90 font-medium">
                     React, JavaScript, modern web technologies
                   </span>
                   , and full-stack development, while also exploring UI/UX to
@@ -979,13 +979,12 @@ export default function Home() {
                     href="#projects"
                     className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:scale-105 active:scale-95"
                   >
-                    {/* Always-on pulsing orange glow */}
+                    {/* Always-on pulsing glow */}
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#ff8a3d] via-[#e8742c] to-[#c2410c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                      className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#670626] to-[#a83050] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
                     />
-                    {/* Pill capsule: solid black & white text at default, turns solid orange & pure black on hover */}
-                    <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-white/10 bg-[#0f0d0b] text-white shadow-[0_4px_20px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#ff8a3d] group-hover:bg-[#ff8a3d] group-hover:text-black group-hover:shadow-[0_0_30px_rgba(255,138,61,0.65),inset_0_1px_0_rgba(255,255,255,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
+                    <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-[#a83050]/20 bg-[#670626] text-[#f7f1ea] shadow-[0_4px_20px_rgba(103,6,38,0.3),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#a83050] group-hover:bg-[#a83050] group-hover:text-[#f7f1ea] group-hover:shadow-[0_0_30px_rgba(168,48,80,0.5),inset_0_1px_0_rgba(245,230,235,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
                       {/* Subtle top specular border highlight */}
                       <span
                         aria-hidden="true"
@@ -996,10 +995,10 @@ export default function Home() {
                     </span>
                   </a>
                 </Magnetic>
-                <span className="h-px w-8 bg-[#3a322b]/15" />
+                <span className="h-px w-8 bg-[#3a3330]/15" />
                 <a
                   href="#contact"
-                  className="text-[13px] font-medium uppercase tracking-[0.3em] text-[#3a322b]/45 hover:text-[#3a322b] transition-colors duration-300"
+                  className="text-[13px] font-medium uppercase tracking-[0.3em] text-[#3a3330]/45 hover:text-[#3a3330] transition-colors duration-300"
                 >
                   Let's Talk
                 </a>
@@ -1020,17 +1019,17 @@ export default function Home() {
           className="relative mx-auto max-w-[1600px] py-[90px] md:py-[110px] overflow-hidden"
         >
           <div className="px-6 md:px-12">
-            <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-researcher">
               <span>03</span>
-              <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
-              <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
+              <span className="h-px w-12 bg-[#756b65]/60 dark:bg-[#756b65]/60 light:bg-black/10"></span>
+              <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
                 Technology Arsenal
               </span>
             </div>
             <WordReveal
               text="A modern arsenal for"
               accentText="building at the edge."
-              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18]"
             />
           </div>
 
@@ -1084,10 +1083,10 @@ export default function Home() {
         {/* Section 5: Projects */}
         <section id="projects" className="relative py-[120px] md:py-[140px]">
           <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-researcher">
               <span>05</span>
-              <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
-              <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
+              <span className="h-px w-12 bg-[#756b65]/60 dark:bg-[#756b65]/60 light:bg-black/10"></span>
+              <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
                 Projects
               </span>
             </div>
@@ -1096,9 +1095,9 @@ export default function Home() {
               <WordReveal
                 text="Projects that"
                 accentText="define me."
-                className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+                className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18]"
               />
-              <div className="text-[11px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-researcher">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-[#756b65]/70 font-researcher">
                 {projects.length} works
               </div>
             </div>
@@ -1115,10 +1114,10 @@ export default function Home() {
           id="journey"
           className="relative mx-auto max-w-[1600px] px-6 py-[120px] md:px-12 md:py-[140px]"
         >
-          <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+          <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-researcher">
             <span>07</span>
-            <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
-            <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
+            <span className="h-px w-12 bg-[#756b65]/60 dark:bg-[#756b65]/60 light:bg-black/10"></span>
+            <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
               Journey
             </span>
           </div>
@@ -1126,7 +1125,7 @@ export default function Home() {
           <WordReveal
             text="My vision towards"
             accentText="what I am striving to."
-            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18]"
           />
 
           {/* Timeline Grid — line draws in on scroll, dots spring in */}
@@ -1136,10 +1135,10 @@ export default function Home() {
         {/* Section 8: Contact */}
         <section id="contact" className="relative overflow-hidden">
           <div className="mx-auto max-w-[1600px] px-6 py-[140px] md:px-12 md:pt-[160px] md:pb-[180px]">
-            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-researcher">
+            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-researcher">
               <span>08</span>
-              <span className="h-px w-12 bg-[#5a3f2a]/60 dark:bg-[#5a3f2a]/60 light:bg-black/10"></span>
-              <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
+              <span className="h-px w-12 bg-[#756b65]/60 dark:bg-[#756b65]/60 light:bg-black/10"></span>
+              <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
                 Let&apos;s Talk
               </span>
             </div>
@@ -1159,7 +1158,7 @@ export default function Home() {
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
-                      <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#756b65]/70 font-semibold font-researcher">
                         Name
                       </label>
                       <input
@@ -1171,11 +1170,11 @@ export default function Home() {
                         disabled={
                           formState === "loading" || formState === "success"
                         }
-                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a3330]/70 bg-transparent px-0 text-base text-[#f7f1ea] placeholder:text-[#756b65]/55 focus:outline-none focus:border-[#a83050] dark:text-[#f7f1ea] dark:border-[#3a3330]/70 dark:placeholder:text-[#756b65]/55 light:text-black light:border-black/20 focus:ring-0"
                       />
                     </div>
                     <div>
-                      <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                      <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#756b65]/70 font-semibold font-researcher">
                         Email
                       </label>
                       <input
@@ -1187,12 +1186,12 @@ export default function Home() {
                         disabled={
                           formState === "loading" || formState === "success"
                         }
-                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0"
+                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#3a3330]/70 bg-transparent px-0 text-base text-[#f7f1ea] placeholder:text-[#756b65]/55 focus:outline-none focus:border-[#a83050] dark:text-[#f7f1ea] dark:border-[#3a3330]/70 dark:placeholder:text-[#756b65]/55 light:text-black light:border-black/20 focus:ring-0"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                    <label className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-[#756b65]/70 font-semibold font-researcher">
                       Tell me about it
                     </label>
                     <textarea
@@ -1204,7 +1203,7 @@ export default function Home() {
                       disabled={
                         formState === "loading" || formState === "success"
                       }
-                      className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#3a2a1c]/70 bg-transparent px-0 text-base text-[#f2ece1] placeholder:text-[#a89c8d]/55 focus:outline-none focus:border-[#ff8a3d] dark:text-[#f2ece1] dark:border-[#3a2a1c]/70 dark:placeholder:text-[#a89c8d]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
+                      className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#3a3330]/70 bg-transparent px-0 text-base text-[#f7f1ea] placeholder:text-[#756b65]/55 focus:outline-none focus:border-[#a83050] dark:text-[#f7f1ea] dark:border-[#3a3330]/70 dark:placeholder:text-[#756b65]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
                     />
                   </div>
 
@@ -1213,7 +1212,7 @@ export default function Home() {
                     disabled={
                       formState === "loading" || formState === "success"
                     }
-                    className="mt-[40px] md:mt-[50px] group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#ff8a3d]/50 bg-gradient-to-br from-[#ff8a3d] via-[#e8742c] to-[#c2410c] px-7 py-4 text-sm font-medium text-[#1a0d05] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_60px_rgba(255,138,61,0.45),inset_0_1px_0_rgba(255,220,180,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="mt-[40px] md:mt-[50px] group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#670626]/50 bg-[#670626] px-7 py-4 text-sm font-medium text-[#f7f1ea] transition-all hover:-translate-y-0.5 hover:bg-[#a83050] hover:shadow-[0_0_60px_rgba(168,48,80,0.45),inset_0_1px_0_rgba(245,230,235,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {formState === "loading" ? (
                       <>
@@ -1242,14 +1241,14 @@ export default function Home() {
                 className="md:col-span-4 md:col-start-9 space-y-8"
               >
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.25em] text-[#a89c8d]/70 font-semibold font-researcher">
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-[#756b65]/70 font-semibold font-researcher">
                     Direct
                   </div>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] transition-colors"
+                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18] transition-colors"
                   >
                     megha.ragumani@gmail.com
                   </a>
@@ -1278,13 +1277,13 @@ export default function Home() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between border-b border-[#3a2a1c]/55 dark:border-[#3a2a1c]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#f2ece1] text-[#a89c8d]"
+                      className="group flex items-center justify-between border-b border-[#3a3330]/55 dark:border-[#3a3330]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#f7f1ea] text-[#756b65]"
                     >
-                      <span className="flex items-center gap-3 text-[#c9bcaa] group-hover:text-[#ff8a3d] transition-colors">
+                      <span className="flex items-center gap-3 text-[#c9bcaa] group-hover:text-[#a83050] transition-colors">
                         {social.icon}
                         {social.label}
                       </span>
-                      <ArrowUpRight className="h-4 w-4 text-[#a89c8d]/55 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#ff8a3d]" />
+                      <ArrowUpRight className="h-4 w-4 text-[#756b65]/55 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#a83050]" />
                     </a>
                   ))}
                 </div>
@@ -1293,20 +1292,20 @@ export default function Home() {
           </div>
 
           {/* Footer Accent bar / text */}
-          <div className="relative border-t border-[#3a2a1c]/55 dark:border-[#3a2a1c]/55 light:border-black/10 overflow-hidden">
+          <div className="relative border-t border-[#3a3330]/55 dark:border-[#3a3330]/55 light:border-black/10 overflow-hidden">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute inset-x-0 bottom-0 h-full bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,138,61,0.28),rgba(194,65,12,0.12)_30%,transparent_60%)]"></div>
-              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff8a3d]/60 to-transparent"></div>
+              <div className="absolute inset-x-0 bottom-0 h-full bg-[radial-gradient(ellipse_at_50%_120%,rgba(168, 48, 80,0.28),rgba(103, 6, 38,0.12)_30%,transparent_60%)]"></div>
+              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#a83050]/60 to-transparent"></div>
             </div>
 
             <div className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-20 md:px-12 md:pt-10 md:pb-24">
               <ScrollReveal initialTransform="translateY(100px)">
-                <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612] text-glow">
+                <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18] text-glow">
                   HIRE ME !!
                 </h3>
               </ScrollReveal>
 
-              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#a89c8d]/70 font-semibold font-researcher">
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#756b65]/70 font-semibold font-researcher">
                 <span>© 2026 · All systems imagined</span>
                 <span>Crafted in the dark · v0.26</span>
                 <span>Made with code, motion & care</span>

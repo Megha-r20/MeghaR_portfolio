@@ -77,13 +77,13 @@ function SkillRow({ name, index }: { name: string; index: number }) {
 
   return (
     <div
-      className="group/skill relative cursor-default border-b border-[#3a2a1c]/15 hover:border-[#ff8a3d]/30 transition-all duration-500"
+      className="group/skill relative cursor-default border-b border-[#3a2a1c]/15 hover:border-[#a83050]/30 transition-all duration-500"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: "800px" }}
     >
       <motion.div
-        className="flex items-center justify-between py-4 px-4 -mx-4 transition-all duration-300 origin-center group-hover/skill:bg-[#3a322b]/[0.02]"
+        className="flex items-center justify-between py-4 px-4 -mx-4 transition-all duration-300 origin-center group-hover/skill:bg-[#3a3330]/[0.02]"
         style={{
           rotateX,
           rotateY,
@@ -92,11 +92,11 @@ function SkillRow({ name, index }: { name: string; index: number }) {
         }}
       >
         {/* Left accent bar — reveals on hover */}
-        <div className="absolute left-0 top-0 w-[3px] h-full bg-[#ff8a3d] scale-y-0 group-hover/skill:scale-y-100 transition-transform duration-300 origin-top" />
+        <div className="absolute left-0 top-0 w-[3px] h-full bg-[#a83050] scale-y-0 group-hover/skill:scale-y-100 transition-transform duration-300 origin-top" />
 
         {/* Skill name */}
         <span 
-          className="font-sans text-sm text-[#3a322b]/70 group-hover/skill:text-[#3a322b] transition-all duration-300"
+          className="font-sans text-sm text-[#3a3330]/70 group-hover/skill:text-[#3a3330] transition-all duration-300"
           style={{ transform: "translateZ(15px)" }}
         >
           {name}
@@ -104,7 +104,7 @@ function SkillRow({ name, index }: { name: string; index: number }) {
 
         {/* Index number */}
         <span 
-          className="font-researcher text-xs tracking-wider text-[#3a322b]/30 group-hover/skill:text-[#ff8a3d] transition-all duration-300"
+          className="font-researcher text-xs tracking-wider text-[#3a3330]/30 group-hover/skill:text-[#a83050] transition-all duration-300"
           style={{ transform: "translateZ(10px)" }}
         >
           {padded}
@@ -154,7 +154,7 @@ function StickyDigitCounter({ activeIndex }: { activeIndex: number }) {
     <div className="hidden md:block md:w-[35%] md:flex-shrink-0">
       <div className="sticky top-[200px]">
         <div
-          className="flex font-display font-bold text-[#f2ece1]/10 light:text-black leading-none"
+          className="flex font-display font-bold text-[#f7f1ea]/10 light:text-black leading-none"
           style={{ fontSize: "18vw" }}
         >
           <DigitColumn digit={tens} />
@@ -179,20 +179,20 @@ const ExpertiseCategoryBlock = React.forwardRef<
       className="min-h-[80vh] flex flex-col justify-center border-t border-[#3a2a1c]/35 light:border-black/10 last:border-b"
     >
       {/* Mobile-only ghost number */}
-      <span className="md:hidden font-display font-bold text-6xl text-[#f2ece1]/10 light:text-black mb-4">
+      <span className="md:hidden font-display font-bold text-6xl text-[#f7f1ea]/10 light:text-black mb-4">
         {padded}
       </span>
 
       {/* Category title */}
       <h3 
-        className="font-normal text-3xl md:text-5xl text-[#3a322b] tracking-wide leading-[1.05] uppercase"
+        className="font-normal text-3xl md:text-5xl text-[#3a3330] tracking-wide leading-[1.05] uppercase"
         style={{ fontFamily: "'Anton', sans-serif" }}
       >
         {category.title}
       </h3>
 
       {/* Category description */}
-      <p className="font-syne font-semibold tracking-wide text-[#a89c8d] light:text-[#3a2a1c]/80 text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl">
+      <p className="font-syne font-semibold tracking-wide text-[#756b65] light:text-[#3a2a1c]/80 text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl">
         {category.description}
       </p>
 
@@ -278,8 +278,8 @@ export function Expertise() {
           }}
         >
           <span>04</span>
-          <span className="h-px w-12 bg-[#ff8a3d]/40" />
-          <span className="text-[#ff8a3d] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Expertise</span>
+          <span className="h-px w-12 bg-[#a83050]/40" />
+          <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Expertise</span>
         </div>
       </div>
 
@@ -294,8 +294,8 @@ export function Expertise() {
               "opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#f2ece1] light:text-[#1a1612] leading-[0.9] tracking-[-0.03em]">
-            My <span className="text-[#ff8a3d]">Expertise</span>
+          <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#f7f1ea] light:text-[#211a18] leading-[0.9] tracking-[-0.03em]">
+            My <span className="text-[#a83050]">Expertise</span>
           </h2>
         </div>
 

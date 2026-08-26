@@ -42,7 +42,7 @@ export const TypewriterTitle = () => {
   }, [text, isDeleting, titleIndex]);
 
   return (
-    <span className="relative inline-flex flex-col items-center justify-center text-[#ff8a3d]/90 uppercase text-[11px] md:text-sm tracking-[0.3em] font-semibold mt-4">
+    <span className="relative inline-flex flex-col items-center justify-center text-[#a83050]/90 uppercase text-[11px] md:text-sm tracking-[0.3em] font-semibold mt-4">
       {/* Invisible longest text to exactly reserve the required layout space at all breakpoints */}
       <span className="invisible whitespace-nowrap">FULL STACK DEVELOPER</span>
       <span className="absolute inset-0 flex items-center justify-center whitespace-nowrap">
@@ -50,7 +50,7 @@ export const TypewriterTitle = () => {
         <motion.span
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-          className="inline-block w-[2px] h-[1.1em] bg-[#ff8a3d]/90 ml-1 md:ml-1.5 rounded-full"
+          className="inline-block w-[2px] h-[1.1em] bg-[#a83050]/90 ml-1 md:ml-1.5 rounded-full"
         />
       </span>
     </span>

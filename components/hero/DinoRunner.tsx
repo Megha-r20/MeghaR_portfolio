@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 /* ═══════════════════════════════════════════════════════════════════════════
    DinoRunner — Ambient Chrome-Dino-inspired infinite runner Easter egg.
    Pure canvas, zero React re-renders, requestAnimationFrame driven.
-   Features a cool orange dino with sunglasses, headphones, horns & hoodie.
+   Features a cool crimson dino with sunglasses, headphones, horns & hoodie.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /** Convert a visual pixel-art grid into [x,y] filled-pixel coordinates */
@@ -84,13 +84,13 @@ const CLOUD = px(["  ###", " #####", "#######"]);
 // ── Palette ────────────────────────────────────────────────────────────────
 
 const PAL = {
-  dino: "rgba(255,138,61,0.85)",
-  gear: "rgba(26,22,18,0.85)",
+  dino: "rgba(168, 48, 80,0.85)",
+  gear: "rgba(33, 26, 24,0.85)",
   lens: "rgba(90,63,42,0.85)",
   shine: "rgba(255,255,255,0.6)",
-  ground: "rgba(58,50,43,0.75)",
-  pebble: "rgba(58,50,43,0.6)",
-  cactus: "rgba(58,50,43,0.75)",
+  ground: "rgba(58, 51, 48,0.75)",
+  pebble: "rgba(58, 51, 48,0.6)",
+  cactus: "rgba(58, 51, 48,0.75)",
   tree: "rgba(90,63,42,0.75)",
   bird: "rgba(168,156,141,0.75)",
   ptero: "rgba(200,170,140,0.65)",

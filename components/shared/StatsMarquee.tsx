@@ -83,19 +83,19 @@ export function StatsMarquee() {
                 <div key={`${i}-${j}`} className="flex items-center gap-12 sm:gap-16 md:gap-24 group">
                   {/* Stat Item */}
                   <div className="flex items-baseline gap-2 sm:gap-3 cursor-default transition-all duration-[600ms] ease-out hover:-translate-y-1">
-                    <span className="font-display font-bold text-2xl sm:text-3xl text-[#f6f2ec] tracking-tight transition-colors duration-500 group-hover:text-[#ff8a3d]">
+                    <span className="font-display font-bold text-2xl sm:text-3xl text-[#f6f2ec] tracking-tight transition-colors duration-500 group-hover:text-[#a83050]">
                       <AnimatedValue value={stat.value} started={started} />
                     </span>
                     <span
-                      className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#ff8a3d]/70 group-hover:text-[#ff8a3d] transition-colors duration-500 font-researcher"
-                      style={{ textShadow: "0 0 12px rgba(255,138,61,0.45)" }}
+                      className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#a83050]/70 group-hover:text-[#a83050] transition-colors duration-500 font-researcher"
+                      style={{ textShadow: "0 0 12px rgba(168, 48, 80,0.45)" }}
                     >
                       {stat.label}
                     </span>
                   </div>
 
                   {/* Static separator dot — no Framer Motion */}
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#ff8a3d]/40 group-hover:bg-[#ff8a3d] transition-colors duration-500 shadow-[0_0_8px_rgba(255,138,61,0.3)]" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#a83050]/40 group-hover:bg-[#a83050] transition-colors duration-500 shadow-[0_0_8px_rgba(168, 48, 80,0.3)]" />
                 </div>
               ))}
             </React.Fragment>

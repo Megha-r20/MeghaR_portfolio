@@ -25,12 +25,12 @@ const ITEMS = [
   "SCROLL TO EXPLORE",
 ];
 
-/** Orange diamond separator */
+/** crimson diamond separator */
 function Sep() {
   return (
     <span
       aria-hidden="true"
-      className="mx-6 shrink-0 text-[#ff8a3d] text-[10px] leading-none"
+      className="mx-6 shrink-0 text-[#a83050] text-[10px] leading-none"
       style={{ userSelect: "none" }}
     >
       ✦
@@ -101,14 +101,14 @@ function TickerRow({ reverse = false }: { reverse?: boolean }) {
 
 /**
  * BottomTicker — full-width black strip with two counter-scrolling rows of
- * tech stack items separated by orange diamond separators.
+ * tech stack items separated by crimson diamond separators.
  */
 export function BottomTicker() {
   return (
     <div
       className="w-full overflow-hidden"
       style={{
-        background: "#1a1612",
+        background: "#211a18",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >

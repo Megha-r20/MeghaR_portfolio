@@ -13,7 +13,7 @@ import { motion, useInView } from "framer-motion";
 interface AnimatedHeroHeadingProps {
   lines: string[];
   className?: string;
-  // Optional per-word highlight: if any word matches, it gets orange treatment
+  // Optional per-word highlight: if any word matches, it gets crimson treatment
   accentWords?: string[];
 }
 
@@ -83,12 +83,12 @@ export function AnimatedHeroHeading({
                     key={wordIdx}
                     className="mr-[0.18em] last:mr-0"
                     style={{
-                      color: isAccent ? "#ff8a3d" : "#3a322b",
+                      color: isAccent ? "#a83050" : "#3a3330",
                     }}
                   >
                     {root}
                     {punctuation && (
-                      <span style={{ color: "#3a322b" }}>{punctuation}</span>
+                      <span style={{ color: "#3a3330" }}>{punctuation}</span>
                     )}
                   </span>
                 );

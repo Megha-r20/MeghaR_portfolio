@@ -47,7 +47,7 @@ export function CursorGlow() {
       className="pointer-events-none fixed top-0 left-0 z-10 h-[400px] w-[400px] rounded-full opacity-60 will-change-transform dark:opacity-60 light:opacity-15"
       style={{
         background:
-          "radial-gradient(circle, rgba(255, 138, 61, 0.12) 0%, rgba(232, 116, 44, 0.04) 40%, transparent 70%)",
+          "radial-gradient(circle, rgba(168, 48, 80, 0.12) 0%, rgba(232, 116, 44, 0.04) 40%, transparent 70%)",
       }}
     />
   );

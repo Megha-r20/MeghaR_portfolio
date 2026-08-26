@@ -95,9 +95,9 @@ export function IntroLoadingBar({
                 className={`flex-1 h-full rounded-[1px] transition-colors duration-100 ${
                   filled
                     ? isEdge
-                      ? "bg-[#ff8a3d]"
+                      ? "bg-[#a83050]"
                       : i % 3 === 0
-                      ? "bg-[#ff8a3d]/80"
+                      ? "bg-[#a83050]/80"
                       : "bg-[var(--preloader-text)]/40"
                     : "bg-transparent"
                 }`}
@@ -114,7 +114,7 @@ export function IntroLoadingBar({
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             style={{
               background:
-                "linear-gradient(90deg, transparent 0%, rgba(255,138,61,0.15) 50%, transparent 100%)",
+                "linear-gradient(90deg, transparent 0%, rgba(168, 48, 80,0.15) 50%, transparent 100%)",
               width: "40%",
             }}
           />

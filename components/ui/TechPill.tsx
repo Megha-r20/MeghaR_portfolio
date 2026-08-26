@@ -21,20 +21,20 @@ export function TechPill({ tech, pillKey, dimmed = false }: TechPillProps) {
   return (
     <span
       key={pillKey}
-      className={`group relative inline-flex items-center px-7 py-4 rounded-full border select-none transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-1 hover:shadow-[0_16px_32px_-8px_rgba(255,138,61,0.25)] hover:border-[#ff8a3d]/50 hover:bg-[#ff8a3d]/[0.08]
+      className={`group relative inline-flex items-center px-7 py-4 rounded-full border select-none transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-1 hover:shadow-[0_16px_32px_-8px_rgba(168, 48, 80,0.25)] hover:border-[#a83050]/50 hover:bg-[#a83050]/[0.08]
         ${
           dimmed
-            ? "border-[#3a322b]/10 bg-[#3a322b]/[0.02] text-[#5a5046]"
-            : "border-[#3a322b]/10 bg-[#3a322b]/[0.02] text-[#3a322b]"
+            ? "border-[#3a3330]/10 bg-[#3a3330]/[0.02] text-[#5a5046]"
+            : "border-[#3a3330]/10 bg-[#3a3330]/[0.02] text-[#3a3330]"
         }
-        font-syne text-[15px] md:text-[17px] font-bold tracking-wide hover:text-[#ff8a3d]
+        font-syne text-[15px] md:text-[17px] font-bold tracking-wide hover:text-[#a83050]
       `}
     >
-      {/* Orange dot indicator */}
+      {/* crimson dot indicator */}
       <span
-        className={`w-2 h-2 rounded-full bg-[#ff8a3d] mr-3 shrink-0 ${
+        className={`w-2 h-2 rounded-full bg-[#a83050] mr-3 shrink-0 ${
           dimmed ? "animate-pulse" : ""
-        } shadow-[0_0_12px_rgba(255,138,61,0.6)] transition-transform duration-300 group-hover:scale-125`}
+        } shadow-[0_0_12px_rgba(168, 48, 80,0.6)] transition-transform duration-300 group-hover:scale-125`}
       />
 
       <span className="relative z-10">{tech}</span>

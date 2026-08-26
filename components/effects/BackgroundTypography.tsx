@@ -78,7 +78,7 @@ export function BackgroundTypography({
   return (
     <div
       ref={ref}
-      className="absolute inset-0 z-0 flex flex-col justify-center overflow-hidden pointer-events-none select-none text-[#f2ece1] dark:text-[#f2ece1] light:text-[#1a1612]"
+      className="absolute inset-0 z-0 flex flex-col justify-center overflow-hidden pointer-events-none select-none text-[#f7f1ea] dark:text-[#f7f1ea] light:text-[#211a18]"
       style={{ opacity }}
       aria-hidden="true"
     >
