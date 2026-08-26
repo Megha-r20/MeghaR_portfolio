@@ -627,10 +627,10 @@ export default function Home() {
               aria-label={item.label}
               className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
-              {/* Always-on pulsing crimson glow — same as the resume button */}
+              {/* Always-on pulsing crimson glow — subtle */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#b40023] via-[#8f001c] to-[#8f001c] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                className="pointer-events-none absolute -inset-1 rounded-full bg-[rgba(180,0,35,0.15)] blur-md transition-opacity duration-500 group-hover:bg-[rgba(180,0,35,0.25)]"
               />
               {/* Liquid glass circle */}
               <span className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[var(--dock-glass-border)] bg-[var(--dock-glass-bg)] text-[#1e1e2f] backdrop-blur-xl shadow-[var(--dock-glass-shadow)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:text-[var(--primary)] group-hover:shadow-[var(--dock-glass-hover-shadow)]">

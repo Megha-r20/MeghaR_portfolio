@@ -155,18 +155,12 @@ export function DinoRunner() {
         const offCtx = offCanvas.getContext("2d");
         if (!offCtx) continue;
 
-        // Apply a hue shift to turn the original orange/amber dino into Crimson Rose / Burgundy
-        offCtx.filter = "hue-rotate(-42deg) saturate(1.3)";
-        
-        // Draw this specific dino frame
+        // Draw this specific dino frame (unfiltered so we can remove background accurately)
         offCtx.drawImage(
           stripImg,
           s * frameW, 0, frameW, sh,
           0, 0, frameW, sh
         );
-        
-        // Reset filter
-        offCtx.filter = "none";
 
         // Remove background beige/white cleanly
         const imgData = offCtx.getImageData(0, 0, frameW, sh);
@@ -337,6 +331,8 @@ export function DinoRunner() {
       if (dinoLoaded && selectedDinoCanvas) {
         ctx.save();
         ctx.globalAlpha = 0.92;
+        // Shift orange dino to Crimson Red
+        ctx.filter = "hue-rotate(-36deg) saturate(1.4)";
         // Pixel-perfect crisp rendering
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(
