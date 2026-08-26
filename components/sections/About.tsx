@@ -9,17 +9,15 @@ export const About = () => {
       id="about-education"
       className="relative mx-auto max-w-[1600px] px-6 py-[100px] md:px-12 md:py-[120px]"
     >
+      {/* ── SECTION HEADER ── */}
+      <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher md:mb-12">
+        <span>02</span>
+        <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
+        <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">About</span>
+      </div>
+
       {/* ── Section layout: flex column, generous spacing for scrolling ── */}
       <div className="flex flex-col gap-24 md:gap-32">
-
-        {/* ── SECTION HEADER ── */}
-        <div className="mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher md:mb-16">
-          <span>02</span>
-          <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
-          <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">About</span>
-        </div>
-
-
         {/* ══════════════════════════════════════════════════════════
             ENTRY 1 — Kalasalingam Academy  (top-right)
         ══════════════════════════════════════════════════════════ */}
@@ -59,7 +57,7 @@ export const About = () => {
               </div>
 
               {/* Institution */}
-              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.8] tracking-tighter text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] scale-x-[1.25] origin-right inline-block">
+              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] scale-x-[1.25] origin-right inline-block">
                 Kalasalingam Academy of<br/>Research and Education
               </h3>
 
