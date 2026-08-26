@@ -84,17 +84,17 @@ const CLOUD = px(["  ###", " #####", "#######"]);
 // ── Palette ────────────────────────────────────────────────────────────────
 
 const PAL = {
-  dino: "rgba(168, 48, 80,0.85)",
-  gear: "rgba(33, 26, 24,0.85)",
-  lens: "rgba(90,63,42,0.85)",
-  shine: "rgba(255,255,255,0.6)",
-  ground: "rgba(58, 51, 48,0.75)",
-  pebble: "rgba(58, 51, 48,0.6)",
-  cactus: "rgba(58, 51, 48,0.75)",
-  tree: "rgba(90,63,42,0.75)",
-  bird: "rgba(168,156,141,0.75)",
-  ptero: "rgba(200,170,140,0.65)",
-  cloud: "rgba(168,156,141,0.5)",
+  dino: "rgba(103, 6, 38, 0.85)",       // Burgundy
+  gear: "rgba(168, 48, 80, 0.85)",      // Crimson Rose
+  lens: "rgba(245, 230, 235, 0.85)",    // Soft Blush
+  shine: "rgba(255, 255, 255, 0.6)",
+  ground: "rgba(58, 51, 48, 0.75)",     // Body Text / Grid
+  pebble: "rgba(58, 51, 48, 0.6)",
+  cactus: "rgba(58, 51, 48, 0.75)",
+  tree: "rgba(168, 48, 80, 0.75)",      // Crimson Rose
+  bird: "rgba(117, 107, 101, 0.75)",    // Muted Text
+  ptero: "rgba(103, 6, 38, 0.65)",      // Burgundy
+  cloud: "rgba(117, 107, 101, 0.4)",    // Muted Text
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
@@ -155,12 +155,18 @@ export function DinoRunner() {
         const offCtx = offCanvas.getContext("2d");
         if (!offCtx) continue;
 
+        // Apply a hue shift to turn the original orange/amber dino into Crimson Rose / Burgundy
+        offCtx.filter = "hue-rotate(-50deg) saturate(1.1)";
+        
         // Draw this specific dino frame
         offCtx.drawImage(
           stripImg,
           s * frameW, 0, frameW, sh,
           0, 0, frameW, sh
         );
+        
+        // Reset filter
+        offCtx.filter = "none";
 
         // Remove background beige/white cleanly
         const imgData = offCtx.getImageData(0, 0, frameW, sh);
