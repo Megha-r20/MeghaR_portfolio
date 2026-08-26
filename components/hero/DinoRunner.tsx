@@ -108,9 +108,9 @@ const PAL = {
   tree: "rgba(180, 0, 35, 0.15)", // #B40023
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
-  cloudBase: "rgba(154, 167, 184, 1.0)", // #9AA7B8
-  cloudSh: "rgba(127, 139, 156, 1.0)",   // #7F8B9C
-  cloudHl: "rgba(197, 205, 214, 1.0)",  // #C5CDD6
+  cloudBase: "rgba(174, 184, 194, 1.0)", // #AEB8C2
+  cloudSh: "rgba(174, 184, 194, 1.0)",   // #AEB8C2 (No dark shadow)
+  cloudHl: "rgba(201, 208, 215, 1.0)",  // #C9D0D7
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
@@ -209,14 +209,14 @@ export function DinoRunner() {
 
       if (!init) {
         cls = [
-          { x: W * 0.05, y: H * 0.08, s: 1.0, a: 0.65, w: 1.2 },
-          { x: W * 0.18, y: H * 0.16, s: 0.8, a: 0.55, w: 1.0 },
-          { x: W * 0.32, y: H * 0.05, s: 1.1, a: 0.70, w: 1.3 },
-          { x: W * 0.48, y: H * 0.12, s: 0.9, a: 0.60, w: 1.1 },
-          { x: W * 0.62, y: H * 0.18, s: 0.7, a: 0.50, w: 1.4 },
-          { x: W * 0.75, y: H * 0.07, s: 1.1, a: 0.75, w: 1.0 },
-          { x: W * 0.88, y: H * 0.14, s: 0.85, a: 0.65, w: 1.2 },
-          { x: W * 0.98, y: H * 0.04, s: 0.8, a: 0.60, w: 0.9 },
+          { x: W * 0.05, y: H * 0.08, s: 1.0, a: 0.55, w: 1.2 },
+          { x: W * 0.18, y: H * 0.16, s: 0.8, a: 0.45, w: 1.0 },
+          { x: W * 0.32, y: H * 0.05, s: 1.1, a: 0.60, w: 1.3 },
+          { x: W * 0.48, y: H * 0.12, s: 0.9, a: 0.50, w: 1.1 },
+          { x: W * 0.62, y: H * 0.18, s: 0.7, a: 0.45, w: 1.4 },
+          { x: W * 0.75, y: H * 0.07, s: 1.1, a: 0.60, w: 1.0 },
+          { x: W * 0.88, y: H * 0.14, s: 0.85, a: 0.55, w: 1.2 },
+          { x: W * 0.98, y: H * 0.04, s: 0.8, a: 0.50, w: 0.9 },
         ];
         init = true;
       }
@@ -321,7 +321,7 @@ export function DinoRunner() {
           x: W + 60,
           y: H * (0.02 + Math.random() * 0.22),
           s: 0.7 + Math.random() * 0.5,
-          a: 0.55 + Math.random() * 0.15, // 55% to 70% opacity
+          a: 0.45 + Math.random() * 0.15, // 45% to 60% opacity
           w: 0.9 + Math.random() * 0.5,  // Slight width stretch/squish
         });
         cCD = 75 + Math.random() * 85;
