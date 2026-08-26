@@ -108,9 +108,9 @@ const PAL = {
   tree: "rgba(180, 0, 35, 0.15)", // #B40023
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
-  cloudBase: "rgba(201, 138, 152, 1.0)", // #C98A98
-  cloudSh: "rgba(169, 79, 103, 1.0)",   // #A94F67
-  cloudHl: "rgba(228, 184, 193, 1.0)",  // #E4B8C1
+  cloudBase: "rgba(154, 167, 184, 1.0)", // #9AA7B8
+  cloudSh: "rgba(127, 139, 156, 1.0)",   // #7F8B9C
+  cloudHl: "rgba(197, 205, 214, 1.0)",  // #C5CDD6
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
@@ -321,7 +321,7 @@ export function DinoRunner() {
           x: W + 60,
           y: H * (0.02 + Math.random() * 0.22),
           s: 0.7 + Math.random() * 0.5,
-          a: 0.55 + Math.random() * 0.2, // 55% to 75% opacity
+          a: 0.55 + Math.random() * 0.15, // 55% to 70% opacity
           w: 0.9 + Math.random() * 0.5,  // Slight width stretch/squish
         });
         cCD = 75 + Math.random() * 85;
