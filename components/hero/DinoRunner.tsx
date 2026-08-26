@@ -108,16 +108,16 @@ const PAL = {
   tree: "rgba(180, 0, 35, 0.15)", // #B40023
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
-  cloudBase: "rgba(201, 138, 152, 0.9)", // #C98A98
-  cloudSh: "rgba(169, 79, 103, 0.9)",   // #A94F67
-  cloudHl: "rgba(228, 184, 193, 0.9)",  // #E4B8C1
+  cloudBase: "rgba(201, 138, 152, 1.0)", // #C98A98
+  cloudSh: "rgba(169, 79, 103, 1.0)",   // #A94F67
+  cloudHl: "rgba(228, 184, 193, 1.0)",  // #E4B8C1
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
 
 interface Obs { x: number; type: "sm" | "lg" | "tree" }
 interface Flyer { x: number; y: number; f: number; t: number; big: boolean }
-interface Drift { x: number; y: number; s: number }
+interface Drift { x: number; y: number; s: number; a: number; w: number }
 
 // ── Component ──────────────────────────────────────────────────────────────
 
@@ -209,14 +209,14 @@ export function DinoRunner() {
 
       if (!init) {
         cls = [
-          { x: W * 0.05, y: H * 0.08, s: 0.9 },
-          { x: W * 0.18, y: H * 0.16, s: 0.7 },
-          { x: W * 0.32, y: H * 0.05, s: 1.1 },
-          { x: W * 0.48, y: H * 0.12, s: 0.8 },
-          { x: W * 0.62, y: H * 0.18, s: 0.65 },
-          { x: W * 0.75, y: H * 0.07, s: 1.0 },
-          { x: W * 0.88, y: H * 0.14, s: 0.85 },
-          { x: W * 0.98, y: H * 0.04, s: 0.75 },
+          { x: W * 0.05, y: H * 0.08, s: 1.0, a: 0.65, w: 1.2 },
+          { x: W * 0.18, y: H * 0.16, s: 0.8, a: 0.55, w: 1.0 },
+          { x: W * 0.32, y: H * 0.05, s: 1.1, a: 0.70, w: 1.3 },
+          { x: W * 0.48, y: H * 0.12, s: 0.9, a: 0.60, w: 1.1 },
+          { x: W * 0.62, y: H * 0.18, s: 0.7, a: 0.50, w: 1.4 },
+          { x: W * 0.75, y: H * 0.07, s: 1.1, a: 0.75, w: 1.0 },
+          { x: W * 0.88, y: H * 0.14, s: 0.85, a: 0.65, w: 1.2 },
+          { x: W * 0.98, y: H * 0.04, s: 0.8, a: 0.60, w: 0.9 },
         ];
         init = true;
       }
@@ -227,12 +227,16 @@ export function DinoRunner() {
     const stamp = (
       sprite: [number, number][],
       ox: number, oy: number,
-      color: string, sz: number = PX
+      color: string, sz: number = PX,
+      a: number = 1.0, wScale: number = 1.0
     ) => {
       ctx.fillStyle = color;
-      const s = Math.max(1, Math.ceil(sz));
+      ctx.globalAlpha = a;
+      const s_w = Math.max(1, Math.ceil(sz * wScale));
+      const s_h = Math.max(1, Math.ceil(sz));
       for (const [sx, sy] of sprite)
-        ctx.fillRect(Math.round(ox + sx * sz), Math.round(oy + sy * sz), s, s);
+        ctx.fillRect(Math.round(ox + sx * sz * wScale), Math.round(oy + sy * sz), s_w, s_h);
+      ctx.globalAlpha = 1.0;
     };
 
     const gy = () => H * 0.78;
@@ -315,8 +319,10 @@ export function DinoRunner() {
       if (cCD <= 0) {
         cls.push({
           x: W + 60,
-          y: H * (0.03 + Math.random() * 0.2),
-          s: 0.6 + Math.random() * 0.6,
+          y: H * (0.02 + Math.random() * 0.22),
+          s: 0.7 + Math.random() * 0.5,
+          a: 0.55 + Math.random() * 0.2, // 55% to 75% opacity
+          w: 0.9 + Math.random() * 0.5,  // Slight width stretch/squish
         });
         cCD = 75 + Math.random() * 85;
       }
@@ -328,9 +334,9 @@ export function DinoRunner() {
 
       // Clouds
       for (const c of cls) {
-        stamp(CLOUD_BASE, c.x, c.y, PAL.cloudBase, PX * c.s);
-        stamp(CLOUD_SH, c.x, c.y, PAL.cloudSh, PX * c.s);
-        stamp(CLOUD_HL, c.x, c.y, PAL.cloudHl, PX * c.s);
+        stamp(CLOUD_BASE, c.x, c.y, PAL.cloudBase, PX * c.s, c.a, c.w);
+        stamp(CLOUD_SH, c.x, c.y, PAL.cloudSh, PX * c.s, c.a, c.w);
+        stamp(CLOUD_HL, c.x, c.y, PAL.cloudHl, PX * c.s, c.a, c.w);
       }
 
       // Ground
