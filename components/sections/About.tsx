@@ -59,7 +59,7 @@ export const About = () => {
               </div>
 
               {/* Institution */}
-              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] scale-x-[1.25] origin-right inline-block">
+              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.8] tracking-tighter text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] scale-x-[1.25] origin-right inline-block">
                 Kalasalingam Academy of<br/>Research and Education
               </h3>
 
