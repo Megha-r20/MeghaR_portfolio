@@ -974,27 +974,25 @@ export default function Home() {
 
               {/* CTA links */}
               <div className="mt-12 flex items-center gap-6 md:mt-14">
-                <Magnetic strength={0.2}>
-                  <a
-                    href="#projects"
-                    className="group relative block rounded-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:scale-105 active:scale-95"
-                  >
-                    {/* Always-on pulsing glow */}
+                <a
+                  href="#projects"
+                  className="group relative block rounded-full"
+                >
+                  {/* Always-on pulsing glow */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#8f001c] to-[#b40023] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                  />
+                  <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-[#b40023] bg-[#b40023] text-[#ffffff] shadow-[0_4px_20px_rgba(143, 0, 28, 0.15),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#8f001c] group-hover:bg-[#8f001c] group-hover:text-[#ffffff] group-hover:shadow-[0_0_30px_rgba(180, 0, 35, 0.15),inset_0_1px_0_rgba(255, 255, 255,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
+                    {/* Subtle top specular border highlight */}
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#8f001c] to-[#b40023] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                      className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
                     />
-                    <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-[#b40023] bg-[#b40023] text-[#ffffff] shadow-[0_4px_20px_rgba(143, 0, 28, 0.15),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#8f001c] group-hover:bg-[#8f001c] group-hover:text-[#ffffff] group-hover:shadow-[0_0_30px_rgba(180, 0, 35, 0.15),inset_0_1px_0_rgba(255, 255, 255,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
-                      {/* Subtle top specular border highlight */}
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
-                      />
-                      <span className="relative z-10">VIEW WORK</span>
-                      <ArrowUpRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </a>
-                </Magnetic>
+                    <span className="relative z-10">VIEW WORK</span>
+                    <ArrowUpRight className="relative z-10 h-4 w-4" />
+                  </span>
+                </a>
                 <span className="h-px w-8 bg-[#353545]/15" />
                 <a
                   href="#contact"
