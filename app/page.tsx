@@ -1304,9 +1304,9 @@ export default function Home() {
               </ScrollReveal>
 
               <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-semibold font-researcher">
-                <span>© 2026 · All systems imagined</span>
-                <span>Crafted in the dark · v0.26</span>
-                <span>Made with code, motion & care</span>
+                <span>© 2026 · MEGHA R</span>
+                <span>FULL-STACK DEVELOPER · V0.26</span>
+                <span>DESIGNED · BUILT · DEPLOYED</span>
               </div>
             </div>
           </div>
