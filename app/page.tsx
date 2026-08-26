@@ -841,19 +841,19 @@ export default function Home() {
 
                 <ScrollReveal
                   initialTransform="translateY(30px)"
-                  className="text-[13px] uppercase tracking-[0.15em] text-[#8f001c] font-researcher font-black text-center mt-2"
+                  className="text-[13px] uppercase tracking-[0.15em] text-[#746f70] font-researcher font-black text-center mt-2"
                 >
                   <div>
                     OPEN TO{" "}
-                    <span className="text-[#b40023] font-bold">
+                    <span className="text-[#b40023]">
                       INTERNSHIPS
                     </span>{" "}
                     &middot; 2026+
                   </div>
                   <div className="mt-1">
-                    BUILDING &middot;{" "}
-                    <span className="text-[#b40023] font-bold">LEARNING</span>{" "}
-                    &middot; CREATING
+                    <span className="text-[#b40023]">BUILDING</span> &middot;{" "}
+                    <span className="text-[#b40023]">LEARNING</span>{" "}
+                    &middot; <span className="text-[#b40023]">CREATING</span>
                   </div>
                 </ScrollReveal>
 
