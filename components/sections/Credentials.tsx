@@ -65,17 +65,17 @@ export function Credentials() {
   return (
     <section ref={sectionRef} id="credentials" className="relative mx-auto w-full py-[100px] md:py-[120px] z-10 block">
       {/* Background soft glow effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#a83050]/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b40023]/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 relative z-10 w-full">
         <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher">
           <span>06</span>
-          <span className="h-px w-12 bg-[#a83050]/40"></span>
-          <span className="text-[#a83050] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Credentials</span>
+          <span className="h-px w-12 bg-[#b40023]/40"></span>
+          <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Credentials</span>
         </div>
         
-        <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[50px] md:mb-[70px] text-[#211a18]">
-          Certifications <span className="text-[#a83050]">Ahead.</span>
+        <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[50px] md:mb-[70px] text-[#1e1e2f]">
+          Certifications <span className="text-[#b40023]">Ahead.</span>
         </h2>
       </div>
 
@@ -84,11 +84,11 @@ export function Credentials() {
         className="relative z-[100] w-full pb-4 pt-2"
       >
         <div 
-          className="group/ticker relative w-full border-y border-[#211a18]/5 bg-[#f7f1ea]/45 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.02)] overflow-hidden"
+          className="group/ticker relative w-full border-y border-[#1e1e2f]/5 bg-[#fcf0d6]/45 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.02)] overflow-hidden"
         >
           {/* Edge Fade Masks */}
-          <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-[#f7f1ea] via-[#f7f1ea]/50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-[#f7f1ea] via-[#f7f1ea]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-[#fcf0d6] via-[#fcf0d6]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-[#fcf0d6] via-[#fcf0d6]/50 to-transparent z-20 pointer-events-none"></div>
           
           <div
             className="flex w-max py-5 md:py-6 pr-16 gap-12 md:gap-16 items-center animate-marquee hover:[animation-play-state:paused] group-hover/ticker:[animation-play-state:paused] will-change-transform"
@@ -112,12 +112,12 @@ export function Credentials() {
                 >
                   {/* Active Indicator Dot */}
                   <div className={`relative flex items-center justify-center h-2 w-2 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}>
-                    <div className="h-full w-full rounded-full bg-[#a83050] shadow-[0_0_12px_rgba(168, 48, 80,0.6)]"></div>
-                    <div className="absolute inset-0 rounded-full border border-[#a83050]/40 animate-ping"></div>
+                    <div className="h-full w-full rounded-full bg-[#b40023] shadow-[0_0_12px_rgba(180, 0, 35, 0.15)]"></div>
+                    <div className="absolute inset-0 rounded-full border border-[#b40023]/40 animate-ping"></div>
                   </div>
                   
                   <span className={`font-display text-2xl md:text-3xl font-semibold tracking-tight transition-colors duration-300 ${
-                    isActive ? "text-[#211a18]" : "text-[#8c7d6e]"
+                    isActive ? "text-[#1e1e2f]" : "text-[#8c7d6e]"
                   }`}>
                     {cred.tickerLabel}
                   </span>
@@ -142,16 +142,16 @@ export function Credentials() {
             {/* Left: Certificate Placeholder (50%) */}
             <div className="relative group perspective-[1200px]">
               <motion.div 
-                className="relative rounded-[1.5rem] overflow-hidden bg-white shadow-[0_15px_40px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.04)] transition-transform duration-700 ease-out group-hover:scale-[1.01] group-hover:shadow-[0_20px_50px_rgba(168, 48, 80,0.08),0_0_0_1px_rgba(0,0,0,0.04)]"
+                className="relative rounded-[1.5rem] overflow-hidden bg-white shadow-[0_15px_40px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.04)] transition-transform duration-700 ease-out group-hover:scale-[1.01] group-hover:shadow-[0_20px_50px_rgba(180, 0, 35,0.08),0_0_0_1px_rgba(0,0,0,0.04)]"
                 whileHover={{ rotateY: 2, rotateX: 2 }}
               >
                 <div className="relative aspect-[1.4/1] w-full bg-[#fdfdfc] flex items-center justify-center">
                   {/* Fallback pattern */}
-                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#211a18_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1e1e2f_1px,transparent_1px)] [background-size:20px_20px]"></div>
                   
                   <div className="relative z-10 flex flex-col items-center justify-center gap-4">
-                    <Clock className="w-12 h-12 text-[#a83050]/40 animate-pulse" />
-                    <span className="font-researcher text-[#211a18]/40 text-sm tracking-[0.3em] font-bold uppercase">
+                    <Clock className="w-12 h-12 text-[#b40023]/40 animate-pulse" />
+                    <span className="font-researcher text-[#1e1e2f]/40 text-sm tracking-[0.3em] font-bold uppercase">
                       Coming Soon
                     </span>
                   </div>
@@ -162,21 +162,21 @@ export function Credentials() {
             {/* Right: Details (50%) */}
             <div className="flex flex-col space-y-6">
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#a83050] font-researcher">
+                <div className="flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#b40023] font-researcher">
                   <Clock className="w-3.5 h-3.5" />
                   <span>{activeCredential.status}</span>
                 </div>
                 
-                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight text-[#211a18]">
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight text-[#1e1e2f]">
                   {activeCredential.title}
                 </h3>
                 
                 <p className="font-syne text-lg md:text-xl font-medium text-[#8c7d6e]">
-                  Continuous <span className="text-[#211a18]">Learning</span>
+                  Continuous <span className="text-[#1e1e2f]">Learning</span>
                 </p>
               </div>
 
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#a83050] to-transparent opacity-40"></div>
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#b40023] to-transparent opacity-40"></div>
 
               <div className="space-y-6">
                 <p className="font-syne text-base md:text-lg leading-[1.6] text-[#6b6054] font-normal">
@@ -187,7 +187,7 @@ export function Credentials() {
                   <h4 className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#8c7d6e] font-researcher">Target Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {activeCredential.skills.map(skill => (
-                      <span key={skill} className="px-3 py-1.5 rounded-lg border border-[#e6e0d8] bg-white text-xs md:text-sm font-medium text-[#211a18] shadow-sm transition-all duration-300 hover:border-[#a83050]/40 hover:text-[#a83050] hover:shadow-[0_4px_12px_rgba(168, 48, 80,0.08)]">
+                      <span key={skill} className="px-3 py-1.5 rounded-lg border border-[#e6e0d8] bg-white text-xs md:text-sm font-medium text-[#1e1e2f] shadow-sm transition-all duration-300 hover:border-[#b40023]/40 hover:text-[#b40023] hover:shadow-[0_4px_12px_rgba(180, 0, 35,0.08)]">
                         {skill}
                       </span>
                     ))}

@@ -83,12 +83,12 @@ export function AnimatedHeroHeading({
                     key={wordIdx}
                     className="mr-[0.18em] last:mr-0"
                     style={{
-                      color: isAccent ? "#a83050" : "#3a3330",
+                      color: isAccent ? "#b40023" : "#353545",
                     }}
                   >
                     {root}
                     {punctuation && (
-                      <span style={{ color: "#3a3330" }}>{punctuation}</span>
+                      <span style={{ color: "#353545" }}>{punctuation}</span>
                     )}
                   </span>
                 );

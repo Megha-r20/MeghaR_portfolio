@@ -42,7 +42,7 @@ export function IntroPreloader({
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.85, ease: [0.85, 0, 0.15, 1] }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#f7f1ea] will-change-transform select-none pointer-events-auto"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#fcf0d6] will-change-transform select-none pointer-events-auto"
           style={{
             backgroundImage: `
               linear-gradient(to right, var(--preloader-grid) 1px, transparent 1px),

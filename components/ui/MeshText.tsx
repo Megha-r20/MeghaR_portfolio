@@ -104,13 +104,13 @@ interface MeshTextProps {
 
 export default function MeshText({
     text,
-    color = "#211a18",
+    color = "#1e1e2f",
     fontFamily = "inherit",
     fontWeight = "inherit",
     fontStyle = "inherit",
     letterSpacing = "inherit",
     colorSplit = true,
-    customColors = ["#a83050", "#670626"],
+    customColors = ["#b40023", "#8f001c"],
     force = 18,
 }: MeshTextProps) {
     const colorSplitRef = useRef<boolean>(colorSplit)

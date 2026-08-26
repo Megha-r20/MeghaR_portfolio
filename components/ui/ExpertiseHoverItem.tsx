@@ -63,7 +63,7 @@ export function ExpertiseHoverItem({ name, index, mouseY }: ExpertiseHoverItemPr
   return (
     <div
       ref={ref}
-      className="group/skill relative cursor-default border-b border-[#3a2a1c]/12 hover:border-[#a83050]/25 transition-colors duration-300"
+      className="group/skill relative cursor-default border-b border-[#3a2a1c]/12 hover:border-[#b40023]/25 transition-colors duration-300"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ perspective: "900px" }}
@@ -79,7 +79,7 @@ export function ExpertiseHoverItem({ name, index, mouseY }: ExpertiseHoverItemPr
       >
         {/* Left accent bar */}
         <motion.div
-          className="absolute left-0 top-0 w-[3px] rounded-r-full bg-[#a83050] origin-top"
+          className="absolute left-0 top-0 w-[3px] rounded-r-full bg-[#b40023] origin-top"
           style={{
             scaleY: glowOpacity,
             height: "100%",
@@ -89,13 +89,13 @@ export function ExpertiseHoverItem({ name, index, mouseY }: ExpertiseHoverItemPr
         {/* Soft highlight backdrop */}
         <motion.div
           aria-hidden
-          className="absolute inset-0 rounded-sm bg-gradient-to-r from-[#a83050]/[0.03] to-transparent"
+          className="absolute inset-0 rounded-sm bg-gradient-to-r from-[#b40023]/[0.03] to-transparent"
           style={{ opacity: glowOpacity }}
         />
 
         {/* Skill name — deeper in 3D */}
         <motion.span
-          className="relative font-sans text-sm text-[#3a3330]/65 transition-colors duration-300 group-hover/skill:text-[#3a3330]"
+          className="relative font-sans text-sm text-[#353545]/65 transition-colors duration-300 group-hover/skill:text-[#353545]"
           style={{ translateZ: 14 }}
         >
           {name}
@@ -103,7 +103,7 @@ export function ExpertiseHoverItem({ name, index, mouseY }: ExpertiseHoverItemPr
 
         {/* Index — slightly shallower */}
         <motion.span
-          className="relative font-researcher text-xs tracking-wider text-[#3a3330]/25 transition-colors duration-300 group-hover/skill:text-[#a83050]"
+          className="relative font-researcher text-xs tracking-wider text-[#353545]/25 transition-colors duration-300 group-hover/skill:text-[#b40023]"
           style={{ translateZ: 8 }}
         >
           {padded}

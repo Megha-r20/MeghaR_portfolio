@@ -30,7 +30,7 @@ function Sep() {
   return (
     <span
       aria-hidden="true"
-      className="mx-6 shrink-0 text-[#a83050] text-[10px] leading-none"
+      className="mx-6 shrink-0 text-[#b40023] text-[10px] leading-none"
       style={{ userSelect: "none" }}
     >
       ✦
@@ -108,7 +108,7 @@ export function BottomTicker() {
     <div
       className="w-full overflow-hidden"
       style={{
-        background: "#211a18",
+        background: "#1e1e2f",
         borderTop: "1px solid rgba(255,255,255,0.06)",
       }}
     >

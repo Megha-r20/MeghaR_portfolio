@@ -20,7 +20,7 @@ export function WordReveal({
   text,
   accentText,
   className = "",
-  accentClassName = "text-[#a83050]",
+  accentClassName = "text-[#b40023]",
 }: WordRevealProps) {
   const words = [
     ...text.split(" ").filter(Boolean).map((w) => ({ w, accent: false })),

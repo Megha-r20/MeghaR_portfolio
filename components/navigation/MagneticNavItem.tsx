@@ -98,19 +98,19 @@ export function MagneticNavItem({ href, label, isActive, mouseX }: MagneticNavIt
         scale,
         y,
         boxShadow: glow.get() > 0.05
-          ? `0 ${Math.round(glow.get() * 12)}px ${Math.round(glow.get() * 28)}px rgba(58, 51, 48,${(glow.get() * 0.12).toFixed(3)}), inset 0 1px 0 rgba(255,255,255,${(glow.get() * 0.4).toFixed(3)})`
+          ? `0 ${Math.round(glow.get() * 12)}px ${Math.round(glow.get() * 28)}px rgba(30, 30, 47,${(glow.get() * 0.12).toFixed(3)}), inset 0 1px 0 rgba(255,255,255,${(glow.get() * 0.4).toFixed(3)})`
           : undefined,
       }}
       className={`font-syne relative inline-block rounded-full px-3 py-1.5 text-[13px] font-semibold transition-colors duration-150 select-none ${
         isActive
-          ? "text-[#a83050]"
-          : "text-[#3a3330]/60 hover:text-[#3a3330]"
+          ? "text-[#b40023]"
+          : "text-[#353545]/60 hover:text-[#353545]"
       }`}
     >
       {/* Soft glass pill background — fades in on proximity */}
       <motion.span
         aria-hidden
-        className="absolute inset-0 rounded-full bg-[#3a3330]/[0.04] border border-[#3a3330]/[0.08]"
+        className="absolute inset-0 rounded-full bg-[#353545]/[0.04] border border-[#353545]/[0.08]"
         style={{ opacity: bgOpacity }}
       />
       <span className="relative z-10">{display}</span>

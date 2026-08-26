@@ -31,7 +31,7 @@ export function StatsCard() {
         WebkitBackdropFilter: "blur(24px) saturate(160%)",
         border: "1px solid rgba(255, 255, 255, 0.55)",
         boxShadow:
-          "0 22px 60px rgba(58, 51, 48,0.16), 0 4px 20px rgba(58, 51, 48,0.07), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 8px rgba(58, 51, 48,0.05)",
+          "0 22px 60px rgba(30, 30, 47,0.16), 0 4px 20px rgba(30, 30, 47,0.07), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 8px rgba(30, 30, 47,0.05)",
       }}
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export function StatsCard() {
       whileHover={{
         y: -3,
         boxShadow:
-          "0 30px 84px rgba(58, 51, 48,0.22), 0 4px 24px rgba(58, 51, 48,0.09), inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -2px 8px rgba(58, 51, 48,0.06)",
+          "0 30px 84px rgba(30, 30, 47,0.22), 0 4px 24px rgba(30, 30, 47,0.09), inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -2px 8px rgba(30, 30, 47,0.06)",
       }}
     >
       {/* Specular sheen — the top-light streak that reads as "glass" */}
@@ -61,13 +61,13 @@ export function StatsCard() {
           >
             <span
               className="font-montserrat text-2xl font-black leading-none tracking-tight"
-              style={{ color: stat.accent ? "#a83050" : "#211a18" }}
+              style={{ color: stat.accent ? "#b40023" : "#1e1e2f" }}
             >
               {stat.value}
             </span>
             <span
               className="font-researcher text-[8.5px] font-bold uppercase tracking-[0.22em] whitespace-nowrap"
-              style={{ color: "rgba(58, 51, 48,0.45)" }}
+              style={{ color: "rgba(30, 30, 47,0.45)" }}
             >
               {stat.label}
             </span>
@@ -86,12 +86,12 @@ export function StatsCard() {
         aria-label="Download my resume"
         className="group relative z-10 flex items-center justify-center gap-2.5 px-6 py-4 sm:py-5"
         style={{
-          backgroundColor: "rgb(33, 26, 24)",
-          color: "#f7f1ea",
+          backgroundColor: "rgb(30, 30, 47)",
+          color: "#fcf0d6",
           textDecoration: "none",
           minWidth: "9rem",
         }}
-        whileHover={{ backgroundColor: "rgb(168, 48, 80)", color: "#211a18" }}
+        whileHover={{ backgroundColor: "rgb(180, 0, 35)", color: "#1e1e2f" }}
         transition={{ duration: 0.22 }}
       >
         <Download

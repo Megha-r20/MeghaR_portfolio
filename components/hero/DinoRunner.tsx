@@ -84,17 +84,17 @@ const CLOUD = px(["  ###", " #####", "#######"]);
 // ── Palette ────────────────────────────────────────────────────────────────
 
 const PAL = {
-  dino: "rgba(103, 6, 38, 0.85)",       // Burgundy
-  gear: "rgba(168, 48, 80, 0.85)",      // Crimson Rose
-  lens: "rgba(245, 230, 235, 0.85)",    // Soft Blush
+  dino: "rgba(180, 0, 35, 0.15)", // #B40023
+  gear: "rgba(30, 30, 47, 0.85)", // #1E1E2F
+  lens: "rgba(255, 255, 255, 0.85)", // #FFFFFF
   shine: "rgba(255, 255, 255, 0.6)",
-  ground: "rgba(58, 51, 48, 0.75)",     // Body Text / Grid
-  pebble: "rgba(58, 51, 48, 0.6)",
-  cactus: "rgba(58, 51, 48, 0.75)",
-  tree: "rgba(168, 48, 80, 0.75)",      // Crimson Rose
-  bird: "rgba(117, 107, 101, 0.75)",    // Muted Text
-  ptero: "rgba(103, 6, 38, 0.65)",      // Burgundy
-  cloud: "rgba(117, 107, 101, 0.4)",    // Muted Text
+  ground: "rgba(30, 30, 47, 0.75)", // #1E1E2F
+  pebble: "rgba(30, 30, 47, 0.6)",
+  cactus: "rgba(30, 30, 47, 0.75)",
+  tree: "rgba(180, 0, 35, 0.15)", // #B40023
+  bird: "rgba(116, 111, 112, 0.75)", // Muted text
+  ptero: "rgba(180, 0, 35, 0.15)", // #B40023
+  cloud: "rgba(230, 230, 230, 0.6)", // Soft Gray
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
@@ -156,7 +156,7 @@ export function DinoRunner() {
         if (!offCtx) continue;
 
         // Apply a hue shift to turn the original orange/amber dino into Crimson Rose / Burgundy
-        offCtx.filter = "hue-rotate(-50deg) saturate(1.1)";
+        offCtx.filter = "hue-rotate(-42deg) saturate(1.3)";
         
         // Draw this specific dino frame
         offCtx.drawImage(
