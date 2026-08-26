@@ -80,19 +80,25 @@ const PTERO = [
 ];
 
 const CLOUD_BASE = px([
-  "    #",
-  "  ###",
-  " ###"
+  "        #####",
+  "      #########",
+  "    #############",
+  "   ###############",
+  "   ###############"
 ]);
 const CLOUD_HL = px([
-  "  ##",
-  " #",
-  "#"
+  "        #####",
+  "      ##",
+  "    ##",
+  "   #",
+  "   #"
 ]);
 const CLOUD_SH = px([
   "",
-  "     #",
-  "    ###"
+  "",
+  "",
+  "               ###",
+  "    ##############"
 ]);
 
 // ── Palette ────────────────────────────────────────────────────────────────
@@ -109,7 +115,7 @@ const PAL = {
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
   cloudBase: "rgba(174, 184, 194, 1.0)", // #AEB8C2
-  cloudSh: "rgba(174, 184, 194, 1.0)",   // #AEB8C2 (No dark shadow)
+  cloudSh: "rgba(154, 167, 184, 1.0)",   // #9AA7B8 (Shadow)
   cloudHl: "rgba(201, 208, 215, 1.0)",  // #C9D0D7
 };
 
@@ -301,7 +307,7 @@ export function DinoRunner() {
       if (bCD <= 0) {
         bds.push({
           x: W + 30,
-          y: g - 60 - Math.random() * (H * 0.3),
+          y: g - 95 - Math.random() * (H * 0.3),
           f: 0, t: 0,
           big: Math.random() > 0.6,
         });
