@@ -79,7 +79,21 @@ const PTERO = [
   ]),
 ];
 
-const CLOUD = px(["  ###", " #####", "#######"]);
+const CLOUD_BASE = px([
+  "    #",
+  "  ###",
+  " ###"
+]);
+const CLOUD_HL = px([
+  "  ##",
+  " #",
+  "#"
+]);
+const CLOUD_SH = px([
+  "",
+  "     #",
+  "    ###"
+]);
 
 // ── Palette ────────────────────────────────────────────────────────────────
 
@@ -94,7 +108,9 @@ const PAL = {
   tree: "rgba(180, 0, 35, 0.15)", // #B40023
   bird: "rgba(116, 111, 112, 0.75)", // Muted text
   ptero: "rgba(180, 0, 35, 0.15)", // #B40023
-  cloud: "rgba(230, 230, 230, 0.6)", // Soft Gray
+  cloudBase: "rgba(201, 138, 152, 0.9)", // #C98A98
+  cloudSh: "rgba(169, 79, 103, 0.9)",   // #A94F67
+  cloudHl: "rgba(228, 184, 193, 0.9)",  // #E4B8C1
 };
 
 // ── Internal types ─────────────────────────────────────────────────────────
@@ -311,7 +327,11 @@ export function DinoRunner() {
       ctx.clearRect(0, 0, W, H);
 
       // Clouds
-      for (const c of cls) stamp(CLOUD, c.x, c.y, PAL.cloud, PX * c.s);
+      for (const c of cls) {
+        stamp(CLOUD_BASE, c.x, c.y, PAL.cloudBase, PX * c.s);
+        stamp(CLOUD_SH, c.x, c.y, PAL.cloudSh, PX * c.s);
+        stamp(CLOUD_HL, c.x, c.y, PAL.cloudHl, PX * c.s);
+      }
 
       // Ground
       ctx.fillStyle = PAL.ground;
