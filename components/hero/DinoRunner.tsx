@@ -185,14 +185,14 @@ export function DinoRunner() {
              // Remap warm orange/amber pixels to dark crimson palette
              const luma = 0.3 * r + 0.59 * g + 0.11 * b;
              if (luma < 115) {
-                // Dark shadows/details: #4A0E18
-                data[i] = 74; data[i+1] = 14; data[i+2] = 24;
+                // Dark shadows/details: #8B001A
+                data[i] = 139; data[i+1] = 0; data[i+2] = 26;
              } else if (luma > 175) {
-                // Highlight pixels: #B8324A
-                data[i] = 184; data[i+1] = 50; data[i+2] = 74;
+                // Highlight pixels: #D92645
+                data[i] = 217; data[i+1] = 38; data[i+2] = 69;
              } else {
-                // Main body: #8B1E2D
-                data[i] = 139; data[i+1] = 30; data[i+2] = 45;
+                // Main body: #B40023
+                data[i] = 180; data[i+1] = 0; data[i+2] = 35;
              }
           }
         }
