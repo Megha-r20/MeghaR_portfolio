@@ -185,11 +185,11 @@ export function DinoRunner() {
              // Remap warm orange/amber pixels to dark crimson palette
              const luma = 0.3 * r + 0.59 * g + 0.11 * b;
              if (luma < 115) {
-                // Dark shadows/details: #8B001A
-                data[i] = 139; data[i+1] = 0; data[i+2] = 26;
+                // Dark shadows/details: #6B0014 (Deep contrast)
+                data[i] = 107; data[i+1] = 0; data[i+2] = 20;
              } else if (luma > 175) {
-                // Highlight pixels: #D92645
-                data[i] = 217; data[i+1] = 38; data[i+2] = 69;
+                // Highlight pixels: #EB3D5D (Bright punchy highlight)
+                data[i] = 235; data[i+1] = 61; data[i+2] = 93;
              } else {
                 // Main body: #B40023
                 data[i] = 180; data[i+1] = 0; data[i+2] = 35;
@@ -365,7 +365,7 @@ export function DinoRunner() {
 
       if (dinoLoaded && selectedDinoCanvas) {
         ctx.save();
-        ctx.globalAlpha = 0.92;
+        ctx.globalAlpha = 1.0;
         // Pixel-perfect crisp rendering
         ctx.imageSmoothingEnabled = false;
         ctx.drawImage(
