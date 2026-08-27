@@ -81,20 +81,17 @@ export function StatsMarquee() {
               {STATS.map((stat, j) => (
                 <div key={`${i}-${j}`} className="flex items-center gap-12 sm:gap-16 md:gap-24 group">
                   {/* Stat Item */}
-                  <div className="flex items-baseline gap-2 sm:gap-3 cursor-default transition-all duration-[600ms] ease-out hover:-translate-y-1">
-                    <span className="font-display font-bold text-2xl sm:text-3xl text-[#f6f2ec] tracking-tight transition-colors duration-500 group-hover:text-[#b40023]">
+                  <div className="flex items-baseline gap-2 sm:gap-3 cursor-default transition-all duration-[600ms] ease-out hover:-translate-y-1 group">
+                    <span className="font-display font-bold text-2xl sm:text-3xl text-[#f5f3ee] tracking-tight transition-colors duration-500 group-hover:text-[#b40023]">
                       <AnimatedValue value={stat.value} started={started} />
                     </span>
-                    <span
-                      className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#b40023]/70 group-hover:text-[#b40023] transition-colors duration-500 font-researcher"
-                      style={{ textShadow: "0 0 12px rgba(180, 0, 35, 0.15)" }}
-                    >
+                    <span className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[#f5f3ee]/80 group-hover:text-[#b40023] transition-colors duration-500 font-researcher">
                       {stat.label}
                     </span>
                   </div>
 
                   {/* Static separator dot — no Framer Motion */}
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#b40023]/40 group-hover:bg-[#b40023] transition-colors duration-500 shadow-[0_0_8px_rgba(180, 0, 35, 0.15)]" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#b40023]/30 group-hover:bg-[#b40023] transition-colors duration-500" />
                 </div>
               ))}
             </React.Fragment>
