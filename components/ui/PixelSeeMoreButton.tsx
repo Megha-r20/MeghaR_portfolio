@@ -56,7 +56,7 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
 
       // --- Dino Jump Physics ---
       if (state.isJumping) {
-        state.dinoVy -= 0.0018 * dt; // Gravity
+        state.dinoVy -= 0.0008 * dt; // Gravity
         state.dinoY += state.dinoVy * dt;
         if (state.dinoY <= 0) {
           state.dinoY = 0;
@@ -72,7 +72,7 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
       });
 
       // --- Moving Obstacles ---
-      const speed = 0.03 * dt; // Faster Obstacle speed
+      const speed = 0.03 * dt; // Obstacle speed
       state.obstacles.forEach((o) => {
         o.x -= speed;
       });
@@ -87,13 +87,13 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
       state.obstacles = state.obstacles.filter((o) => o.x > -20);
 
       // --- Auto-Jump Logic ---
-      // Dino is at x=12%. Jump takes ~600ms. In 600ms obstacle moves 18 units.
-      // We want obstacle to be at x=12% at the peak of the jump (300ms in).
-      // So at start of jump, obstacle should be at 12 + (0.03 * 300) = 21%.
-      const closestObstacle = state.obstacles.find((o) => o.x > 15 && o.x < 24);
+      // Dino is fixed around x=12%. Jump takes exactly 550ms.
+      // Max height is 30px (clears the 12.6px cactus safely).
+      // Trigger jump when obstacle is exactly between 18% and 21.5% to ensure it clears underneath.
+      const closestObstacle = state.obstacles.find((o) => o.x > 18 && o.x <= 21.5);
       if (closestObstacle && !state.isJumping) {
         state.isJumping = true;
-        state.dinoVy = 0.55; // Higher jump
+        state.dinoVy = 0.22; // Initial jump velocity
       }
 
       // --- DOM Updates ---
