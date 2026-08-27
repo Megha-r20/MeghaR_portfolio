@@ -245,5 +245,3 @@ npm run start
 
 **Copyright © 2026 Megha R.**  
 **All rights reserved.**
-
-This project is a personal portfolio and is not intended to be redistributed as a template or commercial product without permission.
