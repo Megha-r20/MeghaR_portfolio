@@ -59,6 +59,10 @@ export const metadata: Metadata = {
   title: "MEGHA R — Full-Stack Developer",
   description:
     "A cinematic futuristic tech identity experience. Full-Stack Developer. Building scalable web experiences.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
