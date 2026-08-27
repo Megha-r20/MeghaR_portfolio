@@ -1210,25 +1210,39 @@ export default function Home() {
                     disabled={
                       formState === "loading" || formState === "success"
                     }
-                    className="mt-[40px] md:mt-[50px] group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-[#b40023] bg-[#b40023] px-7 py-4 text-sm font-medium text-[#ffffff] transition-all hover:-translate-y-0.5 hover:bg-[#8f001c] hover:shadow-[0_0_60px_rgba(180, 0, 35, 0.15),inset_0_1px_0_rgba(255, 255, 255,0.4)] hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="mt-[40px] md:mt-[50px] group relative inline-block rounded-full disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    {formState === "loading" ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Transmitting...
-                      </>
-                    ) : formState === "success" ? (
-                      <>
-                        <CheckCircle2 className="h-4 w-4 text-green-950" />
-                        Transmission Received!
-                      </>
-                    ) : (
-                      <>
-                        <Sparkles className="h-4 w-4" />
-                        Send transmission
-                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </>
-                    )}
+                    {/* Always-on pulsing glow */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#8f001c] to-[#b40023] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+                    />
+                    <span className="relative z-10 flex px-7 py-4 items-center justify-center gap-3 rounded-full border border-[#b40023] bg-[#b40023] text-[#ffffff] shadow-[0_4px_20px_rgba(143, 0, 28, 0.15),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#8f001c] group-hover:bg-[#8f001c] group-hover:text-[#ffffff] group-hover:shadow-[0_0_30px_rgba(180, 0, 35, 0.15),inset_0_1px_0_rgba(255, 255, 255,0.4)] text-sm font-medium whitespace-nowrap">
+                      {/* Subtle top specular border highlight */}
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
+                      />
+                      <span className="relative z-10 flex items-center gap-3">
+                        {formState === "loading" ? (
+                          <>
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            Transmitting...
+                          </>
+                        ) : formState === "success" ? (
+                          <>
+                            <CheckCircle2 className="h-4 w-4 text-green-950" />
+                            Transmission Received!
+                          </>
+                        ) : (
+                          <>
+                            <Sparkles className="h-4 w-4" />
+                            Send transmission
+                            <ArrowUpRight className="h-4 w-4" />
+                          </>
+                        )}
+                      </span>
+                    </span>
                   </button>
                 </form>
               </ScrollReveal>
