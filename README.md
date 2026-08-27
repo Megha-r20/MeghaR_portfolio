@@ -1,6 +1,6 @@
 # MEGHA R — PORTFOLIO V2
 
-> A cinematic, interactive personal portfolio built to showcase my work, skills, projects, and development journey as a Full-Stack Developer.
+> An interactive personal portfolio built to showcase my work, skills, projects, and development journey as a Full-Stack Developer.
 
 ---
 
@@ -39,7 +39,7 @@ The goal is to provide a **clean, premium, and engaging user experience** while 
 - Obstacles move toward the dinosaur
 - Automatic jumping synchronized with incoming obstacles
 
-### 🖥️ Cinematic Hero Section
+### 🖥️ Interactive Hero Section
 - Large animated typography
 - Interactive navigation
 - Dynamic role/title presentation
@@ -237,8 +237,7 @@ npm run start
 
 ## 📸 Portfolio Preview
 
-<!-- Add a screenshot or GIF of the portfolio here -->
-![Portfolio Preview](./public/portfolio-v1-preview.png)
+![Portfolio Preview](./public/portfolio-v2-preview.png)
 
 ---
 
