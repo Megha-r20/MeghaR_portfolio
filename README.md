@@ -138,7 +138,7 @@ Complex interactive elements are optimized for smaller screens to maintain a smo
 ## 📂 Project Structure
 
 ```text
-portfolio_v2/
+MeghaR_portfolio/
 ├── app/
 │   ├── page.tsx
 │   ├── layout.tsx
@@ -187,8 +187,8 @@ portfolio_v2/
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/Megha-r20/portfolio_v2.git
-cd portfolio_v2
+git clone https://github.com/Megha-r20/MeghaR_portfolio.git
+cd MeghaR_portfolio
 ```
 
 **2. Install dependencies**
@@ -221,7 +221,7 @@ npm run start
 ## 🔗 Links
 
 - **Live Portfolio:** `[Add your live URL here once deployed]`
-- **GitHub Repository:** [https://github.com/Megha-r20/portfolio_v2](https://github.com/Megha-r20/portfolio_v2)
+- **GitHub Repository:** [https://github.com/Megha-r20/MeghaR_portfolio](https://github.com/Megha-r20/MeghaR_portfolio)
 
 ---
 
