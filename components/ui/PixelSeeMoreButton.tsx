@@ -18,7 +18,7 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
     dinoY: 0,
     dinoVy: 0,
     isJumping: false,
-    obstacles: [] as { id: number; x: number }[],
+    obstacles: [] as { id: number; x: number; hasJumped?: boolean; passed?: boolean }[],
     clouds: [
       { id: 1, x: 20, y: 15, speed: 0.005 },
       { id: 2, x: 70, y: 30, speed: 0.007 },
@@ -37,7 +37,10 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
     let requestRef: number;
 
     const update = (time: number) => {
-      if (!gameState.current.lastTime) gameState.current.lastTime = time;
+      // Fix potential dt spike on initial render or tab switch
+      if (!gameState.current.lastTime || time - gameState.current.lastTime > 100) {
+        gameState.current.lastTime = time;
+      }
       const dt = time - gameState.current.lastTime;
       gameState.current.lastTime = time;
 
@@ -78,8 +81,8 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
       });
 
       // --- Spawning Obstacles ---
-      if (time - state.lastSpawnTime > 1800 + Math.random() * 1500) {
-        state.obstacles.push({ id: state.obsIdCounter++, x: 120 });
+      if (time - state.lastSpawnTime > 2000 + Math.random() * 2000) {
+        state.obstacles.push({ id: state.obsIdCounter++, x: 120, hasJumped: false, passed: false });
         state.lastSpawnTime = time;
       }
 
@@ -87,13 +90,24 @@ export function PixelSeeMoreButton({ onClick, expanded }: Props) {
       state.obstacles = state.obstacles.filter((o) => o.x > -20);
 
       // --- Auto-Jump Logic ---
-      // Dino is fixed around x=12%. Jump takes exactly 550ms.
-      // Max height is 30px (clears the 12.6px cactus safely).
-      // Trigger jump when obstacle is exactly between 18% and 21.5% to ensure it clears underneath.
-      const closestObstacle = state.obstacles.find((o) => o.x > 18 && o.x <= 21.5);
-      if (closestObstacle && !state.isJumping) {
-        state.isJumping = true;
-        state.dinoVy = 0.22; // Initial jump velocity
+      // Dino is at x=12%. We guarantee EXACTLY ONE jump per obstacle.
+      const upcomingObstacle = state.obstacles.find((o) => o.x > 0 && !o.passed);
+      
+      if (upcomingObstacle) {
+        // Trigger jump precisely when obstacle hits 22% mark
+        if (upcomingObstacle.x <= 22 && !upcomingObstacle.hasJumped) {
+          upcomingObstacle.hasJumped = true;
+          
+          if (!state.isJumping) {
+            state.isJumping = true;
+            state.dinoVy = 0.22; // Initial jump velocity
+          }
+        }
+        
+        // Mark as passed once it's safely behind the Dino
+        if (upcomingObstacle.x < 5) {
+          upcomingObstacle.passed = true;
+        }
       }
 
       // --- DOM Updates ---
