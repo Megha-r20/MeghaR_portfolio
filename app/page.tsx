@@ -519,6 +519,18 @@ export default function Home() {
       github: "https://github.com/Megha-r20/Megha_portfolio.git",
       image: "/portfolio-v1-preview.png",
     },
+    {
+      num: "/03",
+      title: "IEEE EDUCATION SOCIETY WEBSITE",
+      cat: "FRONT-END • CONCEPT",
+      desc: "A demo chapter website showcasing events, gallery, and team sections. Note: This is a concept created for design practice, not an official IEEE website.",
+      tags: ["REACT.JS", "TAILWIND CSS"],
+      status: "LIVE",
+      year: "2024",
+      link: "https://ieee-education-society-kare.netlify.app/",
+      github: "https://github.com/Megha-r20/IEEE_Education_Society_KARE.git",
+      image: "/ieee-preview.png",
+    },
   ];
 
   const timeline = [
