@@ -26,7 +26,7 @@ export function StatsCard() {
       style={{
         // Liquid glass: translucent so the grid shows through, saturated
         // backdrop for that refractive richness.
-        background: "rgba(246, 242, 236, 0.42)",
+        background: "rgba(255, 255, 255, 0.42)",
         backdropFilter: "blur(24px) saturate(160%)",
         WebkitBackdropFilter: "blur(24px) saturate(160%)",
         border: "1px solid rgba(255, 255, 255, 0.55)",
@@ -87,7 +87,7 @@ export function StatsCard() {
         className="group relative z-10 flex items-center justify-center gap-2.5 px-6 py-4 sm:py-5"
         style={{
           backgroundColor: "rgb(30, 30, 47)",
-          color: "#fcf0d6",
+          color: "#ffffff",
           textDecoration: "none",
           minWidth: "9rem",
         }}

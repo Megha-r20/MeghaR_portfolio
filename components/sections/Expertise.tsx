@@ -154,7 +154,7 @@ function StickyDigitCounter({ activeIndex }: { activeIndex: number }) {
     <div className="hidden md:block md:w-[35%] md:flex-shrink-0">
       <div className="sticky top-[200px]">
         <div
-          className="flex font-display font-bold text-[#fcf0d6]/10 light:text-black leading-none"
+          className="flex font-display font-bold text-[#ffffff]/10 light:text-black leading-none"
           style={{ fontSize: "18vw" }}
         >
           <DigitColumn digit={tens} />
@@ -179,7 +179,7 @@ const ExpertiseCategoryBlock = React.forwardRef<
       className="min-h-[80vh] flex flex-col justify-center border-t border-[#3a2a1c]/35 light:border-black/10 last:border-b"
     >
       {/* Mobile-only ghost number */}
-      <span className="md:hidden font-display font-bold text-6xl text-[#fcf0d6]/10 light:text-black mb-4">
+      <span className="md:hidden font-display font-bold text-6xl text-[#ffffff]/10 light:text-black mb-4">
         {padded}
       </span>
 
@@ -294,7 +294,7 @@ export function Expertise() {
               "opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#fcf0d6] light:text-[#1e1e2f] leading-[0.9] tracking-[-0.03em]">
+          <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#ffffff] light:text-[#1e1e2f] leading-[0.9] tracking-[-0.03em]">
             My <span className="text-[#b40023]">Expertise</span>
           </h2>
         </div>

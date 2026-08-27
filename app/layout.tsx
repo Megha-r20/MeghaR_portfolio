@@ -73,7 +73,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head></head>
-      <body className="antialiased min-h-screen bg-[#fcf0d6]">
+      <body className="antialiased min-h-screen bg-[#ffffff]">
         <CustomCursor />
         <CursorGlow />
         <SmoothScroll>{children}</SmoothScroll>

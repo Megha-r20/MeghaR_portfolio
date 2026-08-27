@@ -84,11 +84,11 @@ export function Credentials() {
         className="relative z-[100] w-full pb-4 pt-2"
       >
         <div 
-          className="group/ticker relative w-full border-y border-[#1e1e2f]/5 bg-[#fcf0d6]/45 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.02)] overflow-hidden"
+          className="group/ticker relative w-full border-y border-[#1e1e2f]/5 bg-[#ffffff]/45 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.02)] overflow-hidden"
         >
           {/* Edge Fade Masks */}
-          <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-[#fcf0d6] via-[#fcf0d6]/50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-[#fcf0d6] via-[#fcf0d6]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
           
           <div
             className="flex w-max py-5 md:py-6 pr-16 gap-12 md:gap-16 items-center animate-marquee hover:[animation-play-state:paused] group-hover/ticker:[animation-play-state:paused] will-change-transform"

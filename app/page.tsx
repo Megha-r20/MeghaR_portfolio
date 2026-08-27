@@ -111,7 +111,7 @@ function ProjectCard({ project }: { project: Project }) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-[28px] md:rounded-[40px] shadow-[0_45px_100px_-30px_rgba(180, 0, 35, 0.15)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       ></div>
-      <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#353545]/10 bg-gradient-to-br from-white via-[#f3e5c8] to-[#f3e5c8] shadow-[0_30px_80px_-30px_rgba(30, 30, 47,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#b40023]/30">
+      <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#353545]/10 bg-gradient-to-br from-white via-[#f8f8f8] to-[#f8f8f8] shadow-[0_30px_80px_-30px_rgba(30, 30, 47,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#b40023]/30">
 
         <div className="relative grid grid-cols-1 items-center gap-10 p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
           {/* ── Left: Icons, Title, Description, Tech Tags ── */}
@@ -123,7 +123,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} source on GitHub`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#fcf0d6] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -132,7 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${project.title} live site`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#fcf0d6] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
               >
                 <Link2 className="h-5 w-5" />
               </a>
@@ -192,7 +192,7 @@ function ProjectCard({ project }: { project: Project }) {
               </div>
 
               {/* Browser Screen / Screenshot */}
-              <div className="relative w-full bg-[#fcf0d6]">
+              <div className="relative w-full bg-[#ffffff]">
                 <motion.div
                   initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
                   whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
@@ -418,7 +418,7 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen w-full bg-[#fcf0d6] flex items-center justify-center">
+      <div className="min-h-screen w-full bg-[#ffffff] flex items-center justify-center">
         <Loader2 className="h-6 w-6 animate-spin text-[#b40023]" />
       </div>
     );
@@ -551,7 +551,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative min-h-screen w-full overflow-x-clip bg-[#fcf0d6]">
+    <main className="relative min-h-screen w-full overflow-x-clip bg-[#ffffff]">
       <IntroPreloader onReadyToReveal={() => setIsReadyToReveal(true)} />
 
       <div
@@ -1027,7 +1027,7 @@ export default function Home() {
             <WordReveal
               text="A modern arsenal for"
               accentText="building at the edge."
-              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f]"
+              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
             />
           </div>
 
@@ -1093,7 +1093,7 @@ export default function Home() {
               <WordReveal
                 text="Projects that"
                 accentText="define me."
-                className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f]"
+                className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
               />
               <div className="text-[11px] uppercase tracking-[0.25em] text-[#746f70]/70 font-researcher">
                 {projects.length} works
@@ -1123,7 +1123,7 @@ export default function Home() {
           <WordReveal
             text="My vision towards"
             accentText="what I am striving to."
-            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f]"
+            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
           />
 
           {/* Timeline Grid — line draws in on scroll, dots spring in */}
@@ -1168,7 +1168,7 @@ export default function Home() {
                         disabled={
                           formState === "loading" || formState === "success"
                         }
-                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#fcf0d6] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#fcf0d6] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0"
+                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#ffffff] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#ffffff] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0"
                       />
                     </div>
                     <div>
@@ -1184,7 +1184,7 @@ export default function Home() {
                         disabled={
                           formState === "loading" || formState === "success"
                         }
-                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#fcf0d6] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#fcf0d6] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0"
+                        className="flex w-full py-1 transition-colors h-12 rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#ffffff] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#ffffff] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0"
                       />
                     </div>
                   </div>
@@ -1201,7 +1201,7 @@ export default function Home() {
                       disabled={
                         formState === "loading" || formState === "success"
                       }
-                      className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#fcf0d6] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#fcf0d6] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
+                      className="flex w-full py-2 transition-colors rounded-none border-0 border-b border-[#353545]/70 bg-transparent px-0 text-base text-[#ffffff] placeholder:text-[#746f70]/55 focus:outline-none focus:border-[#b40023] dark:text-[#ffffff] dark:border-[#353545]/70 dark:placeholder:text-[#746f70]/55 light:text-black light:border-black/20 focus:ring-0 resize-none"
                     />
                   </div>
 
@@ -1246,7 +1246,7 @@ export default function Home() {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] transition-colors"
+                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] transition-colors"
                   >
                     megha.ragumani@gmail.com
                   </a>
@@ -1275,7 +1275,7 @@ export default function Home() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between border-b border-[#353545]/55 dark:border-[#353545]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#fcf0d6] text-[#746f70]"
+                      className="group flex items-center justify-between border-b border-[#353545]/55 dark:border-[#353545]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#ffffff] text-[#746f70]"
                     >
                       <span className="flex items-center gap-3 text-[#c9bcaa] group-hover:text-[#b40023] transition-colors">
                         {social.icon}
@@ -1298,7 +1298,7 @@ export default function Home() {
 
             <div className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-20 md:px-12 md:pt-10 md:pb-24">
               <ScrollReveal initialTransform="translateY(100px)">
-                <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#fcf0d6] dark:text-[#fcf0d6] light:text-[#1e1e2f] text-glow">
+                <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] text-glow">
                   HIRE ME !!
                 </h3>
               </ScrollReveal>

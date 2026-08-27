@@ -36,7 +36,7 @@ export const AnimatedDock = ({ className, items }: AnimatedDockProps) => {
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "flex h-14 items-center gap-3 rounded-full bg-[#fcf0d6]/10 border border-[#3a2a1c]/5 px-3 py-1.5 backdrop-blur-md",
+        "flex h-14 items-center gap-3 rounded-full bg-[#ffffff]/10 border border-[#3a2a1c]/5 px-3 py-1.5 backdrop-blur-md",
         className,
       )}
     >
