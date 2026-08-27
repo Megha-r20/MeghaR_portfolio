@@ -226,7 +226,6 @@ function ProjectsShowcase({ projects }: { projects: Project[] }) {
   const [expanded, setExpanded] = useState(false);
   
   const visibleProjects = expanded ? projects : projects.slice(0, 3);
-  const hasMore = projects.length > 3;
 
   return (
     <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-[35px] md:gap-y-[50px] px-6 md:px-12">
@@ -236,14 +235,12 @@ function ProjectsShowcase({ projects }: { projects: Project[] }) {
         </ScrollReveal>
       ))}
 
-      {hasMore && (
-        <div className="mt-8 flex justify-center w-full">
-          <PixelSeeMoreButton 
-            onClick={() => setExpanded(!expanded)} 
-            expanded={expanded} 
-          />
-        </div>
-      )}
+      <div className="mt-8 flex justify-center w-full">
+        <PixelSeeMoreButton 
+          onClick={() => setExpanded(!expanded)} 
+          expanded={expanded} 
+        />
+      </div>
     </div>
   );
 }
@@ -533,30 +530,6 @@ export default function Home() {
       link: "https://megha-r.netlify.app/",
       github: "https://github.com/Megha-r20/Megha_portfolio.git",
       image: "/portfolio-v1-preview.png",
-    },
-    {
-      num: "/03",
-      title: "IEEE EDUCATION SOCIETY WEBSITE",
-      cat: "FRONT-END • CONCEPT",
-      desc: "A demo chapter website showcasing events, gallery, and team sections. Note: This is a concept created for design practice, not an official IEEE website.",
-      tags: ["REACT.JS", "TAILWIND CSS"],
-      status: "LIVE",
-      year: "2024",
-      link: "https://ieee-education-society-kare.netlify.app/",
-      github: "https://github.com/Megha-r20/IEEE_Education_Society_KARE.git",
-      image: "/ieee-preview.png",
-    },
-    {
-      num: "/04",
-      title: "TEST DEMO PROJECT",
-      cat: "EXPERIMENTAL • DEMO",
-      desc: "A temporary demo project added to test the pixel-art SEE MORE button functionality.",
-      tags: ["TEST", "DEMO"],
-      status: "STAGING",
-      year: "2026",
-      link: "#",
-      github: "#",
-      image: "",
     },
   ];
 
