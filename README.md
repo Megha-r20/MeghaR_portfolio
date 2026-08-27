@@ -230,7 +230,7 @@ npm run start
 **Megha R**  
 *Full-Stack Developer*  
 - **Email:** [megha.ragumani@gmail.com](mailto:megha.ragumani@gmail.com)
-- **LinkedIn:** [https://www.linkedin.com/in/megha-r2005](https://www.linkedin.com/in/megha-r2005)
+- **LinkedIn:** [https://www.linkedin.com/in/megha-r20](https://www.linkedin.com/in/megha-r20)
 - **GitHub:** [https://github.com/Megha-r20](https://github.com/Megha-r20)
 
 ---

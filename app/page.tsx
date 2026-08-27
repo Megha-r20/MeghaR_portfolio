@@ -603,7 +603,7 @@ export default function Home() {
             },
             {
               label: "LinkedIn",
-              href: "https://www.linkedin.com/in/megha-r20/",
+              href: "https://www.linkedin.com/in/megha-r20",
               icon: (
                 <svg
                   className="h-[24px] w-[24px]"
@@ -1298,7 +1298,7 @@ export default function Home() {
                     },
                     {
                       label: "LinkedIn",
-                      href: "https://www.linkedin.com/in/megha-r20/",
+                      href: "https://www.linkedin.com/in/megha-r20",
                       icon: <Linkedin className="h-4 w-4" />,
                     },
                     {
