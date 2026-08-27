@@ -507,6 +507,18 @@ export default function Home() {
       github: "https://github.com/kalviumcommunity/s82_Megha_Capstone_Meraki",
       image: "/meraki-preview.png",
     },
+    {
+      num: "/02",
+      title: "MEGHA R — PORTFOLIO V1",
+      cat: "FRONT-END • PORTFOLIO",
+      desc: "An earlier personal portfolio showcasing my projects, skills, and development journey through an interactive developer-focused interface.",
+      tags: ["REACT", "JAVASCRIPT", "CSS"],
+      status: "LIVE",
+      year: "2024",
+      link: "https://megha-r.netlify.app/",
+      github: "https://github.com/Megha-r20/Megha_portfolio.git",
+      image: "/portfolio-v1-preview.png",
+    },
   ];
 
   const timeline = [
@@ -643,9 +655,8 @@ export default function Home() {
               </span>
               {/* Hover label — glowing crimson text */}
               <span
-                className="pointer-events-none absolute right-full top-1/2 z-20 mr-3 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-full border border-[var(--primary)]/30 bg-[var(--dock-label-bg)] px-3.5 py-2 font-researcher text-[9px] font-bold uppercase tracking-[0.3em] opacity-0 shadow-[0_8px_24px_rgba(180, 0, 35, 0.15),0_0_12px_rgba(180, 0, 35, 0.08)] backdrop-blur-md transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+                className="pointer-events-none absolute right-full top-1/2 z-20 mr-3 hidden -translate-y-1/2 translate-x-1 whitespace-nowrap rounded-full border border-[#b40023]/30 bg-[var(--dock-label-bg)] px-3.5 py-2 font-researcher text-[9px] font-bold uppercase tracking-[0.3em] opacity-0 shadow-[0_8px_24px_rgba(180, 0, 35, 0.15),0_0_12px_rgba(180, 0, 35, 0.08)] backdrop-blur-md transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block text-[#b40023]"
                 style={{
-                  color: "var(--primary)",
                   textShadow:
                     "0 0 8px rgba(180, 0, 35, 0.15), 0 0 20px rgba(180, 0, 35, 0.15)",
                 }}
