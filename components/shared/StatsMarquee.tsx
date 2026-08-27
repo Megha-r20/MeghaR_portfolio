@@ -65,7 +65,7 @@ export function StatsMarquee() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-2 sm:py-2.5 border-y border-white/10 bg-[#1F1C17] shadow-[0_8px_24px_rgba(0,0,0,0.22),0_-8px_24px_rgba(0,0,0,0.22)] overflow-hidden z-20"
+      className="relative w-full py-2 sm:py-2.5 border-y border-white/10 bg-[#1e1e2f] shadow-[0_8px_24px_rgba(0,0,0,0.22),0_-8px_24px_rgba(0,0,0,0.22)] overflow-hidden z-20"
     >
       <div className="relative z-0 flex overflow-hidden whitespace-nowrap group/marquee">
         <div
@@ -81,7 +81,7 @@ export function StatsMarquee() {
               {STATS.map((stat, j) => (
                 <div key={`${i}-${j}`} className="flex items-center gap-12 sm:gap-16 md:gap-24 group">
                   {/* Stat Item */}
-                  <div className="flex items-baseline gap-2 sm:gap-3 cursor-default transition-all duration-[600ms] ease-out hover:-translate-y-1 group">
+                  <div className="flex items-baseline gap-2 sm:gap-3 cursor-default transition-all duration-[600ms] ease-out hover:-translate-y-1">
                     <span className="font-display font-bold text-2xl sm:text-3xl text-[#f5f3ee] tracking-tight transition-colors duration-500 group-hover:text-[#b40023]">
                       <AnimatedValue value={stat.value} started={started} />
                     </span>
@@ -91,7 +91,7 @@ export function StatsMarquee() {
                   </div>
 
                   {/* Static separator dot — no Framer Motion */}
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#b40023]/30 group-hover:bg-[#b40023] transition-colors duration-500" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#b40023]/80 group-hover:bg-[#b40023] transition-colors duration-500" />
                 </div>
               ))}
             </React.Fragment>
