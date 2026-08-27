@@ -90,8 +90,8 @@
   --accent: #8f001c;
 
   /* ── Grid overlay ── */
-  --grid-color: rgba(30, 30, 47, 0.05);
-  --grid-color-hz: rgba(30, 30, 47, 0.07);
+  --grid-color: rgba(30, 30, 47, 0.02);
+  --grid-color-hz: rgba(30, 30, 47, 0.03);
 
   /* ── Glass / blur surfaces ── */
   --glass-bg: rgba(255, 255, 255, 0.42);
@@ -246,8 +246,8 @@
   --fg-mute: #746f70;
   --fg-faint: rgba(30, 30, 47, 0.25);
 
-  --grid-color: rgba(30, 30, 47, 0.05);
-  --grid-color-hz: rgba(30, 30, 47, 0.07);
+  --grid-color: rgba(30, 30, 47, 0.02);
+  --grid-color-hz: rgba(30, 30, 47, 0.03);
 
   --glass-bg: rgba(255, 255, 255, 0.42);
   --glass-border: rgba(255, 255, 255, 0.55);
