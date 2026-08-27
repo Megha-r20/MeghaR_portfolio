@@ -181,8 +181,8 @@ export function DinoRunner() {
           const r = data[i], g = data[i + 1], b = data[i + 2];
           if (r > 215 && g > 210 && b > 200) {
             data[i + 3] = 0; // Transparent background
-          } else if (r > g + 15 && r > b + 15) {
-             // Remap warm orange/amber pixels to dark crimson palette
+          } else if (Math.max(r, g, b) - Math.min(r, g, b) > 25) {
+             // Remap all colorful pixels (any hue) to the dark crimson palette
              const luma = 0.3 * r + 0.59 * g + 0.11 * b;
              if (luma < 115) {
                 // Dark shadows/details: #6B0014 (Deep contrast)
