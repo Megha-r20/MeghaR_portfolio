@@ -825,7 +825,7 @@ export default function Home() {
                 </span>
                 <span>Available for projects · 2026</span>
               </div>
-              <div className="hidden md:block">Portfolio · v0.26</div>
+              <div className="hidden md:block">Portfolio · v2</div>
             </ScrollReveal>
 
             {/* ── MASSIVE HERO TITLE — full viewport width, no container constraint ── */}
@@ -1342,7 +1342,7 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-semibold font-researcher">
                 <span>© 2026 · MEGHA R</span>
-                <span>FULL-STACK DEVELOPER · V0.26</span>
+                <span>FULL-STACK DEVELOPER · V2</span>
                 <span>DESIGNED · BUILT · DEPLOYED</span>
               </div>
             </div>
