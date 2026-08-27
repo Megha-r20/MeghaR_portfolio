@@ -25,12 +25,10 @@ export function IntroPreloader({
     // Progress hit exactly 100%
     setStartOutro(true);
 
-    // Short delay to let the "SYSTEM READY" text flash, then trigger reveal
-    setTimeout(() => {
-      if (onReadyToReveal) onReadyToReveal(); // Unhide the main page underneath
-      setIsVisible(false); // Slide up the overlay
-      document.body.style.overflow = ""; // Unlock scroll
-    }, 600);
+    // Immediately trigger reveal without extra delay
+    if (onReadyToReveal) onReadyToReveal();
+    setIsVisible(false); // Slide up the overlay
+    document.body.style.overflow = ""; // Unlock scroll
   };
 
   const words = ["Innovating,", "Empowering,", "Delivering."];
@@ -105,8 +103,8 @@ export function IntroPreloader({
               className="w-full px-4 sm:px-0"
             >
               <IntroLoadingBar
-                startDelay={500}
-                duration={3500}
+                startDelay={0}
+                duration={2000}
                 onComplete={handleLoadingComplete}
               />
             </motion.div>
