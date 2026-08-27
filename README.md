@@ -6,7 +6,19 @@
 
 ## 🚀 Overview
 
-**MEGHA R — PORTFOLIO V2** is a highly interactive and visually immersive personal portfolio built with **Next.js, React, and Tailwind CSS**. The portfolio combines modern web development with motion-rich micro-interactions, pixel-art elements, smooth scrolling, and a distinctive visual identity to create a memorable browsing experience.
+**MEGHA R — PORTFOLIO V2** is my personal portfolio website, designed and developed to showcase my skills, projects, education, experience, and development journey as a Full-Stack Developer.
+
+Built with **Next.js, React, and Tailwind CSS**, the portfolio combines modern web development with smooth animations, interactive micro-interactions, pixel-art elements, responsive design, and a distinctive visual identity to create an engaging and memorable browsing experience.
+
+---
+
+## 👋 About Me
+
+Hi, I'm **Megha R**, a **B.Tech Computer Science Engineering student** specializing in **Software Product Engineering**. I'm passionate about building modern, responsive, and scalable web applications and turning ideas into meaningful digital experiences.
+
+I enjoy working across the **MERN stack** and exploring modern web technologies, with a strong interest in **full-stack development, software engineering, interactive UI, and building practical solutions to real-world problems**.
+
+I'm continuously learning, building projects, and improving my technical skills as I work toward becoming a strong software engineer.
 
 ---
 
