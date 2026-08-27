@@ -1260,7 +1260,7 @@ export default function Home() {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#c9bcaa] md:text-3xl text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] transition-colors"
+                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#b40023] hover:[text-shadow:0_0_16px_rgba(180,0,35,0.6)] active:text-[#8f001c] active:[text-shadow:0_0_12px_rgba(143,0,28,0.8)] md:text-3xl text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] transition-all duration-300"
                   >
                     megha.ragumani@gmail.com
                   </a>
