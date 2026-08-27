@@ -222,13 +222,41 @@ function ProjectCard({ project }: { project: Project }) {
 // on every screen size.
 
 function ProjectsShowcase({ projects }: { projects: Project[] }) {
+  const [expanded, setExpanded] = useState(false);
+  
+  const visibleProjects = expanded ? projects : projects.slice(0, 3);
+  const hasMore = projects.length > 3;
+
   return (
     <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-[35px] md:gap-y-[50px] px-6 md:px-12">
-      {projects.map((project) => (
+      {visibleProjects.map((project) => (
         <ScrollReveal key={project.title} initialTransform="translateY(80px)">
           <ProjectCard project={project} />
         </ScrollReveal>
       ))}
+
+      {hasMore && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="group relative inline-block rounded-full"
+          >
+            {/* Always-on pulsing glow */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-r from-[#8f001c] to-[#b40023] opacity-40 blur-lg animate-pulse transition-opacity duration-500 group-hover:opacity-80"
+            />
+            <span className="relative z-10 flex h-12 px-8 items-center justify-center gap-2 rounded-full border border-[#b40023] bg-[#b40023] text-[#ffffff] shadow-[0_4px_20px_rgba(143, 0, 28, 0.15),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 group-hover:border-[#8f001c] group-hover:bg-[#8f001c] group-hover:text-[#ffffff] group-hover:shadow-[0_0_30px_rgba(180, 0, 35, 0.15),inset_0_1px_0_rgba(255, 255, 255,0.4)] text-[11px] font-black uppercase tracking-[0.25em] font-researcher whitespace-nowrap">
+              {/* Subtle top specular border highlight */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(155deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_28%,transparent_50%)] transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <span className="relative z-10">{expanded ? "SHOW LESS" : "SEE MORE"}</span>
+            </span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
