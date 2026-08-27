@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 const STATS = [
   { value: "10+", label: "PROJECTS BUILT" },
-  { value: "3", label: "AI MODELS" },
   { value: "2+", label: "YEARS CODING" },
   { value: "500+", label: "COMMITS" },
   { value: "96.8%", label: "MODEL ACCURACY" },
