@@ -81,8 +81,8 @@ export function StatsCard() {
 
       {/* Resume CTA */}
       <motion.a
-        href="/Prajit_Balaji_Resume.pdf"
-        download="Prajit_Balaji_Resume.pdf"
+        href="/Megha_R_Resume.pdf"
+        download="Megha_R_Resume.pdf"
         aria-label="Download my resume"
         className="group relative z-10 flex items-center justify-center gap-2 px-4 py-3 sm:gap-2.5 sm:px-6 sm:py-5"
         style={{

@@ -776,8 +776,8 @@ export default function Home() {
 
               <div className="pt-2 mt-2 border-t border-[#1e1e2f]/10">
                 <a
-                  href="/Prajit_Balaji_Resume.pdf"
-                  download="Prajit_Balaji_Resume.pdf"
+                  href="/Megha_R_Resume.pdf"
+                  download="Megha_R_Resume.pdf"
                   onClick={() => setMenuOpen(false)}
                   className="font-syne flex items-center gap-2 rounded-xl px-4 py-2.5 text-[15px] font-semibold text-[#1e1e2f] hover:text-[#b40023] hover:bg-[#1e1e2f]/5"
                 >

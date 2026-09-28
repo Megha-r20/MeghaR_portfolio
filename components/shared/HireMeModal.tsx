@@ -281,9 +281,9 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                   style={{ aspectRatio: "8.5 / 11.5" }}
                 >
                   <iframe
-                    src="/Prajit_Balaji_Resume.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0&statusbar=0"
+                    src="/Megha_R_Resume.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0&statusbar=0"
                     className="absolute -top-[4px] -left-[6px] w-[calc(100%+12px)] h-[calc(100%+8px)] pointer-events-none border-none bg-white"
-                    title="Prajit Balaji Resume"
+                    title="Megha R Resume"
                   />
                   <div className="absolute inset-0 z-10" />
                 </div>
@@ -292,8 +292,8 @@ export function HireMeModal({ isOpen, onClose }: HireMeModalProps) {
                 <div className="mt-5 flex justify-center shrink-0">
                   <Magnetic strength={0.3}>
                     <a
-                      href="/Prajit_Balaji_Resume.pdf"
-                      download="Prajit_Balaji_Resume.pdf"
+                      href="/Megha_R_Resume.pdf"
+                      download="Megha_R_Resume.pdf"
                       className="font-syne group flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] transition-colors border border-[#b40023] text-[#b40023] hover:bg-[#b40023] hover:text-[#ffffff] px-6 py-3 rounded-full bg-transparent"
                     >
                       <Download className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
