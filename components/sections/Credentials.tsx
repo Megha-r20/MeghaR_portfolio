@@ -63,18 +63,18 @@ export function Credentials() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full py-[100px] md:py-[120px] z-10 block">
+    <section ref={sectionRef} id="credentials" className="relative mx-auto w-full py-[70px] md:py-[120px] z-10 block">
       {/* Background soft glow effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b40023]/[0.02] rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 relative z-10 w-full">
-        <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher">
+        <div className="mb-[30px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher">
           <span>06</span>
           <span className="h-px w-12 bg-[#b40023]/40"></span>
           <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">Credentials</span>
         </div>
         
-        <h2 className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[50px] md:mb-[70px] text-[#1e1e2f]">
+        <h2 className="font-display max-w-5xl text-[clamp(2.1rem,6.5vw,7.5rem)] font-black leading-[1.08] sm:leading-[1.02] md:leading-[0.9] tracking-[-0.03em] mb-[35px] md:mb-[70px] text-[#1e1e2f]">
           Certifications <span className="text-[#b40023]">Ahead.</span>
         </h2>
       </div>
@@ -87,11 +87,11 @@ export function Credentials() {
           className="group/ticker relative w-full border-y border-[#1e1e2f]/5 bg-[#ffffff]/45 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.02)] overflow-hidden"
         >
           {/* Edge Fade Masks */}
-          <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-8 sm:w-16 md:w-32 bg-gradient-to-r from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-8 sm:w-16 md:w-32 bg-gradient-to-l from-[#ffffff] via-[#ffffff]/50 to-transparent z-20 pointer-events-none"></div>
           
           <div
-            className="flex w-max py-5 md:py-6 pr-16 gap-12 md:gap-16 items-center animate-marquee hover:[animation-play-state:paused] group-hover/ticker:[animation-play-state:paused] will-change-transform"
+            className="flex w-max py-5 md:py-6 pr-16 gap-8 sm:gap-12 md:gap-16 items-center animate-marquee hover:[animation-play-state:paused] group-hover/ticker:[animation-play-state:paused] will-change-transform"
             style={{
               animationDuration: "40s",
               animationPlayState: inView ? undefined : "paused",
@@ -106,7 +106,7 @@ export function Credentials() {
                   onClick={() => setActiveId(cred.id)}
                   onMouseEnter={() => setActiveId(cred.id)}
                   onFocus={() => setActiveId(cred.id)}
-                  className={`group relative flex items-center gap-4 whitespace-nowrap transition-all duration-300 outline-none ${
+                  className={`group relative flex items-center gap-3 sm:gap-4 whitespace-nowrap transition-all duration-300 outline-none ${
                     isActive ? "opacity-100 scale-105" : "opacity-40 hover:opacity-80"
                   }`}
                 >
@@ -116,7 +116,7 @@ export function Credentials() {
                     <div className="absolute inset-0 rounded-full border border-[#b40023]/40 animate-ping"></div>
                   </div>
                   
-                  <span className={`font-display text-2xl md:text-3xl font-semibold tracking-tight transition-colors duration-300 ${
+                  <span className={`font-display text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight transition-colors duration-300 ${
                     isActive ? "text-[#1e1e2f]" : "text-[#8c7d6e]"
                   }`}>
                     {cred.tickerLabel}
@@ -129,7 +129,7 @@ export function Credentials() {
       </div>
 
       {/* Content Area */}
-      <div className="mx-auto max-w-[1600px] w-full px-6 md:px-12 relative z-10 pt-12 md:pt-16 min-h-[700px] lg:min-h-[550px]">
+      <div className="mx-auto max-w-[1600px] w-full px-6 md:px-12 relative z-10 pt-8 md:pt-16 min-h-0 lg:min-h-[550px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeId}

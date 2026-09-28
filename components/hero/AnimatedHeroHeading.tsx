@@ -60,13 +60,13 @@ export function AnimatedHeroHeading({
               variants={lineVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              className="flex flex-wrap"
+              className="flex flex-nowrap"
               style={{
                 // Critical: Syne 800 for the big editorial feel
                 fontFamily: "var(--next-font-syne), 'Cabinet Grotesk', system-ui, sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(1.8rem, 3.5vw, 3.8rem)",
-                lineHeight: 1.05,
+                fontSize: "clamp(1.05rem, 5.2vw, 3.8rem)",
+                lineHeight: 1.15,
                 letterSpacing: "-0.02em",
                 textTransform: "uppercase",
                 whiteSpace: "nowrap",

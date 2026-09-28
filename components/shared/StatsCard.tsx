@@ -57,16 +57,16 @@ export function StatsCard() {
         {STATS.map((stat) => (
           <div
             key={stat.label}
-            className="flex flex-col items-center justify-center gap-1 px-5 py-4 sm:py-5"
+            className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 px-3 sm:px-5 py-3 sm:py-5"
           >
             <span
-              className="font-montserrat text-2xl font-black leading-none tracking-tight"
+              className="font-montserrat text-xl sm:text-2xl font-black leading-none tracking-tight"
               style={{ color: stat.accent ? "#b40023" : "#1e1e2f" }}
             >
               {stat.value}
             </span>
             <span
-              className="font-researcher text-[8.5px] font-bold uppercase tracking-[0.22em] whitespace-nowrap"
+              className="font-researcher text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.22em] whitespace-nowrap"
               style={{ color: "rgba(30, 30, 47,0.45)" }}
             >
               {stat.label}
@@ -84,12 +84,11 @@ export function StatsCard() {
         href="/Prajit_Balaji_Resume.pdf"
         download="Prajit_Balaji_Resume.pdf"
         aria-label="Download my resume"
-        className="group relative z-10 flex items-center justify-center gap-2.5 px-6 py-4 sm:py-5"
+        className="group relative z-10 flex items-center justify-center gap-2 px-4 py-3 sm:gap-2.5 sm:px-6 sm:py-5"
         style={{
           backgroundColor: "rgb(30, 30, 47)",
           color: "#ffffff",
           textDecoration: "none",
-          minWidth: "9rem",
         }}
         whileHover={{ backgroundColor: "rgb(180, 0, 35)", color: "#1e1e2f" }}
         transition={{ duration: 0.22 }}

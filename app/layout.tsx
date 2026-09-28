@@ -73,11 +73,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`light ${inter.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${montserrat.variable} ${researcher.variable} ${GeistSans.variable} ${GeistMono.variable} ${syne.variable}`}
+      className={`light overflow-x-hidden ${inter.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${montserrat.variable} ${researcher.variable} ${GeistSans.variable} ${GeistMono.variable} ${syne.variable}`}
       suppressHydrationWarning
     >
       <head></head>
-      <body className="antialiased min-h-screen bg-[#ffffff]">
+      <body className="antialiased min-h-screen bg-[#ffffff] overflow-x-hidden w-full">
         <CustomCursor />
         <CursorGlow />
         <SmoothScroll>{children}</SmoothScroll>

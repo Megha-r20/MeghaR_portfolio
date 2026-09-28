@@ -176,28 +176,28 @@ const ExpertiseCategoryBlock = React.forwardRef<
   return (
     <div
       ref={ref}
-      className="min-h-[80vh] flex flex-col justify-center border-t border-[#3a2a1c]/35 light:border-black/10 last:border-b"
+      className="min-h-0 py-12 md:py-0 md:min-h-[80vh] flex flex-col justify-center border-t border-[#3a2a1c]/20 light:border-black/10 last:border-b"
     >
       {/* Mobile-only ghost number */}
-      <span className="md:hidden font-display font-bold text-6xl text-[#ffffff]/10 light:text-black mb-4">
+      <span className="md:hidden font-display font-bold text-4xl text-[#1e1e2f]/15 mb-3">
         {padded}
       </span>
 
       {/* Category title */}
       <h3 
-        className="font-normal text-3xl md:text-5xl text-[#353545] tracking-wide leading-[1.05] uppercase"
+        className="font-normal text-2xl sm:text-3xl md:text-5xl text-[#1e1e2f] tracking-wide leading-tight md:leading-[1.05] uppercase"
         style={{ fontFamily: "'Anton', sans-serif" }}
       >
         {category.title}
       </h3>
 
       {/* Category description */}
-      <p className="font-syne font-semibold tracking-wide text-[#746f70] light:text-[#3a2a1c]/80 text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl">
+      <p className="font-syne font-semibold tracking-wide text-[#746f70] text-sm sm:text-base md:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-xl">
         {category.description}
       </p>
 
       {/* Skills list */}
-      <div className="mt-10 space-y-0">
+      <div className="mt-8 sm:mt-10 space-y-0">
         <ProximitySkillList skills={category.skills} />
       </div>
     </div>
@@ -265,11 +265,11 @@ export function Expertise() {
   );
 
   return (
-    <section ref={sectionRef} className="px-6 md:px-12 relative py-[120px] md:py-[140px]">
+    <section ref={sectionRef} className="px-6 md:px-12 relative py-[70px] md:py-[140px]">
       {/* ── Section tag / Small eyebrow (Aligned top-left like Credentials) ── */}
       <div className="max-w-[1600px] mx-auto w-full">
         <div
-          className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher"
+          className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(46px)",
@@ -286,7 +286,7 @@ export function Expertise() {
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div
-          className="mb-[60px] md:mb-[90px]"
+          className="mb-[40px] md:mb-[90px]"
           style={{
             opacity: revealed ? 1 : 0,
             transform: revealed ? "translateY(0)" : "translateY(46px)",
@@ -294,7 +294,7 @@ export function Expertise() {
               "opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1), transform 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <h2 className="font-display font-black text-[clamp(3rem,7vw,8rem)] text-[#ffffff] light:text-[#1e1e2f] leading-[0.9] tracking-[-0.03em]">
+          <h2 className="font-display font-black text-[clamp(2.1rem,6.5vw,7.5rem)] text-[#1e1e2f] leading-[1.08] sm:leading-[1.02] md:leading-[0.9] tracking-[-0.03em]">
             My <span className="text-[#b40023]">Expertise</span>
           </h2>
         </div>

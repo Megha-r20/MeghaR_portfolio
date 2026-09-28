@@ -114,17 +114,17 @@ function ProjectCard({ project }: { project: Project }) {
       ></div>
       <div className="relative overflow-hidden rounded-[28px] md:rounded-[40px] border border-[#353545]/10 bg-gradient-to-br from-white via-[#f8f8f8] to-[#f8f8f8] shadow-[0_30px_80px_-30px_rgba(30, 30, 47,0.28)] transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#b40023]/30">
 
-        <div className="relative grid grid-cols-1 items-center gap-10 p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
+        <div className="relative grid grid-cols-1 items-center gap-8 p-5 sm:gap-10 sm:p-8 md:p-12 lg:grid-cols-2 lg:gap-12 lg:p-16">
           {/* ── Left: Icons, Title, Description, Tech Tags ── */}
           <div className="flex flex-col">
             {/* Icon buttons */}
-            <div className="mb-8 flex items-center gap-4 md:mb-10">
+            <div className="mb-6 sm:mb-8 flex items-center gap-4 md:mb-10">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${project.title} source on GitHub`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
+                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -133,28 +133,28 @@ function ProjectCard({ project }: { project: Project }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visit ${project.title} live site`}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
+                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#1e1e2f] text-[#ffffff] shadow-[0_0_24px_rgba(180, 0, 35, 0.15)] transition-colors duration-300 hover:bg-[#8f001c] hover:text-[#1e1e2f]"
               >
                 <Link2 className="h-5 w-5" />
               </a>
             </div>
 
             {/* Title */}
-            <h3 className="font-montserrat text-4xl font-black leading-[0.95] tracking-tight text-[#1e1e2f] transition-colors duration-500 group-hover:text-[#b40023] md:text-5xl xl:text-6xl">
+            <h3 className="font-montserrat text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-black leading-[1.08] md:leading-[0.95] tracking-tight text-[#1e1e2f] transition-colors duration-500 group-hover:text-[#b40023]">
               {project.title}
             </h3>
 
             {/* Description */}
-            <p className="font-syne mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold leading-[24px] text-[#95979D]">
+            <p className="font-syne mt-3 sm:mt-4 w-full md:w-[90%] max-w-[457px] text-[15px] sm:text-[16px] font-semibold leading-[22px] sm:leading-[24px] text-[#746f70]">
               {project.desc}
             </p>
 
             {/* Tech tags */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6 sm:gap-y-3">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-syne text-[13px] font-bold uppercase tracking-[0.12em] text-[#353545] transition-colors duration-300 group-hover:text-[#1e1e2f] md:text-[15px]"
+                  className="font-syne text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.12em] text-[#353545] transition-colors duration-300 group-hover:text-[#1e1e2f] md:text-[15px]"
                 >
                   {tag}
                 </span>
@@ -173,7 +173,7 @@ function ProjectCard({ project }: { project: Project }) {
             <div className="relative mx-auto w-full max-w-[650px] overflow-hidden rounded-[14px] border-[1.5px] border-[#1e1e2f] bg-[#f8f5f0] shadow-[0_24px_50px_-12px_rgba(30, 30, 47,0.3),0_0_60px_-15px_rgba(180, 0, 35, 0.15)]">
               
               {/* Dark Browser Chrome */}
-              <div className="flex h-[38px] w-full items-center justify-between border-b-[1.5px] border-[#1e1e2f] bg-[#1e1e2f] px-4">
+              <div className="flex h-[38px] w-full items-center justify-between border-b-[1.5px] border-[#1e1e2f] bg-[#1e1e2f] px-3 sm:px-4">
                 {/* Colored window-control dots */}
                 <div className="flex gap-[6px]">
                   <div className="h-[10px] w-[10px] rounded-full bg-[#ff5f56]"></div>
@@ -182,8 +182,8 @@ function ProjectCard({ project }: { project: Project }) {
                 </div>
                 
                 {/* Address bar */}
-                <div className="flex h-[22px] items-center justify-center rounded-[4px] bg-[#ffffff]/10 px-6 md:px-10">
-                  <span className="font-sans text-[10px] font-medium tracking-wide text-[#ffffff]/60">
+                <div className="flex h-[22px] items-center justify-center rounded-[4px] bg-[#ffffff]/10 px-3 sm:px-6 md:px-10 max-w-[150px] sm:max-w-none">
+                  <span className="font-sans text-[10px] font-medium tracking-wide text-[#ffffff]/60 truncate">
                     {project.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                   </span>
                 </div>
@@ -281,25 +281,25 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
               className={`flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 ${node.side === "left" ? "md:justify-end" : ""}`}
             >
               {node.side === "left" && node.logoSrc && (
-                <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(180, 0, 35, 0.15)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                <div className="group/logo flex h-14 sm:h-20 px-5 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(180, 0, 35, 0.15)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
                   <Image
                     src={node.logoSrc}
                     alt={node.role}
                     width={200}
                     height={80}
-                    className={`object-contain h-10 sm:h-12 w-auto ${node.logoClass || ""}`}
+                    className={`object-contain h-8 sm:h-12 w-auto ${node.logoClass || ""}`}
                     priority
                   />
                 </div>
               )}
-              <div className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+              <div className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[#1e1e2f] md:text-7xl">
                 {node.year}
               </div>
             </div>
-            <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
+            <div className="mt-2 sm:mt-4 font-display text-lg sm:text-xl md:text-2xl text-[#1e1e2f] font-semibold">
               {node.role}
             </div>
-            <p className="mt-2 text-sm text-[#746f70]/70 font-syne">
+            <p className="mt-2 text-sm text-[#746f70] font-syne leading-relaxed">
               {node.desc}
             </p>
           </div>
@@ -326,27 +326,27 @@ function JourneyTimeline({ timeline }: { timeline: TimelineNode[] }) {
           >
             {node.side === "right" && (
               <>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
-                  <div className="font-display text-5xl font-semibold tracking-tight md:text-7xl">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                  <div className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[#1e1e2f] md:text-7xl">
                     {node.year}
                   </div>
                   {node.logoSrc && (
-                    <div className="group/logo flex h-16 sm:h-20 px-6 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(180, 0, 35, 0.15)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
+                    <div className="group/logo flex h-14 sm:h-20 px-5 sm:px-8 items-center justify-center rounded-[20px] bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.2)] light:shadow-[0_15px_40px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_50px_rgba(180, 0, 35, 0.15)] overflow-hidden border border-black/5 dark:border-white/10 shrink-0">
                       <Image
                         src={node.logoSrc}
                         alt={node.role}
                         width={200}
                         height={80}
-                        className={`object-contain h-10 sm:h-12 w-auto ${node.logoClass || ""}`}
+                        className={`object-contain h-8 sm:h-12 w-auto ${node.logoClass || ""}`}
                         priority
                       />
                     </div>
                   )}
                 </div>
-                <div className="mt-4 font-display text-xl text-[#dfd3c0] md:text-2xl dark:text-[#dfd3c0] light:text-[#3a352f] font-medium">
+                <div className="mt-2 sm:mt-4 font-display text-lg sm:text-xl md:text-2xl text-[#1e1e2f] font-semibold">
                   {node.role}
                 </div>
-                <p className="mt-2 text-sm text-[#746f70]/70 font-syne">
+                <p className="mt-2 text-sm text-[#746f70] font-syne leading-relaxed">
                   {node.desc}
                 </p>
               </>
@@ -694,7 +694,7 @@ export default function Home() {
 
         {/* Floating Header Navbar */}
         <nav
-          className="fixed top-4 left-[calc(50%+16px)] z-50 -translate-x-1/2 transition-all duration-700 w-[min(95%,760px)]"
+          className="fixed top-3 sm:top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-700 w-[min(94%,760px)]"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted
@@ -702,7 +702,7 @@ export default function Home() {
               : "translateX(-50%) translateY(-40px)",
           }}
         >
-          <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-6 py-2.5 shadow-[var(--nav-shadow)]">
+          <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-[var(--nav-shadow)]">
             <a
               href="#hero"
               className="flex items-center gap-2 text-sm font-medium tracking-tight"
@@ -812,11 +812,11 @@ export default function Home() {
           <DinoRunner />
 
           {/* Hero layout: flex column filling full viewport height */}
-          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-32 pb-10">
+          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-24 sm:pt-32 pb-10">
             {/* Top metadata row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
-              className="mx-auto mt-12 w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9.5px] uppercase tracking-[0.3em] text-[#1e1e2f] font-researcher font-bold"
+              className="mx-auto mt-6 sm:mt-12 w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] sm:text-[9.5px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#1e1e2f] font-researcher font-bold"
             >
               <div className="flex items-center gap-3">
                 <span className="relative flex h-2 w-2">
@@ -835,7 +835,7 @@ export default function Home() {
                 <h1
                   className="font-montserrat whitespace-nowrap font-black text-[#1e1e2f] text-glow pointer-events-none select-text"
                   style={{
-                    fontSize: "clamp(2rem, 12.5vw, 18rem)",
+                    fontSize: "clamp(2.5rem, 12.5vw, 18rem)",
                     lineHeight: "0.85",
                     letterSpacing: "-0.06em",
                     position: "relative",
@@ -846,17 +846,17 @@ export default function Home() {
               </div>
 
               {/* Sub-info row — centered directly underneath */}
-              <div className="mt-12 flex flex-col items-center justify-center gap-6 px-6 md:px-12 w-full max-w-[1600px]">
+              <div className="mt-8 sm:mt-12 flex flex-col items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 md:px-12 w-full max-w-[1600px]">
                 <ScrollReveal
                   initialTransform="translateY(30px)"
                   className="relative w-full flex justify-center"
                 >
-                  <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl text-[#1e1e2f] text-center">
+                  <p className="font-display text-xl sm:text-2xl leading-tight tracking-tight md:text-4xl text-[#1e1e2f] text-center">
                     Full-Stack Developer
                     <br />
                     <TypewriterTitle />
                     <br />
-                    <span className="font-syne text-[#746f70] text-xl md:text-2xl mt-3 inline-block">
+                    <span className="font-syne text-[#746f70] text-base sm:text-xl md:text-2xl mt-2 sm:mt-3 inline-block">
                       Building scalable web experiences.
                     </span>
                   </p>
@@ -864,7 +864,7 @@ export default function Home() {
 
                 <ScrollReveal
                   initialTransform="translateY(30px)"
-                  className="text-[13px] uppercase tracking-[0.15em] text-[#746f70] font-researcher font-black text-center mt-2"
+                  className="text-[11px] sm:text-[13px] uppercase tracking-[0.12em] sm:tracking-[0.15em] text-[#746f70] font-researcher font-black text-center mt-1 sm:mt-2"
                 >
                   <div>
                     OPEN TO{" "}
@@ -883,7 +883,7 @@ export default function Home() {
                 {/* Stats card + resume */}
                 <ScrollReveal
                   initialTransform="translateY(30px)"
-                  className="mt-8 flex justify-center w-full"
+                  className="mt-6 sm:mt-8 flex justify-center w-full px-2 sm:px-0"
                 >
                   <StatsCard />
                 </ScrollReveal>
@@ -910,7 +910,7 @@ export default function Home() {
         {/* Section 1: About (Introduction) */}
         <section
           id="about"
-          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[110px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden"
+          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[70px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden"
         >
           {/* Atmospheric name watermark */}
           <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
@@ -923,7 +923,7 @@ export default function Home() {
           </div>
 
           {/* ── Section tag / Small eyebrow ── */}
-          <div className="relative z-10 w-full mb-12 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-14">
+          <div className="relative z-10 w-full mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-14">
             <span>01</span>
             <span className="h-px w-12 bg-[#b40023]/40" />
             <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -945,11 +945,11 @@ export default function Home() {
                   "TURN IDEAS INTO REALITY.",
                 ]}
                 accentWords={["products", "experiences", "reality"]}
-                className="mb-10"
+                className="mb-6 sm:mb-10"
               />
 
               {/* Biography block */}
-              <div className="font-syne space-y-5 text-[16px] font-semibold leading-[24px] text-[#95979D]">
+              <div className="font-syne space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] font-semibold leading-[22px] sm:leading-[24px] text-[#746f70]">
                 <p>
                   I'm{" "}
                   <span
@@ -1037,10 +1037,10 @@ export default function Home() {
         {/* Section 3: Technology Arsenal */}
         <section
           id="stack"
-          className="relative mx-auto max-w-[1600px] py-[90px] md:py-[110px] overflow-hidden"
+          className="relative mx-auto max-w-[1600px] py-[70px] md:py-[110px] overflow-hidden"
         >
           <div className="px-6 md:px-12">
-            <div className="mb-[40px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
+            <div className="mb-[30px] md:mb-[50px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
               <span>03</span>
               <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
               <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1050,7 +1050,7 @@ export default function Home() {
             <WordReveal
               text="A modern arsenal for"
               accentText="building at the edge."
-              className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] mb-[45px] md:mb-[60px] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
+              className="font-display max-w-5xl text-[clamp(2.1rem,6.5vw,7.5rem)] font-black leading-[1.08] sm:leading-[1.02] md:leading-[0.92] tracking-[-0.03em] mb-[35px] md:mb-[60px] text-[#1e1e2f]"
             />
           </div>
 
@@ -1102,9 +1102,9 @@ export default function Home() {
         <Expertise />
 
         {/* Section 5: Projects */}
-        <section id="projects" className="relative py-[120px] md:py-[140px]">
+        <section id="projects" className="relative py-[70px] md:py-[140px]">
           <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
+            <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
               <span>05</span>
               <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
               <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1112,11 +1112,11 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="mb-[60px] md:mb-[80px] flex flex-wrap items-end justify-between gap-6">
+            <div className="mb-[40px] md:mb-[80px] flex flex-wrap items-end justify-between gap-4 sm:gap-6">
               <WordReveal
                 text="Projects that"
                 accentText="define me."
-                className="font-display max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
+                className="font-display max-w-5xl text-[clamp(2.1rem,6.5vw,7.5rem)] font-black leading-[1.08] sm:leading-[1.02] md:leading-[0.92] tracking-[-0.03em] text-[#1e1e2f]"
               />
               <div className="text-[11px] uppercase tracking-[0.25em] text-[#746f70]/70 font-researcher">
                 {projects.length} works
@@ -1133,9 +1133,9 @@ export default function Home() {
         {/* Section 7: Journey */}
         <section
           id="journey"
-          className="relative mx-auto max-w-[1600px] px-6 py-[120px] md:px-12 md:py-[140px]"
+          className="relative mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:py-[140px]"
         >
-          <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
+          <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
             <span>07</span>
             <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
             <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1146,7 +1146,7 @@ export default function Home() {
           <WordReveal
             text="My vision towards"
             accentText="what I am striving to."
-            className="font-display mb-[60px] md:mb-[80px] max-w-5xl text-[clamp(3rem,7vw,8rem)] font-black leading-[0.9] tracking-[-0.03em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f]"
+            className="font-display mb-[40px] md:mb-[80px] max-w-5xl text-[clamp(2.1rem,6.5vw,7.5rem)] font-black leading-[1.08] sm:leading-[1.02] md:leading-[0.92] tracking-[-0.03em] text-[#1e1e2f]"
           />
 
           {/* Timeline Grid — line draws in on scroll, dots spring in */}
@@ -1155,8 +1155,8 @@ export default function Home() {
 
         {/* Section 8: Contact */}
         <section id="contact" className="relative overflow-hidden">
-          <div className="mx-auto max-w-[1600px] px-6 py-[140px] md:px-12 md:pt-[160px] md:pb-[180px]">
-            <div className="mb-[40px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
+          <div className="mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:pt-[140px] md:pb-[160px]">
+            <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
               <span>08</span>
               <span className="h-px w-12 bg-[#746f70]/60 dark:bg-[#746f70]/60 light:bg-black/10"></span>
               <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -1167,7 +1167,7 @@ export default function Home() {
             <WordReveal
               text="Let's build the"
               accentText="future."
-              className="font-display max-w-6xl text-[clamp(2.5rem,8vw,10rem)] font-semibold leading-[0.9] tracking-tight"
+              className="font-display max-w-6xl text-[clamp(2.1rem,6.5vw,7.5rem)] font-semibold leading-[1.08] sm:leading-[1.02] md:leading-[0.92] tracking-tight text-[#1e1e2f]"
             />
 
             <div className="mt-[50px] md:mt-[70px] grid grid-cols-1 gap-16 md:grid-cols-12">
@@ -1283,7 +1283,7 @@ export default function Home() {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-display mt-2 block text-2xl tracking-tight hover:text-[#b40023] active:text-[#8f001c] md:text-3xl text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] transition-colors duration-300"
+                    className="font-display mt-2 block break-all text-xl sm:text-2xl md:text-3xl tracking-tight text-[#1e1e2f] hover:text-[#b40023] active:text-[#8f001c] transition-colors duration-300"
                   >
                     megha.ragumani@gmail.com
                   </a>
@@ -1314,7 +1314,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between border-b border-[#353545]/55 dark:border-[#353545]/55 light:border-black/10 py-3 text-sm transition-colors hover:text-[#ffffff] text-[#746f70]"
                     >
-                      <span className="flex items-center gap-3 text-[#c9bcaa] group-hover:text-[#b40023] transition-colors">
+                      <span className="flex items-center gap-3 text-[#353545] group-hover:text-[#b40023] transition-colors">
                         {social.icon}
                         {social.label}
                       </span>
@@ -1335,12 +1335,12 @@ export default function Home() {
 
             <div className="relative mx-auto max-w-[1600px] px-6 pt-8 pb-20 md:px-12 md:pt-10 md:pb-24">
               <ScrollReveal initialTransform="translateY(100px)">
-                <h3 className="font-montserrat text-balance text-[clamp(3.5rem,12vw,12rem)] font-black leading-[0.85] tracking-[-0.06em] text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] text-glow">
+                <h3 className="font-montserrat text-balance text-[clamp(2.5rem,10vw,12rem)] font-black leading-none sm:leading-[0.85] tracking-[-0.06em] text-[#1e1e2f] text-glow">
                   HIRE ME !!
                 </h3>
               </ScrollReveal>
 
-              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-semibold font-researcher">
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[9px] sm:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#746f70]/70 font-semibold font-researcher">
                 <span>© 2026 · MEGHA R</span>
                 <span>FULL-STACK DEVELOPER · V2</span>
                 <span>DESIGNED · BUILT · DEPLOYED</span>

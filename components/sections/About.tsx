@@ -7,7 +7,7 @@ export const About = () => {
   return (
     <section
       id="about-education"
-      className="relative mx-auto max-w-[1600px] px-6 py-[100px] md:px-12 md:py-[120px]"
+      className="relative mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:py-[120px]"
     >
       {/* ── SECTION HEADER ── */}
       <div className="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher md:mb-12">
@@ -17,7 +17,7 @@ export const About = () => {
       </div>
 
       {/* ── Section layout: flex column, generous spacing for scrolling ── */}
-      <div className="flex flex-col gap-24 md:gap-32">
+      <div className="flex flex-col gap-16 md:gap-32">
         {/* ══════════════════════════════════════════════════════════
             ENTRY 1 — Kalasalingam Academy  (top-right)
         ══════════════════════════════════════════════════════════ */}
@@ -33,8 +33,8 @@ export const About = () => {
             style={{ zIndex: 0, pointerEvents: "none", userSelect: "none" }}
           >
             <span
-              className="font-researcher absolute right-[0%] top-[50%] -translate-y-[50%] text-[9rem] md:text-[15rem] lg:text-[20rem] font-semibold leading-none tracking-tighter"
-              style={{ color: "rgb(30, 30, 47)", opacity: 0.10 }}
+              className="font-researcher absolute right-[0%] top-[50%] -translate-y-[50%] text-[6rem] sm:text-[9rem] md:text-[15rem] lg:text-[20rem] font-semibold leading-none tracking-tighter"
+              style={{ color: "rgb(30, 30, 47)", opacity: 0.05 }}
             >
               2028
             </span>
@@ -51,28 +51,28 @@ export const About = () => {
           >
             <div className="flex flex-col items-end text-right">
               {/* Arrow */}
-              <div className="mb-4 flex items-center gap-2">
-                <span className="font-researcher text-sm text-[#b40023]">&larr;</span>
-                <div className="h-px w-14 md:w-24 bg-[#b40023]" />
+              <div className="mb-3 sm:mb-4 flex items-center gap-2">
+                <span className="font-researcher text-xs sm:text-sm text-[#b40023]">&larr;</span>
+                <div className="h-px w-10 sm:w-14 md:w-24 bg-[#b40023]" />
               </div>
 
               {/* Institution */}
-              <h3 className="font-geist text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[0.9] tracking-tighter text-[#ffffff] dark:text-[#ffffff] light:text-[#1e1e2f] scale-x-[1.25] origin-right inline-block">
+              <h3 className="font-geist text-[1.65rem] sm:text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black leading-[1.08] md:leading-[0.9] tracking-tight md:tracking-tighter text-[#1e1e2f] scale-x-100 md:scale-x-[1.25] origin-right inline-block">
                 Kalasalingam Academy of<br/>Research and Education
               </h3>
 
               {/* Degree */}
-              <h4 className="font-syne mt-2 text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-[0.9] tracking-tighter text-[#b40023]">
+              <h4 className="font-syne mt-2 text-[1.2rem] sm:text-[1.75rem] md:text-[2.75rem] lg:text-[3.25rem] font-black leading-tight md:leading-[0.9] tracking-tight md:tracking-tighter text-[#b40023]">
                 B.Tech In Computer Science
               </h4>
 
               {/* Subtitle */}
-              <p className="font-syne mt-4 text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#746f70] dark:text-[#746f70] light:text-[#746f70]">
+              <p className="font-syne mt-2 sm:mt-4 text-sm sm:text-base md:text-2xl lg:text-[30px] font-semibold tracking-wide text-[#746f70]">
                 Software Product Engineering
               </p>
 
               {/* Location & years */}
-              <div className="mt-8 flex flex-col items-end gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#746f70] dark:text-[#746f70] light:text-[#746f70]">
+              <div className="mt-6 sm:mt-8 flex flex-col items-end gap-1 font-researcher text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] text-[#746f70]">
                 <span>Virudhunagar, Tamil Nadu</span>
                 <span>2024 &ndash; Present</span>
               </div>
