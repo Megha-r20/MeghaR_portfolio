@@ -703,11 +703,11 @@ export default function Home() {
 
         {/* Floating Header Navbar */}
         <nav
-          className={`fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[min(94%,760px)] ${
+          className={`fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 md:left-8 lg:left-12 2xl:left-[calc((100vw-1600px)/2+3rem)] md:translate-x-0 md:top-6 z-50 transition-all duration-500 w-[min(94%,760px)] md:w-auto ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6 pointer-events-none"
           }`}
         >
-          <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-[var(--nav-shadow)]">
+          <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-[var(--nav-shadow)] md:gap-4 md:px-5">
             <a
               href="#hero"
               className="flex items-center gap-2 text-sm font-medium tracking-tight shrink-0"
