@@ -692,22 +692,27 @@ export default function Home() {
         <div className="grain"></div>
         <div className="vignette"></div>
 
+        {/* Mobile menu backdrop */}
+        {menuOpen && (
+          <div
+            className="fixed inset-0 z-40 bg-black/25 backdrop-blur-[2px] md:hidden"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         {/* Floating Header Navbar */}
         <nav
-          className="fixed top-3 sm:top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-700 w-[min(94%,760px)]"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted
-              ? "translateX(-50%) translateY(0)"
-              : "translateX(-50%) translateY(-40px)",
-          }}
+          className={`fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[min(94%,760px)] ${
+            mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6 pointer-events-none"
+          }`}
         >
           <div className="flex items-center justify-between gap-3 rounded-full border border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-[var(--nav-shadow)]">
             <a
               href="#hero"
-              className="flex items-center gap-2 text-sm font-medium tracking-tight"
+              className="flex items-center gap-2 text-sm font-medium tracking-tight shrink-0"
             >
-              <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(180, 0, 35, 0.15)]">
+              <span className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center overflow-hidden rounded-full border border-[var(--nav-border)] shadow-[0_0_15px_rgba(180, 0, 35, 0.15)]">
                 <Image
                   src="/mr_logo_v2.png"
                   alt="MR Logo"
@@ -716,7 +721,7 @@ export default function Home() {
                   className="object-cover"
                 />
               </span>
-              <span className="hidden sm:inline text-[#1e1e2f] font-researcher font-bold tracking-[0.2em] text-[11px] whitespace-nowrap">
+              <span className="text-[#1e1e2f] font-researcher font-bold tracking-[0.2em] text-[11px] whitespace-nowrap">
                 MEGHA R
               </span>
             </a>
@@ -745,37 +750,41 @@ export default function Home() {
 
           {/* Mobile dropdown — glass panel */}
           <div
-            className={`mt-2 overflow-hidden rounded-3xl border bg-[var(--dropdown-bg)] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden ${
+            className={`mt-2 overflow-hidden rounded-3xl border border-[#1e1e2f]/10 bg-white/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(30,30,47,0.15)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden ${
               menuOpen
-                ? "max-h-96 border-[var(--border-subtle)] opacity-100"
-                : "max-h-0 border-transparent opacity-0"
+                ? "max-h-[28rem] opacity-100 visible"
+                : "max-h-0 opacity-0 invisible pointer-events-none border-transparent"
             }`}
           >
             <div className="flex flex-col p-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={() => setMenuOpen(false)}
-                  className={`font-syne rounded-2xl px-4 py-3 text-[15px] font-semibold transition-colors ${
-                    activeSection === item.id
-                      ? "bg-[var(--dropdown-active-bg)] text-[var(--primary)]"
-                      : "text-[#1e1e2f]/70 active:bg-[var(--fg-body)]/5"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              <div className="flex flex-col space-y-1">
+                {navItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={() => setMenuOpen(false)}
+                    className={`font-syne rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors ${
+                      activeSection === item.id
+                        ? "bg-[#b40023]/10 text-[#b40023]"
+                        : "text-[#1e1e2f] hover:text-[#b40023] hover:bg-[#1e1e2f]/5 active:bg-[#1e1e2f]/10"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
 
-              <a
-                href="/Prajit_Balaji_Resume.pdf"
-                download="Prajit_Balaji_Resume.pdf"
-                onClick={() => setMenuOpen(false)}
-                className="font-syne mt-1 flex items-center gap-2 rounded-2xl border-t border-[var(--border-subtle)] px-4 py-3 text-[15px] font-semibold text-[#1e1e2f]"
-              >
-                <Download className="h-4 w-4 text-[var(--primary)]" />
-                My Resume
-              </a>
+              <div className="pt-2 mt-2 border-t border-[#1e1e2f]/10">
+                <a
+                  href="/Prajit_Balaji_Resume.pdf"
+                  download="Prajit_Balaji_Resume.pdf"
+                  onClick={() => setMenuOpen(false)}
+                  className="font-syne flex items-center gap-2 rounded-xl px-4 py-2.5 text-[15px] font-semibold text-[#1e1e2f] hover:text-[#b40023] hover:bg-[#1e1e2f]/5"
+                >
+                  <Download className="h-4 w-4 text-[#b40023]" />
+                  My Resume
+                </a>
+              </div>
             </div>
           </div>
         </nav>
