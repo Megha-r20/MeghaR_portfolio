@@ -60,16 +60,15 @@ export function AnimatedHeroHeading({
               variants={lineVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              className="flex flex-nowrap"
+              className="flex flex-wrap sm:flex-nowrap items-baseline"
               style={{
                 // Critical: Syne 800 for the big editorial feel
                 fontFamily: "var(--next-font-syne), 'Cabinet Grotesk', system-ui, sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(1.05rem, 5.2vw, 3.8rem)",
+                fontSize: "clamp(1.15rem, 3.4vw, 3.15rem)",
                 lineHeight: 1.15,
                 letterSpacing: "-0.02em",
                 textTransform: "uppercase",
-                whiteSpace: "nowrap",
               }}
             >
               {words.map((word, wordIdx) => {

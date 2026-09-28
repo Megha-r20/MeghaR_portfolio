@@ -919,7 +919,7 @@ export default function Home() {
         {/* Section 1: About (Introduction) */}
         <section
           id="about"
-          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[70px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden"
+          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[70px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden scroll-mt-24 md:scroll-mt-32"
         >
           {/* Atmospheric name watermark */}
           <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
@@ -941,7 +941,7 @@ export default function Home() {
           </div>
 
           {/* ── Single Column Editorial Layout ─────────────────────────────── */}
-          <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col">
+          <div className="relative z-10 w-full max-w-5xl xl:max-w-6xl mx-auto flex flex-col">
             <ScrollReveal
               initialTransform="translateY(50px)"
               className="flex flex-col justify-center w-full"
@@ -958,7 +958,7 @@ export default function Home() {
               />
 
               {/* Biography block */}
-              <div className="font-syne space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] font-semibold leading-[22px] sm:leading-[24px] text-[#746f70]">
+              <div className="font-syne space-y-4 sm:space-y-5 text-[15px] sm:text-[16px] font-semibold leading-[22px] sm:leading-[24px] text-[#746f70] max-w-3xl">
                 <p>
                   I'm{" "}
                   <span
@@ -1111,7 +1111,7 @@ export default function Home() {
         <Expertise />
 
         {/* Section 5: Projects */}
-        <section id="projects" className="relative py-[70px] md:py-[140px]">
+        <section id="projects" className="relative py-[70px] md:py-[140px] scroll-mt-24 md:scroll-mt-32">
           <div className="mx-auto max-w-[1600px] px-6 md:px-12">
             <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
               <span>05</span>
@@ -1142,7 +1142,7 @@ export default function Home() {
         {/* Section 7: Journey */}
         <section
           id="journey"
-          className="relative mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:py-[140px]"
+          className="relative mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:py-[140px] scroll-mt-24 md:scroll-mt-32"
         >
           <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
             <span>07</span>
@@ -1163,7 +1163,7 @@ export default function Home() {
         </section>
 
         {/* Section 8: Contact */}
-        <section id="contact" className="relative overflow-hidden">
+        <section id="contact" className="relative overflow-hidden scroll-mt-24 md:scroll-mt-32">
           <div className="mx-auto max-w-[1600px] px-6 py-[70px] md:px-12 md:pt-[140px] md:pb-[160px]">
             <div className="mb-[30px] md:mb-[55px] flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#746f70]/70 font-researcher">
               <span>08</span>
