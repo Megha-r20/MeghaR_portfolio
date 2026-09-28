@@ -919,7 +919,7 @@ export default function Home() {
         {/* Section 1: About (Introduction) */}
         <section
           id="about"
-          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 py-[70px] md:px-12 lg:px-20 md:py-[130px] overflow-hidden scroll-mt-24 md:scroll-mt-32"
+          className="relative mx-auto max-w-[1600px] flex flex-col justify-center px-6 pt-[120px] pb-[70px] md:px-12 lg:px-20 md:pt-[150px] md:pb-[100px] overflow-hidden scroll-mt-28 md:scroll-mt-36"
         >
           {/* Atmospheric name watermark */}
           <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none z-0 overflow-hidden opacity-60">
@@ -932,7 +932,7 @@ export default function Home() {
           </div>
 
           {/* ── Section tag / Small eyebrow ── */}
-          <div className="relative z-10 w-full mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-14">
+          <div className="relative z-10 w-full mb-6 sm:mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[#8c7d6e] font-researcher self-start md:mb-10">
             <span>01</span>
             <span className="h-px w-12 bg-[#b40023]/40" />
             <span className="text-[#b40023] font-black text-[13px] md:text-[15px] tracking-[0.4em]">
@@ -946,15 +946,18 @@ export default function Home() {
               initialTransform="translateY(50px)"
               className="flex flex-col justify-center w-full"
             >
-              {/* Syed-style 3-line animated hero heading */}
+              {/* Syed-style 6-line animated hero heading */}
               <AnimatedHeroHeading
                 lines={[
-                  "I BUILD WEB PRODUCTS,",
-                  "DESIGN DIGITAL EXPERIENCES,",
-                  "TURN IDEAS INTO REALITY.",
+                  "I BUILD WEB",
+                  "PRODUCTS,",
+                  "DESIGN DIGITAL",
+                  "EXPERIENCES,",
+                  "TURN IDEAS INTO",
+                  "REALITY.",
                 ]}
                 accentWords={["products", "experiences", "reality"]}
-                className="mb-6 sm:mb-10"
+                className="mb-6 sm:mb-8"
               />
 
               {/* Biography block */}
@@ -1005,7 +1008,7 @@ export default function Home() {
               </div>
 
               {/* CTA links */}
-              <div className="mt-12 flex items-center gap-6 md:mt-14">
+              <div className="mt-8 sm:mt-10 flex items-center gap-6">
                 <a
                   href="#projects"
                   className="group relative block rounded-full"
