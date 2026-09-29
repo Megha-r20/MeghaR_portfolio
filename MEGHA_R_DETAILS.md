@@ -17,6 +17,11 @@
 | **Portfolio V1 Repo** | Portfolio V1 Repository | [github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git) |
 | **MERAKI Platform Live** | Volunteer NGO Platform | [meraki-ngo-platform.netlify.app](https://meraki-ngo-platform.netlify.app/) |
 | **MERAKI Platform Repo** | Capstone Project Repository | [github.com/kalviumcommunity/s82_Megha_Capstone_Meraki](https://github.com/kalviumcommunity/s82_Megha_Capstone_Meraki) |
+| **ELOW Storefront Live** | Full-Stack E-Commerce Storefront | [elow-store.vercel.app](https://elow-store.vercel.app/) |
+| **ELOW REST API Live** | Render Backend REST API | [elow.onrender.com](https://elow.onrender.com) |
+| **ELOW Repository** | Full-Stack E-Commerce Repo | [github.com/Megha-r20/elow](https://github.com/Megha-r20/elow) |
+| **IEEE Chapter Live** | IEEE Education Society Chapter Demo | [ieee-education-society-kare.netlify.app](https://ieee-education-society-kare.netlify.app/) |
+| **IEEE Chapter Repo** | IEEE Chapter Project Repository | [github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE) |
 
 ---
 
@@ -86,7 +91,22 @@
 - **Live Demo Link**: [https://meraki-ngo-platform.netlify.app/](https://meraki-ngo-platform.netlify.app/)
 - **GitHub Repository Link**: [https://github.com/kalviumcommunity/s82_Megha_Capstone_Meraki](https://github.com/kalviumcommunity/s82_Megha_Capstone_Meraki)
 
-### 2. **Megha R — Portfolio V1**
+### 2. **ELOW — Stationery • Lifestyle • Little Joys**
+- **Category**: Full-Stack • E-Commerce Platform
+- **Duration**: 2026
+- **Description**: Full-stack e-commerce application for curated stationery, lifestyle items, and desk accessories featuring a React storefront and secure Node.js / Express / MongoDB Atlas backend REST API.
+- **Tech Stack**: React, Vite, Tailwind CSS v4, Node.js, Express, MongoDB Atlas, Mongoose, JWT, Stripe API, Vitest
+- **Highlights**:
+  - Built an aesthetic Pinterest-inspired storefront with soft pastel palette, glassmorphism navigation, dynamic responsive layout, and tactile hover animations.
+  - Implemented secure JWT session authentication, bcrypt password hashing, and role-based access control (RBAC).
+  - Engineered server-side financial calculations, promo code discounts (e.g. ELOW10), Stripe PaymentIntent & Webhook integration, and atomic stock deduction.
+  - Developed comprehensive Admin Portal for real-time analytics, product catalog CRUD, review moderation, and order fulfillment tracking.
+- **Status**: Live Storefront & REST API
+- **Live Storefront Link**: [https://elow-store.vercel.app/](https://elow-store.vercel.app/)
+- **Live Backend API Link**: [https://elow.onrender.com](https://elow.onrender.com)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/elow](https://github.com/Megha-r20/elow)
+
+### 3. **Megha R — Portfolio V1**
 - **Category**: Front-End • Personal Portfolio
 - **Description**: Personal portfolio showcasing initial projects, technical skills, and development journey through an interactive interface.
 - **Tech Stack**: React, JavaScript, CSS
@@ -94,7 +114,20 @@
 - **Live Demo Link**: [https://megha-r.netlify.app/](https://megha-r.netlify.app/)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git)
 
-### 3. **Megha R — Portfolio V2 (Current Codebase)**
+### 4. **IEEE Education Society Website**
+- **Category**: Front-End • Demo Project
+- **Duration**: Jan 2026 – Feb 2026
+- **Description**: A responsive website demo showcasing an IEEE Education Society chapter concept with events, gallery, team, and achievements.
+- **Tech Stack**: React.js, Tailwind CSS, Netlify, Git
+- **Highlights**:
+  - Built a responsive, component-driven website using React.js and Tailwind CSS.
+  - Developed reusable sections for events, gallery, team, and achievements.
+  - Deployed the demo on Netlify using Git-based workflows.
+- **Status**: Live Demo
+- **Live Demo Link**: [https://ieee-education-society-kare.netlify.app/](https://ieee-education-society-kare.netlify.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE)
+
+### 5. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
 - **Description**: High-performance personal portfolio website featuring custom pixel-art dino runner, liquid glass aesthetic, Framer Motion animations, smooth scroll, marquee, and responsive design.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lenis

@@ -521,6 +521,18 @@ export default function Home() {
     },
     {
       num: "/02",
+      title: "ELOW",
+      cat: "FULL-STACK • E-COMMERCE PLATFORM",
+      desc: "A full-stack e-commerce application for curated stationery and lifestyle items with JWT auth, role-based admin portal, Stripe checkout, and server-side inventory control.",
+      tags: ["REACT", "NODE.JS", "EXPRESS", "MONGODB", "STRIPE"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://elow-store.vercel.app/",
+      github: "https://github.com/Megha-r20/elow.git",
+      image: "/elow-preview.png",
+    },
+    {
+      num: "/03",
       title: "MEGHA R — PORTFOLIO V1",
       cat: "FRONT-END • PORTFOLIO",
       desc: "An earlier personal portfolio showcasing my projects, skills, and development journey through an interactive developer-focused interface.",
@@ -530,6 +542,18 @@ export default function Home() {
       link: "https://megha-r.netlify.app/",
       github: "https://github.com/Megha-r20/Megha_portfolio.git",
       image: "/portfolio-v1-preview.png",
+    },
+    {
+      num: "/04",
+      title: "IEEE EDUCATION SOCIETY WEBSITE",
+      cat: "FRONT-END • DEMO PROJECT",
+      desc: "A responsive website demo showcasing an IEEE Education Society chapter concept with events, gallery, team, and achievements.",
+      tags: ["REACT.JS", "TAILWIND CSS", "NETLIFY", "GIT"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://ieee-education-society-kare.netlify.app/",
+      github: "https://github.com/Megha-r20/IEEE_Education_Society_KARE",
+      image: "/ieee-preview.png",
     },
   ];
 
