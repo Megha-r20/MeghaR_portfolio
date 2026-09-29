@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/effects/ScrollProgressBar";
 import { ScrollReveal } from "@/components/effects/ScrollReveal";
-import { PixelSeeMoreButton } from "@/components/ui/PixelSeeMoreButton";
+import { PixelPagination } from "@/components/ui/PixelPagination";
 import { BackgroundTypography } from "@/components/effects/BackgroundTypography";
 import { StatsMarquee } from "@/components/shared/StatsMarquee";
 import { Credentials } from "@/components/sections/Credentials";
@@ -223,9 +223,26 @@ function ProjectCard({ project }: { project: Project }) {
 // on every screen size.
 
 function ProjectsShowcase({ projects }: { projects: Project[] }) {
-  const [expanded, setExpanded] = useState(false);
-  
-  const visibleProjects = expanded ? projects : projects.slice(0, 3);
+  const [currentPage, setCurrentPage] = useState(1);
+  const PROJECTS_PER_PAGE = 3;
+
+  const totalPages = Math.max(1, Math.ceil(projects.length / PROJECTS_PER_PAGE));
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const visibleProjects = projects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prev) => prev + 1);
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="mx-auto mt-8 flex max-w-[1600px] flex-col gap-y-[35px] md:gap-y-[50px] px-6 md:px-12">
@@ -235,10 +252,13 @@ function ProjectsShowcase({ projects }: { projects: Project[] }) {
         </ScrollReveal>
       ))}
 
-      <div className="mt-8 flex justify-center w-full">
-        <PixelSeeMoreButton 
-          onClick={() => setExpanded(!expanded)} 
-          expanded={expanded} 
+      {/* Dinosaur Running Background Pagination Navigation */}
+      <div className="mt-8 sm:mt-12 flex justify-center w-full">
+        <PixelPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPrev={handlePrev}
+          onNext={handleNext}
         />
       </div>
     </div>
@@ -554,6 +574,30 @@ export default function Home() {
       link: "https://ieee-education-society-kare.netlify.app/",
       github: "https://github.com/Megha-r20/IEEE_Education_Society_KARE",
       image: "/ieee-preview.png",
+    },
+    {
+      num: "/05",
+      title: "CYBERNOVA SERIES 2026",
+      cat: "FULL-STACK • EVENT PLATFORM",
+      desc: "A full-stack event registration platform developed for my college’s CyberNova Series 2026, with real-time slot availability, validation, admin management, and concurrency-safe registration.",
+      tags: ["REACT", "TYPESCRIPT", "NODE.JS", "EXPRESS", "TAILWIND CSS"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://cybernova2026.netlify.app/",
+      github: "https://github.com/Megha-r20/CyberNova-2026.git",
+      image: "/cybernova-preview.png",
+    },
+    {
+      num: "/06",
+      title: "LUMACART",
+      cat: "FULL-STACK • LUXURY TECH E-COMMERCE",
+      desc: "An editorial, luxury tech e-commerce platform and executive SaaS administration console built with the MERN stack, featuring INR pricing, Stripe checkout, and real-time analytics.",
+      tags: ["REACT", "NODE.JS", "EXPRESS", "MONGODB", "STRIPE"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://luma-cart.vercel.app/",
+      github: "https://github.com/Megha-r20/LumaCart.git",
+      image: "/lumacart-preview.png",
     },
   ];
 

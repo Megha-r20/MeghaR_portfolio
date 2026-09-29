@@ -22,6 +22,10 @@
 | **ELOW Repository** | Full-Stack E-Commerce Repo | [github.com/Megha-r20/elow](https://github.com/Megha-r20/elow) |
 | **IEEE Chapter Live** | IEEE Education Society Chapter Demo | [ieee-education-society-kare.netlify.app](https://ieee-education-society-kare.netlify.app/) |
 | **IEEE Chapter Repo** | IEEE Chapter Project Repository | [github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE) |
+| **CyberNova 2026 Live** | Cybersecurity Event & Registration Platform | [cybernova2026.netlify.app](https://cybernova2026.netlify.app/) |
+| **CyberNova 2026 Repo** | Event Platform Repository | [github.com/Megha-r20/CyberNova-2026](https://github.com/Megha-r20/CyberNova-2026) |
+| **LumaCart Live** | Luxury Tech E-Commerce Storefront | [luma-cart.vercel.app](https://luma-cart.vercel.app/) |
+| **LumaCart Repo** | MERN Tech E-Commerce Repository | [github.com/Megha-r20/LumaCart](https://github.com/Megha-r20/LumaCart) |
 
 ---
 
@@ -127,7 +131,33 @@
 - **Live Demo Link**: [https://ieee-education-society-kare.netlify.app/](https://ieee-education-society-kare.netlify.app/)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE)
 
-### 5. **Megha R — Portfolio V2 (Current Codebase)**
+### 5. **CyberNova Series 2026**
+- **Category**: Full-Stack • Event Platform
+- **Duration**: 2026
+- **Description**: A full-stack event registration platform developed for my college’s CyberNova Series 2026, with real-time slot availability, validation, admin management, and concurrency-safe registration.
+- **Tech Stack**: React.js, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, ExcelJS, Async Mutex
+- **Highlights**:
+  - Engineered modern dark retro-futuristic interface with cyan neon glow, interactive event sections, and responsive UI.
+  - Implemented real-time slot checking, duplicate prevention across registration numbers/emails/phone numbers, and mutex-protected concurrency.
+  - Built protected admin dashboard with secure Excel-based registration data export (`/api/admin/download`).
+- **Status**: Live Platform
+- **Live Platform Link**: [https://cybernova2026.netlify.app/](https://cybernova2026.netlify.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/CyberNova-2026](https://github.com/Megha-r20/CyberNova-2026)
+
+### 6. **LumaCart — Premium Luxury Tech E-Commerce Platform**
+- **Category**: Full-Stack • Luxury Tech E-Commerce
+- **Duration**: 2026
+- **Description**: Editorial, luxury tech e-commerce platform built on the MERN stack with an obsidian & electric indigo dark mode aesthetic, localized in Indian Rupees (₹), and paired with an executive SaaS administration console.
+- **Tech Stack**: React 18, Vite, React Router v6, Tailwind CSS / Vanilla CSS, Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, Stripe API, Recharts
+- **Highlights**:
+  - Engineered luxury dark-mode design system with glassmorphism backdrop blurs, instant debounced search, category filters, and multi-angle preview.
+  - Implemented ₹5,000 free shipping progress meter, dynamic LUMA20 coupon application, 18% GST tax calculation, and order tracking timeline.
+  - Developed full-featured executive admin SaaS console with KPI dashboard metrics, Recharts data visualization, inventory management, and order fulfillment center.
+- **Status**: Live Storefront
+- **Live Storefront Link**: [https://luma-cart.vercel.app/](https://luma-cart.vercel.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/LumaCart](https://github.com/Megha-r20/LumaCart)
+
+### 7. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
 - **Description**: High-performance personal portfolio website featuring custom pixel-art dino runner, liquid glass aesthetic, Framer Motion animations, smooth scroll, marquee, and responsive design.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lenis
