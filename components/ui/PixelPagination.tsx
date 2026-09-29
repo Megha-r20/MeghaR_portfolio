@@ -234,6 +234,80 @@ export function PixelPagination({
           </svg>
         </div>
 
+        {/* ── Retro Pixel Plants & Vines Scenery Layer ── */}
+        <div className="absolute inset-0 pointer-events-none select-none z-10 overflow-hidden">
+          {/* Bottom-Left Corner: Clustered Pixel Fern/Grass */}
+          <div className="absolute bottom-[13px] left-[7px] sm:left-[11px]">
+            <svg
+              viewBox="0 0 10 9"
+              className="w-[13px] h-[11.7px] fill-[#b40023] opacity-55"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M2 0 h1 v1 h-1 Z M6 0 h1 v1 h-1 Z M1 1 h2 v1 h-2 Z M5 1 h2 v1 h-2 Z M1 2 h2 v1 h-2 Z M5 2 h2 v1 h-2 Z M9 2 h1 v1 h-1 Z M0 3 h1 v1 h-1 Z M2 3 h2 v1 h-2 Z M5 3 h3 v1 h-3 Z M9 3 h1 v1 h-1 Z M0 4 h1 v1 h-1 Z M2 4 h6 v1 h-6 Z M9 4 h1 v1 h-1 Z M1 5 h9 v1 h-9 Z M2 6 h7 v1 h-7 Z M3 7 h5 v1 h-5 Z M4 8 h3 v1 h-3 Z" />
+            </svg>
+          </div>
+
+          {/* Top-Left Rim: Pixel Hanging Vine curling from top border */}
+          <div className="absolute top-[2px] left-[26px] sm:left-[36px]">
+            <svg
+              viewBox="0 0 8 13"
+              className="w-[10px] h-[16px] fill-[#b40023] opacity-40"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M0 0 h6 v1 h-6 Z M2 1 h2 v1 h-2 Z M2 2 h4 v1 h-4 Z M2 3 h4 v1 h-4 Z M2 4 h2 v1 h-2 Z M0 5 h4 v1 h-4 Z M0 6 h4 v1 h-4 Z M2 7 h2 v1 h-2 Z M2 8 h4 v1 h-4 Z M2 9 h4 v1 h-4 Z M2 10 h2 v1 h-2 Z M2 11 h2 v1 h-2 Z M2 12 h1 v1 h-1 Z" />
+            </svg>
+          </div>
+
+          {/* Bottom-Right Corner: Climbing Pixel Ivy & Ground Sprout */}
+          <div className="absolute bottom-[13px] right-[7px] sm:right-[11px] flex items-end">
+            <svg
+              viewBox="0 0 11 11"
+              className="w-[14px] h-[14px] fill-[#b40023] opacity-55"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M7 0 h2 v1 h-2 Z M6 1 h4 v1 h-4 Z M6 2 h4 v1 h-4 Z M4 3 h2 v1 h-2 Z M8 3 h2 v1 h-2 Z M3 4 h4 v1 h-4 Z M2 5 h6 v1 h-6 Z M1 6 h3 v1 h-3 Z M6 6 h4 v1 h-4 Z M0 7 h4 v1 h-4 Z M6 7 h4 v1 h-4 Z M0 8 h4 v1 h-4 Z M7 8 h2 v1 h-2 Z M1 9 h3 v1 h-3 Z M2 10 h1 v1 h-1 Z" />
+            </svg>
+          </div>
+
+          {/* Top-Right Rim: Mirrored Hanging Vine curling from border */}
+          <div className="absolute top-[2px] right-[26px] sm:right-[36px]">
+            <svg
+              viewBox="0 0 8 13"
+              className="w-[10px] h-[16px] fill-[#b40023] opacity-40 -scale-x-100"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M0 0 h6 v1 h-6 Z M2 1 h2 v1 h-2 Z M2 2 h4 v1 h-4 Z M2 3 h4 v1 h-4 Z M2 4 h2 v1 h-2 Z M0 5 h4 v1 h-4 Z M0 6 h4 v1 h-4 Z M2 7 h2 v1 h-2 Z M2 8 h4 v1 h-4 Z M2 9 h4 v1 h-4 Z M2 10 h2 v1 h-2 Z M2 11 h2 v1 h-2 Z M2 12 h1 v1 h-1 Z" />
+            </svg>
+          </div>
+
+          {/* Subtle Ground Flora in Empty Spans (non-overlapping) */}
+          {/* 1. Between PREVIOUS and Center Badge */}
+          <div className="absolute bottom-[13px] left-[35%] hidden sm:block">
+            <svg
+              viewBox="0 0 8 7"
+              className="w-[9px] h-[8px] fill-[#b40023] opacity-35"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M1 0 h1 v1 h-1 Z M5 0 h1 v1 h-1 Z M0 1 h3 v1 h-3 Z M4 1 h3 v1 h-3 Z M1 2 h5 v1 h-5 Z M2 3 h3 v1 h-3 Z M3 4 h1 v1 h-1 Z M3 5 h1 v1 h-1 Z M2 6 h3 v1 h-3 Z" />
+            </svg>
+          </div>
+
+          {/* 2. Between Center Badge and NEXT Button */}
+          <div className="absolute bottom-[13px] right-[23%] hidden sm:block">
+            <svg
+              viewBox="0 0 7 10"
+              className="w-[8.5px] h-[12px] fill-[#b40023] opacity-35"
+              style={{ shapeRendering: "crispEdges" }}
+            >
+              <path d="M1 0 h3 v1 h-1 Z M0 1 h5 v1 h-5 Z M1 2 h3 v1 h-3 Z M2 3 h1 v1 h-1 Z M1 4 h3 v1 h-3 Z M2 5 h2 v1 h-2 Z M5 5 h1 v1 h-1 Z M2 6 h4 v1 h-4 Z M2 7 h1 v1 h-1 Z M1 8 h3 v1 h-3 Z M1 9 h3 v1 h-3 Z" />
+            </svg>
+          </div>
+
+          {/* Subtle Ambient Pixel Floating Leaf Spores */}
+          <div className="absolute top-[22%] left-[46%] w-[3px] h-[2px] bg-[#b40023] opacity-25" />
+          <div className="absolute top-[32%] right-[38%] w-[2px] h-[2px] bg-[#b40023] opacity-20" />
+        </div>
+
         {/* ── Foreground Layout: [ dinosaur ]   ← PREVIOUS        02 / 02        NEXT → ── */}
         <div className="relative z-20 flex items-center justify-between w-full h-full">
           {/* Left Side: Dedicated Dinosaur Area + PREVIOUS Button */}
