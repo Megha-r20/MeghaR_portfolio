@@ -157,7 +157,21 @@
 - **Live Storefront Link**: [https://luma-cart.vercel.app/](https://luma-cart.vercel.app/)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/LumaCart](https://github.com/Megha-r20/LumaCart)
 
-### 7. **Megha R — Portfolio V2 (Current Codebase)**
+### 7. **TaskFlow — Enterprise Project & Collaboration Platform**
+- **Category**: Full-Stack • Enterprise Project & Collaboration Platform
+- **Duration**: 2026
+- **Description**: High-velocity, real-time project management and team collaboration suite built on Next.js 15 App Router, WebRTC video/audio streaming, Server-Sent Events (SSE), and Prisma ORM.
+- **Tech Stack**: Next.js 15 (App Router), React 18, WebRTC, Server-Sent Events (SSE), Prisma ORM, SQLite, Tailwind CSS, Lucide Icons, Framer Motion, JWT, bcryptjs
+- **Highlights**:
+  - Engineered WebRTC team audio & video huddles with 1-click screen sharing, privacy-first mic/camera states, and solo host dynamic view.
+  - Implemented advanced sprint burndown SVG graphics plotting ideal slope vs. actual effort, velocity metrics, and 1-click CSV data export.
+  - Built Notion-style workspace docs with category organization, `@task` references, and auto-saving markdown editor.
+  - Integrated live task timers, billable timesheets, Slack/Discord webhook dispatches, and quarterly OKRs strategic goal tracking.
+  - Developed client share links (`/share/[token]`), bulk CSV/JSON task importer, full workspace JSON backups, Pomodoro execution timer, and no-code workflow automation engine.
+- **Status**: Live / Production Ready
+- **GitHub Repository Link**: [https://github.com/Megha-r20/TaskFlow](https://github.com/Megha-r20/TaskFlow)
+
+### 8. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
 - **Description**: High-performance personal portfolio website featuring custom pixel-art dino runner, liquid glass aesthetic, Framer Motion animations, smooth scroll, marquee, and responsive design.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lenis

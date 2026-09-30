@@ -599,6 +599,18 @@ export default function Home() {
       github: "https://github.com/Megha-r20/LumaCart.git",
       image: "/lumacart-preview.png",
     },
+    {
+      num: "/07",
+      title: "TASKFLOW",
+      cat: "FULL-STACK • ENTERPRISE WORKSPACE",
+      desc: "A high-velocity, real-time project management and team collaboration suite featuring WebRTC video/audio huddles, sprint burndown analytics, Notion-style wiki docs, and SSE live streams.",
+      tags: ["NEXT.JS 15", "WEBRTC", "PRISMA", "SQLITE", "TAILWIND CSS"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://github.com/Megha-r20/TaskFlow",
+      github: "https://github.com/Megha-r20/TaskFlow.git",
+      image: "/taskflow-preview.png",
+    },
   ];
 
   const timeline = [
