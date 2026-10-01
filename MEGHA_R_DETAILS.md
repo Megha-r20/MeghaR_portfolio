@@ -71,7 +71,7 @@
 ### **Full-Stack Development**
 - **Frontend**: React, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS
 - **Backend**: Node.js, Express.js, REST APIs, GraphQL
-- **Databases**: MongoDB, PostgreSQL
+- **Databases & ORM**: MongoDB, PostgreSQL, Prisma ORM, SQLite
 
 ### **Backend & Infrastructure**
 - **DevOps & Cloud**: Docker, AWS, Vercel, Netlify

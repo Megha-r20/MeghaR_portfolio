@@ -14,6 +14,7 @@ const ITEMS = [
   "REST APIS",
   "MONGODB",
   "POSTGRESQL",
+  "PRISMA",
   "GIT",
   "GITHUB",
   "DOCKER",

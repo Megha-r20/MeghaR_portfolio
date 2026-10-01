@@ -1172,6 +1172,7 @@ export default function Home() {
                   "Express",
                   "MongoDB",
                   "PostgreSQL",
+                  "Prisma",
                   "OpenAI",
                   "LLMs",
                 ]}

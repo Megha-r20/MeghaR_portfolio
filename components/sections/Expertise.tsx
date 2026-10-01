@@ -30,7 +30,7 @@ const EXPERTISE_DATA: ExpertiseCategoryData[] = [
     title: "Backend & Infrastructure",
     description:
       "Designing resilient, scalable systems from APIs to deployment pipelines.",
-    skills: ["MongoDB", "PostgreSQL", "REST APIs", "Docker", "AWS", "Vercel"],
+    skills: ["MongoDB", "PostgreSQL", "Prisma", "REST APIs", "Docker", "AWS", "Vercel"],
   },
   {
     title: "UI/UX & Creative Engineering",
