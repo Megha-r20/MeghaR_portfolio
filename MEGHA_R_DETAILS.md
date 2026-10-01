@@ -110,54 +110,7 @@
 - **Live Backend API Link**: [https://elow.onrender.com](https://elow.onrender.com)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/elow](https://github.com/Megha-r20/elow)
 
-### 3. **Megha R — Portfolio V1**
-- **Category**: Front-End • Personal Portfolio
-- **Description**: Personal portfolio showcasing initial projects, technical skills, and development journey through an interactive interface.
-- **Tech Stack**: React, JavaScript, CSS
-- **Status**: Live (2024)
-- **Live Demo Link**: [https://megha-r.netlify.app/](https://megha-r.netlify.app/)
-- **GitHub Repository Link**: [https://github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git)
-
-### 4. **IEEE Education Society Website**
-- **Category**: Front-End • Demo Project
-- **Duration**: Jan 2026 – Feb 2026
-- **Description**: A responsive website demo showcasing an IEEE Education Society chapter concept with events, gallery, team, and achievements.
-- **Tech Stack**: React.js, Tailwind CSS, Netlify, Git
-- **Highlights**:
-  - Built a responsive, component-driven website using React.js and Tailwind CSS.
-  - Developed reusable sections for events, gallery, team, and achievements.
-  - Deployed the demo on Netlify using Git-based workflows.
-- **Status**: Live Demo
-- **Live Demo Link**: [https://ieee-education-society-kare.netlify.app/](https://ieee-education-society-kare.netlify.app/)
-- **GitHub Repository Link**: [https://github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE)
-
-### 5. **CyberNova Series 2026**
-- **Category**: Full-Stack • Event Platform
-- **Duration**: 2026
-- **Description**: A full-stack event registration platform developed for my college’s CyberNova Series 2026, with real-time slot availability, validation, admin management, and concurrency-safe registration.
-- **Tech Stack**: React.js, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, ExcelJS, Async Mutex
-- **Highlights**:
-  - Engineered modern dark retro-futuristic interface with cyan neon glow, interactive event sections, and responsive UI.
-  - Implemented real-time slot checking, duplicate prevention across registration numbers/emails/phone numbers, and mutex-protected concurrency.
-  - Built protected admin dashboard with secure Excel-based registration data export (`/api/admin/download`).
-- **Status**: Live Platform
-- **Live Platform Link**: [https://cybernova2026.netlify.app/](https://cybernova2026.netlify.app/)
-- **GitHub Repository Link**: [https://github.com/Megha-r20/CyberNova-2026](https://github.com/Megha-r20/CyberNova-2026)
-
-### 6. **LumaCart — Premium Luxury Tech E-Commerce Platform**
-- **Category**: Full-Stack • Luxury Tech E-Commerce
-- **Duration**: 2026
-- **Description**: Editorial, luxury tech e-commerce platform built on the MERN stack with an obsidian & electric indigo dark mode aesthetic, localized in Indian Rupees (₹), and paired with an executive SaaS administration console.
-- **Tech Stack**: React 18, Vite, React Router v6, Tailwind CSS / Vanilla CSS, Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, Stripe API, Recharts
-- **Highlights**:
-  - Engineered luxury dark-mode design system with glassmorphism backdrop blurs, instant debounced search, category filters, and multi-angle preview.
-  - Implemented ₹5,000 free shipping progress meter, dynamic LUMA20 coupon application, 18% GST tax calculation, and order tracking timeline.
-  - Developed full-featured executive admin SaaS console with KPI dashboard metrics, Recharts data visualization, inventory management, and order fulfillment center.
-- **Status**: Live Storefront
-- **Live Storefront Link**: [https://luma-cart.vercel.app/](https://luma-cart.vercel.app/)
-- **GitHub Repository Link**: [https://github.com/Megha-r20/LumaCart](https://github.com/Megha-r20/LumaCart)
-
-### 7. **TaskFlow — Enterprise Project & Collaboration Platform**
+### 3. **TaskFlow — Enterprise Project & Collaboration Platform**
 - **Category**: Full-Stack • Enterprise Project & Collaboration Platform
 - **Duration**: 2026
 - **Description**: High-velocity, real-time project management and team collaboration suite built on Next.js 15 App Router, WebRTC video/audio streaming, Server-Sent Events (SSE), and Prisma ORM.
@@ -171,7 +124,7 @@
 - **Status**: Live / Production Ready
 - **GitHub Repository Link**: [https://github.com/Megha-r20/TaskFlow](https://github.com/Megha-r20/TaskFlow)
 
-### 8. **FinTrack — Personal Expense Tracker & Shared Financial Workspace**
+### 4. **FinTrack — Personal Expense Tracker & Shared Financial Workspace**
 - **Category**: Full-Stack • Financial Workspace & Expense Tracker
 - **Duration**: 2026
 - **Description**: Production-grade, privacy-focused personal expense tracker and shared financial workspace manager with WhatsApp bot expense logging, category budgeting, and AI advisory.
@@ -185,6 +138,53 @@
 - **Status**: Live Platform
 - **Live Platform Link**: [https://fintrack-expenses.vercel.app/](https://fintrack-expenses.vercel.app/)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/FinTrack](https://github.com/Megha-r20/FinTrack)
+
+### 5. **LumaCart — Premium Luxury Tech E-Commerce Platform**
+- **Category**: Full-Stack • Luxury Tech E-Commerce
+- **Duration**: 2026
+- **Description**: Editorial, luxury tech e-commerce platform built on the MERN stack with an obsidian & electric indigo dark mode aesthetic, localized in Indian Rupees (₹), and paired with an executive SaaS administration console.
+- **Tech Stack**: React 18, Vite, React Router v6, Tailwind CSS / Vanilla CSS, Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, Stripe API, Recharts
+- **Highlights**:
+  - Engineered luxury dark-mode design system with glassmorphism backdrop blurs, instant debounced search, category filters, and multi-angle preview.
+  - Implemented ₹5,000 free shipping progress meter, dynamic LUMA20 coupon application, 18% GST tax calculation, and order tracking timeline.
+  - Developed full-featured executive admin SaaS console with KPI dashboard metrics, Recharts data visualization, inventory management, and order fulfillment center.
+- **Status**: Live Storefront
+- **Live Storefront Link**: [https://luma-cart.vercel.app/](https://luma-cart.vercel.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/LumaCart](https://github.com/Megha-r20/LumaCart)
+
+### 6. **CyberNova Series 2026**
+- **Category**: Full-Stack • Event Platform
+- **Duration**: 2026
+- **Description**: A full-stack event registration platform developed for my college’s CyberNova Series 2026, with real-time slot availability, validation, admin management, and concurrency-safe registration.
+- **Tech Stack**: React.js, TypeScript, Vite, Tailwind CSS, Node.js, Express.js, ExcelJS, Async Mutex
+- **Highlights**:
+  - Engineered modern dark retro-futuristic interface with cyan neon glow, interactive event sections, and responsive UI.
+  - Implemented real-time slot checking, duplicate prevention across registration numbers/emails/phone numbers, and mutex-protected concurrency.
+  - Built protected admin dashboard with secure Excel-based registration data export (`/api/admin/download`).
+- **Status**: Live Platform
+- **Live Platform Link**: [https://cybernova2026.netlify.app/](https://cybernova2026.netlify.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/CyberNova-2026](https://github.com/Megha-r20/CyberNova-2026)
+
+### 7. **IEEE Education Society Website**
+- **Category**: Front-End • Demo Project
+- **Duration**: Jan 2026 – Feb 2026
+- **Description**: A responsive website demo showcasing an IEEE Education Society chapter concept with events, gallery, team, and achievements.
+- **Tech Stack**: React.js, Tailwind CSS, Netlify, Git
+- **Highlights**:
+  - Built a responsive, component-driven website using React.js and Tailwind CSS.
+  - Developed reusable sections for events, gallery, team, and achievements.
+  - Deployed the demo on Netlify using Git-based workflows.
+- **Status**: Live Demo
+- **Live Demo Link**: [https://ieee-education-society-kare.netlify.app/](https://ieee-education-society-kare.netlify.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/IEEE_Education_Society_KARE](https://github.com/Megha-r20/IEEE_Education_Society_KARE)
+
+### 8. **Megha R — Portfolio V1**
+- **Category**: Front-End • Personal Portfolio
+- **Description**: Personal portfolio showcasing initial projects, technical skills, and development journey through an interactive interface.
+- **Tech Stack**: React, JavaScript, CSS
+- **Status**: Live (2024)
+- **Live Demo Link**: [https://megha-r.netlify.app/](https://megha-r.netlify.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git)
 
 ### 9. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
