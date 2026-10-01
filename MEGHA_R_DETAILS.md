@@ -171,7 +171,22 @@
 - **Status**: Live / Production Ready
 - **GitHub Repository Link**: [https://github.com/Megha-r20/TaskFlow](https://github.com/Megha-r20/TaskFlow)
 
-### 8. **Megha R — Portfolio V2 (Current Codebase)**
+### 8. **FinTrack — Personal Expense Tracker & Shared Financial Workspace**
+- **Category**: Full-Stack • Financial Workspace & Expense Tracker
+- **Duration**: 2026
+- **Description**: Production-grade, privacy-focused personal expense tracker and shared financial workspace manager with WhatsApp bot expense logging, category budgeting, and AI advisory.
+- **Tech Stack**: Next.js 16 (App Router), React 19, Tailwind CSS, Lucide React, Recharts, Prisma ORM, SQLite, JWT
+- **Highlights**:
+  - Engineered real-time income and expense tracking with category budgeting, dynamic progress bars, and overspending alerts.
+  - Built multi-member shared workspaces (roommates, household, trip budgets) with unique invite codes and role-based access.
+  - Implemented WhatsApp expense logging bot via `/api/bot/webhook` for zero-friction mobile entry.
+  - Developed conversational AI financial advisor offering spending habit analysis and budget optimization advice.
+  - Integrated financial goals milestone tracker, recurring subscriptions audit, and secure PIN-based app lock screen.
+- **Status**: Live Platform
+- **Live Platform Link**: [https://fintrack-expenses.vercel.app/](https://fintrack-expenses.vercel.app/)
+- **GitHub Repository Link**: [https://github.com/Megha-r20/FinTrack](https://github.com/Megha-r20/FinTrack)
+
+### 9. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
 - **Description**: High-performance personal portfolio website featuring custom pixel-art dino runner, liquid glass aesthetic, Framer Motion animations, smooth scroll, marquee, and responsive design.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lenis

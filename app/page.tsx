@@ -611,6 +611,18 @@ export default function Home() {
       github: "https://github.com/Megha-r20/TaskFlow.git",
       image: "/taskflow-preview.png",
     },
+    {
+      num: "/08",
+      title: "FINTRACK",
+      cat: "FULL-STACK • FINANCIAL WORKSPACE",
+      desc: "A privacy-focused personal expense tracker and shared financial workspace manager featuring WhatsApp bot expense logging, category budgeting, and AI advisory.",
+      tags: ["NEXT.JS 16", "REACT 19", "PRISMA", "SQLITE", "TAILWIND CSS"],
+      status: "LIVE",
+      year: "2026",
+      link: "https://fintrack-expenses.vercel.app/",
+      github: "https://github.com/Megha-r20/FinTrack.git",
+      image: "/fintrack-preview.png",
+    },
   ];
 
   const timeline = [
