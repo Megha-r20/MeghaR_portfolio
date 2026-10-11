@@ -12,6 +12,7 @@
 | **Email (Standard Mailto)** | Standard Email Client | [megha.ragumani@gmail.com](mailto:megha.ragumani@gmail.com) |
 | **GitHub Profile** | Primary GitHub Account | [github.com/Megha-r20](https://github.com/Megha-r20) |
 | **LinkedIn Profile** | Professional Network | [linkedin.com/in/megha-r20](https://www.linkedin.com/in/megha-r20) |
+| **LeetCode Profile** | Problem Solving (100+ Solved) | [leetcode.com/u/r_megha/](https://leetcode.com/u/r_megha/) |
 | **Portfolio V2 Repo** | Current Portfolio Codebase | [github.com/Megha-r20/MeghaR_portfolio](https://github.com/Megha-r20/MeghaR_portfolio) |
 | **Portfolio V1 Live** | First Portfolio Site | [megha-r.netlify.app](https://megha-r.netlify.app/) |
 | **Portfolio V1 Repo** | Portfolio V1 Repository | [github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git) |
@@ -33,10 +34,12 @@
 
 - **Full Name**: Megha R
 - **Role / Title**: Full-Stack Developer & Software Product Engineering Student
+- **Phone**: [+91 8838928793](tel:+918838928793)
 - **Email**: [megha.ragumani@gmail.com](mailto:megha.ragumani@gmail.com) | [Compose via Gmail Web](https://mail.google.com/mail/?view=cm&fs=1&to=megha.ragumani@gmail.com)
-- **Location**: Virudhunagar, Tamil Nadu, India
+- **Location**: Tirunelveli, Tamil Nadu, India
 - **Availability**: Open for Internships & Projects (2026+)
 - **Headline / Tagline**: *"I build web products, design digital experiences, turn ideas into reality."*
+- **Languages**: Tamil (Native) | English (Professional) | Kannada (Conversational) | Telugu (Conversational)
 
 ---
 
@@ -44,6 +47,7 @@
 
 - **GitHub Profile**: [https://github.com/Megha-r20](https://github.com/Megha-r20)
 - **LinkedIn Profile**: [https://www.linkedin.com/in/megha-r20](https://www.linkedin.com/in/megha-r20)
+- **LeetCode Profile**: [https://leetcode.com/u/r_megha/](https://leetcode.com/u/r_megha/)
 - **Direct Email**: [megha.ragumani@gmail.com](mailto:megha.ragumani@gmail.com)
 
 ---
@@ -186,7 +190,18 @@
 - **Live Demo Link**: [https://megha-r.netlify.app/](https://megha-r.netlify.app/)
 - **GitHub Repository Link**: [https://github.com/Megha-r20/Megha_portfolio.git](https://github.com/Megha-r20/Megha_portfolio.git)
 
-### 9. **Megha R — Portfolio V2 (Current Codebase)**
+### 9. **Skill2Hire — AI Career & Recruitment Platform**
+- **Category**: Full-Stack • AI Career & Recruitment Platform
+- **Duration**: 2026
+- **Description**: AI-powered career platform with resume parsing, skill-gap analysis, job matching, career recommendations, and interview assessments.
+- **Tech Stack**: JavaScript, React.js, Next.js, Prisma, PostgreSQL, JWT, REST APIs
+- **Highlights**:
+  - Implemented AI-powered resume parsing and skill-gap analysis for personalized career recommendations.
+  - Built JWT authentication and role-based access control for student and recruiter workflows.
+  - Developed RESTful APIs for secure user and recruiter operations.
+- **Status**: Repository Available (2026)
+
+### 10. **Megha R — Portfolio V2 (Current Codebase)**
 - **Category**: Full-Stack / Creative Front-End • Interactive Portfolio V2
 - **Description**: High-performance personal portfolio website featuring custom pixel-art dino runner, liquid glass aesthetic, Framer Motion animations, smooth scroll, marquee, and responsive design.
 - **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lenis
