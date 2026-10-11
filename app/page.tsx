@@ -913,7 +913,7 @@ export default function Home() {
           <DinoRunner />
 
           {/* Hero layout: flex column filling full viewport height */}
-          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-24 sm:pt-32 pb-24 sm:pb-14 md:pb-10">
+          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-20 sm:pt-32 pb-14 md:pb-10">
             {/* Top metadata row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
@@ -996,7 +996,7 @@ export default function Home() {
             {/* Bottom row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
-              className="mx-auto w-full max-w-[1600px] px-6 md:px-12 flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#1e1e2f] font-researcher font-bold"
+              className="mx-auto w-full max-w-[1600px] px-6 md:px-12 hidden sm:flex items-center justify-between text-[9px] uppercase tracking-[0.3em] text-[#1e1e2f] font-researcher font-bold"
             >
               <span className="flex items-center gap-2">Scroll to explore</span>
 

@@ -220,11 +220,12 @@ export function DinoRunner() {
             const statsRect = statsEl.getBoundingClientRect();
             const statsBottom = statsRect.bottom - heroRect.top;
             if (statsBottom > 60) {
-              cachedGy = Math.min(Math.max(statsBottom + 32, H * 0.82), H - 28);
+              const preferredGy = H - 38;
+              cachedGy = Math.max(preferredGy, statsBottom + 36);
               return;
             }
           }
-          cachedGy = H * 0.88;
+          cachedGy = H - 38;
           return;
         }
         cachedGy = H * 0.78;
