@@ -208,6 +208,31 @@ export function DinoRunner() {
       }
     };
 
+    let cachedGy = H * 0.78;
+    let frameCount = 0;
+
+    const updateGy = () => {
+      try {
+        if (W < 768) {
+          const statsEl = typeof document !== "undefined" ? document.getElementById("hero-stats-card") : null;
+          if (statsEl && el) {
+            const heroRect = el.getBoundingClientRect();
+            const statsRect = statsEl.getBoundingClientRect();
+            const statsBottom = statsRect.bottom - heroRect.top;
+            if (statsBottom > 60) {
+              cachedGy = Math.min(Math.max(statsBottom + 32, H * 0.82), H - 28);
+              return;
+            }
+          }
+          cachedGy = H * 0.88;
+          return;
+        }
+        cachedGy = H * 0.78;
+      } catch {
+        cachedGy = H * 0.78;
+      }
+    };
+
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       const r = el.getBoundingClientRect();
@@ -229,6 +254,7 @@ export function DinoRunner() {
         ];
         init = true;
       }
+      updateGy();
     };
     resize();
     window.addEventListener("resize", resize);
@@ -248,7 +274,6 @@ export function DinoRunner() {
       ctx.globalAlpha = 1.0;
     };
 
-    const gy = () => H * 0.78;
     const SPD = 1.5;
     const DINO_X_FRAC = 0.12;
 
@@ -257,9 +282,12 @@ export function DinoRunner() {
     const frame = (t: number) => {
       const dt = prev ? Math.min((t - prev) / 16.67, 3) : 1;
       prev = t;
-      const g = gy();
+      if (frameCount++ % 30 === 0) {
+        updateGy();
+      }
+      const g = cachedGy;
       const v = SPD * dt;
-      const dinoX = W * DINO_X_FRAC;
+      const dinoX = W < 768 ? Math.max(36, W * 0.12) : W * DINO_X_FRAC;
       // Target rendered size matching existing scale
       const dinoTargetH = 20 * PX;
       const dinoTargetW = dinoTargetH * (dinoAspect || 1.15);

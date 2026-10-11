@@ -913,7 +913,7 @@ export default function Home() {
           <DinoRunner />
 
           {/* Hero layout: flex column filling full viewport height */}
-          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-24 sm:pt-32 pb-10">
+          <div className="relative z-10 flex min-h-[100svh] flex-col justify-between pt-24 sm:pt-32 pb-24 sm:pb-14 md:pb-10">
             {/* Top metadata row — constrained to 1600px */}
             <ScrollReveal
               initialTransform="translateY(20px)"
@@ -986,7 +986,9 @@ export default function Home() {
                   initialTransform="translateY(30px)"
                   className="mt-6 sm:mt-8 flex justify-center w-full px-2 sm:px-0"
                 >
-                  <StatsCard />
+                  <div id="hero-stats-card" className="w-full flex justify-center">
+                    <StatsCard />
+                  </div>
                 </ScrollReveal>
               </div>
             </div>
